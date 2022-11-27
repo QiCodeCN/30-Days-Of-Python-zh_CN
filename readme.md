@@ -1,455 +1,362 @@
-# 🐍 30 Days Of Python 
+[English](https://github.com/Asabeneh/30-Days-Of-Python) | 简体中文
 
-|# Day | Topics                                                    |
-|------|:---------------------------------------------------------:|
-| 01  |  [Introduction](./readme.md)|
-| 02  |  [Variables, Built-in Functions](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
-| 03  |  [Operators](./03_Day_Operators/03_operators.md)|
-| 04  |  [Strings](./04_Day_Strings/04_strings.md)|
-| 05  |  [Lists](./05_Day_Lists/05_lists.md)|
-| 06  |  [Tuples](./06_Day_Tuples/06_tuples.md)|
-| 07  |  [Sets](./07_Day_Sets/07_sets.md)|
-| 08  |  [Dictionaries](./08_Day_Dictionaries/08_dictionaries.md)|
-| 09  |  [Conditionals](./09_Day_Conditionals/09_conditionals.md)|
-| 10  |  [Loops](./10_Day_Loops/10_loops.md)|
-| 11  |  [Functions](./11_Day_Functions/11_functions.md)|
-| 12  |  [Modules](./12_Day_Modules/12_modules.md)|
-| 13  |  [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)|
-| 14  |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|     
-| 15  |  [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)| 
-| 16 |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |     
-| 17 |  [Exception Handling](./17_Day_Exception_handling/17_exception_handling.md)|    
-| 18 |  [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)|    
-| 19 |  [File Handling](./19_Day_File_handling/19_file_handling.md)|
-| 20 |  [Python Package Manager](./20_Day_Python_package_manager/20_python_package_manager.md)|
-| 21 |  [Classes and Objects](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
-| 22 |  [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)|
-| 23 |  [Virtual Environment](./23_Day_Virtual_environment/23_virtual_environment.md)|
-| 24 |  [Statistics](./24_Day_Statistics/24_statistics.md)|
-| 25 |  [Pandas](./25_Day_Pandas/25_pandas.md)|
-| 26 |  [Python web](./26_Day_Python_web/26_python_web.md)|
-| 27 |  [Python with MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
-| 28 |  [API](./28_Day_API/28_API.md)|
-| 29 |  [Building API](./29_Day_Building_API/29_building_API.md)|
-| 30 |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)|
+# 🐍 挑战30天学完Python
 
-🧡🧡🧡 HAPPY CODING 🧡🧡🧡
+| # 天 |                                          文章目录                                          |
+|-----|:--------------------------------------------------------------------------------------:|
+| 01  |                                [初识Python](./readme.md)                                 |
+| 02  |   [变量和内置函数](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)    |
+| 03  |                     [布尔值和运算符](./03_Day_Operators/03_operators.md)                      |
+| 04  |                     [数据类型-字符串str](./04_Day_Strings/04_strings.md)                      |
+| 05  |                       [数据类型-列表list](./05_Day_Lists/05_lists.md)                        |
+| 06  |                      [数据类型-元组tuple](./06_Day_Tuples/06_tuples.md)                      |
+| 07  |                         [数据类型-集合set](./07_Day_Sets/07_sets.md)                         |
+| 08  |                [数据类型-字典dict](./08_Day_Dictionaries/08_dictionaries.md)                 |
+| 09  |                [Conditionals](./09_Day_Conditionals/09_conditionals.md)                |
+| 10  |                          [Loops](./10_Day_Loops/10_loops.md)                           |
+| 11  |                    [Functions](./11_Day_Functions/11_functions.md)                     |
+| 12  |                       [Modules](./12_Day_Modules/12_modules.md)                        |
+| 13  |       [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)       |
+| 14  | [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md) |     
+| 15  |       [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)       | 
+| 16  |          [Python Date time](./16_Day_Python_date_time/16_python_datetime.md)           |     
+| 17  |       [Exception Handling](./17_Day_Exception_handling/17_exception_handling.md)       |    
+| 18  |     [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)      |    
+| 19  |              [File Handling](./19_Day_File_handling/19_file_handling.md)               |
+| 20  | [Python Package Manager](./20_Day_Python_package_manager/20_python_package_manager.md) |
+| 21  |     [Classes and Objects](./21_Day_Classes_and_objects/21_classes_and_objects.md)      |
+| 22  |                [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)                |
+| 23  |     [Virtual Environment](./23_Day_Virtual_environment/23_virtual_environment.md)      |
+| 24  |                   [Statistics](./24_Day_Statistics/24_statistics.md)                   |
+| 25  |                         [Pandas](./25_Day_Pandas/25_pandas.md)                         |
+| 26  |                   [Python web](./26_Day_Python_web/26_python_web.md)                   |
+| 27  |     [Python with MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)      |
+| 28  |                             [API](./28_Day_API/28_API.md)                              |
+| 29  |                [Building API](./29_Day_Building_API/29_building_API.md)                |
+| 30  |                 [Conclusions](./30_Day_Conclusions/30_conclusions.md)                  |
 
-<div>
-<small>Support the <strong>author</strong> to create more educational materials</small> <br />  
-<a href = "https://www.paypal.me/asabeneh"><img src='./images/paypal_lg.png' alt='Paypal Logo' style="width:10%"/></a>
-</div>
-
-<div align="center">
-  <h1> 30 Days Of Python: Day 1 - Introduction</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> Second Edition: July, 2021</small>
-  </sub>
-</div>
+🧡🧡🧡 祝君编码学习愉快 🧡🧡🧡
 
 
-[Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Day2 变量和内置函数 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
-- [🐍 30 Days Of Python](#-30-days-of-python)
-- [📘 Day 1](#-day-1)
-  - [Welcome](#welcome)
-  - [Introduction](#introduction)
-  - [Why Python ?](#why-python-)
-  - [Environment Setup](#environment-setup)
-    - [Installing Python](#installing-python)
-    - [Python Shell](#python-shell)
-    - [Installing Visual Studio Code](#installing-visual-studio-code)
-      - [How to use visual studio code](#how-to-use-visual-studio-code)
-  - [Basic Python](#basic-python)
-    - [Python Syntax](#python-syntax)
-    - [Python Indentation](#python-indentation)
-    - [Comments](#comments)
-    - [Data types](#data-types)
-      - [Number](#number)
-      - [String](#string)
-      - [Booleans](#booleans)
-      - [List](#list)
-      - [Dictionary](#dictionary)
-      - [Tuple](#tuple)
-      - [Set](#set)
-    - [Checking Data types](#checking-data-types)
-    - [Python File](#python-file)
-  - [💻 Exercises - Day 1](#-exercises---day-1)
-    - [Exercise: Level 1](#exercise-level-1)
-    - [Exercise: Level 2](#exercise-level-2)
-    - [Exercise: Level 3](#exercise-level-3)
+# 📘 Day 1：初识Python
 
-# 📘 Day 1
+## 开篇说
 
-## Welcome
+> 🎉 本系列为Python基础学习，原稿来源于github英文项目，大奇主要是对其本地化翻译、逐条验证和补充，想通过30天完成正儿八经的系统化实践。此系列适合零基础同学，会简单用但又没有系统学习的使用者。总之如果你想提升自己的Python技能，欢迎加入《挑战30天学完Python》。
 
-**Congratulations** for deciding to participate in a _30 days of Python_ programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concept of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
+![学习导览图](./images/day101_mind.jpg)
+首先给出未来30天学习的思维导图，让我们了解它后开始正式的学习。
 
-If you would like to actively engage in the challenge, you may join the [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) telegram group.  
+## 为什选它？
+Python是一种非常接近自然语言的高级编程语言，因此易于学习和使用。Python被各行各业和包括Google在内的公司使用，它被应用于开发Web、桌面应用系统管理和机器学习。Python在数据科学领域和机械学习社区是很受欢迎的语言。希望这些理由可以说服你开始学习Python这门语言。
+> 💡 补充：在测试行业里很多自动化、工具也都在使用Python，如果没有任何开发语言基础，简单易学可以快速入门的它是非常不错的选择。
+## 环境配置
+### 安装Python
+运行python脚本需要安装依赖环境，让我们从官方 [https://www.python.org/downloads/](https://www.python.org/downloads/) 进行下载。
+需要注意的是默认下载页面的版本，一般是最新的Release版本，如图中的红圈出是`3.10.6`，如果是纯学习3.6+都可以，这里笔者为了兼容更好选择了`3.8.10`版本，后续的代码演示也会基于此版本。
+![image.png](./images/day102_python.png)
 
-## Introduction
+下载历史版本需要在` looking for specific release?`里查找，比如`Ctrl+F`搜索到了Python 3.8.10，点击对应行的Download即会跳转到下载页面。
+> 💡 Tips：图中还可以看到3.8.11、12版本，这个两个是后来的小版本升级，进入download只有源码包，没有直接安装包，所以为了方便安装我们最终选定10版本。
+![image.png](./images/day103_download.png)
 
-Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of Python programming language was derived from a British sketch comedy series, *Month Python's Flying Circus*.  The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, many hands on exercises and projects.
+如果你使用的是windows用户，可以点击图中红色框内对应系统位数版本下载，如果是Mac用户选择绿色框内对应os系统版本下载，其他linux系统则需要通过source版本配置。
+![image.png](./images/day104_window_mac.png)
 
-This challenge is designed for beginners and professionals who want to learn python programming language. It may take 30 to 100 days to complete the challenge, people who actively participate on the telegram group have a high probability of completing the challenge.
-If you are a visual learner or in favor of videos, you may get started with this [Python for Absolute Beginners video](https://www.youtube.com/watch?v=11OYpBrhdyM).
-
-## Why Python ?
-
-It is a programming language which is very close to human language and because of that it is easy to learn and use.
-Python is used by various industries and companies (including Google). It has been used to develop web applications, desktop applications, system adminstration, and machine learning libraries. Python is highly embraced language in the data science and machine learning community. I hope this is enough to convince you to start learning Python. Python is eating the world and you are killing it before it eats you.
-
-## Environment Setup
-
-### Installing Python
-
-To run a python script you need to install python. Let's [download](https://www.python.org/) python.
-If your are a windows user. Click the button encircled in red.
-
-[![installing on Windows](./images/installing_on_windows.png)](https://www.python.org/)
-
-If you are a macOS user. Click the button encircled in red.
-
-[![installing on Windows](./images/installing_on_macOS.png)](https://www.python.org/)
-
-To check if python is installed write the following command on your device terminal.
-
+安装包方法进行安装比较简单就省略了，如果有问题或者需要配置环境变量，网上安装教程也很多，自行搜索解决下，这里当python安装好后让我们启动一个终端，通过命令行检查下安装情况。
 ```shell
-python --version
+pyhton --version
+
+# 如mac或系统有共存的2.7版本，需要通过python3查看
+pyhton3 --version
 ```
-
-![Python Version](./images/python_versio.png)
-
-As you can see from the terminal, I am using _Python 3.7.5_ version at the moment. Your version of Python might be different from mine by but it should be 3.6 or above. If you mange to see the python version, well done. Python has been installed on your machine. Continue to the next section.
+![Python Version](./images/day105_python_version.png)
+当你看到版本信息的时候就证明python已经在电脑上安装好，如果你是其他版本也无妨，不影响接下来的学习。
 
 ### Python Shell
-
-Python is an interpreted scripting language, so it does not need to be compiled. It means it executes the code line by line. Python comes with a _Python Shell (Python Interactive Shell)_. It is used to execute a single python command and get the result.
-
-Python Shell waits for the Python code from the user. When you enter the code, it interprets the code and shows the result in the next line.
-Open your terminal or command prompt(cmd) and write:
-
+Python是解释型脚本语言，因此它不需要编译，这意味着它将逐行执行代码。Python带有一个Python Shell（交互式命令行）。它被用于执行单行phthon命令并得到相应结果。
 ```shell
-python
+python3  #python 
 ```
 
-![Python Scripting Shell](./images/opening_python_shell.png)
+![open_python_shell](./images/day106_opening_python_shell.png)
 
-The Python interactive shell is opened and it is waiting for you to write Python code(Python script). You will write your Python script next to this symbol >>> and then click Enter.
-Let us write our very first script on the Python scripting shell.
+此时python交互式shell已经打开，并且等待你写入代码（python 脚本），在符号 `>>>`写下你的代码然后按下Enter回车键，那么接下来让我们在python shell 写下第一个脚本。
 
-![Python script on Python shell](./images/adding_on_python_shell.png)
+![add_on_python_shell](./images/day107_adding_on_python_shell.png)
 
-Well done, you wrote your first Python script on Python interactive shell. How do we close the Python interactive shell ?
-To close the shell, next to this symbol >> write **exit()** command and press Enter.
+很好，在交互Shell控制台上你已经写下了第一个脚本，简单做了个加法计算`2+3`，并得到结果`5`输出。那么如何关闭python shell呢？要退出只需要在符号`>>>`输入 `exit()`命令并且按下回车键即可。
 
-![Exit from python shell](./images/exit_from_shell.png)
+![Exit from python shell](./images/day108_exit_from_shell.png)
 
-Now, you know how to open the Python interactive shell and how to exit from it.
+到现在为止，你已经知道如何打开Python shell 以及如何退出它了。
 
-Python will give you results if you write scripts that Python understands, if not it returns errors. Let's make a deliberate mistake and see what Python will return.
+如果你写下的代码能被python正确解读，它将返回一个结果，否则将看到一个错误。让我们故意制造一个错误来看看它是如何返回的。
 
-![Invalid Syntax Error](./images/invalid_syntax_error.png)
+![Invalid Syntax Error](./images/day109_invalid_syntax_error.png)
 
-As you can see from the returned error, Python is so clever that it knows the mistake we made and which was _Syntax Error: invalid syntax_. Using x as multiplication in Python is a syntax error because (x) is not a valid syntax in Python. Instead of (**x**) we use asterisk (*) for multiplication. The returned error clearly shows what to fix.
+正如你看到返回的错误，Python很聪明，它发现了一个 **Syntax Error: invalid syntax** 错误。使用了错误的乘法语法，因为在python中（`x`）不是一个有效关键词，要实现乘法计算，我们需要使用（`*`）来替换（x）。返回的错误很明显地展示了如何修复它。
 
-The process of identifying and removing errors from a program is called *debugging*. Let us debug it by putting * in place of **x**.
+从程序中找到错误并移除它的过程叫 `调试`，接下来让我们用 `*` 替换掉 `x` 通过调试来修复错误。
 
-![Fixing Syntax Error](./images/fixing_syntax_error.png)
+![Fixing Syntax Error](./images/day110_fixing_syntax_error.png)
 
-Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing. Some of the Python errors you may encounter are *SyntaxError*, *IndexError*, *NameError*, *ModuleNotFoundError*, *KeyError*, *ImportError*, *AttributeError*, *TypeError*, *ValueError*, *ZeroDivisionError* etc. We will see more about different Python **_error types_** in later sections.
+我们的bug此时已经被正确修复，代码正常运行并得到预期的结果（2乘3等于6）。作为一名程序员在每天的编程中你都会遇到这样那样的错误。知道如何调试问题是一件好事。
 
-Let us practice more how to use Python interactive shell. Go to your terminal or command prompt and write the word **python**.
+为了更好调试你应该了解常见的错误的类型。你将来可能会遇到的一些Python错误类型包括但不限于 _SyntaxError、IndexError、NameError、ModuleNotFoundError、KeyError、ImportError、AttributeError、TypeError、ValueError、ZeroDivisionError _等。在后续的实战中将会看到更多不同的 **错误类型信息**。
 
-![Python Scripting Shell](./images/opening_python_shell.png)
+让我们继续在Python shell 做一些练习，回到终端并次进入交互模式，不要忘记进入命令是`python`或`python3`。
 
-The Python interactive shell is opened. Let us do some basic mathematical operations (addition, subtraction, multiplication, division, modulus,  exponential).
+![open_python_shell](./images/day106_opening_python_shell.png)
 
-Let us do some maths first before we write any Python code:
-
-- 2 + 3 = 5
-- 3 - 2 = 1
-- 3 \* 2 = 6
+在Python shell模式下，我们先进行一些基础的数学运算操作（加法、减法、乘法、除法、取模、指数）。
+编写正式pyton代码之前先做一些数学计算：
+- 3 + 7 = 10 
+- 7 - 2 = 5
+- 2 * 6 = 12
 - 3 / 2 = 1.5
-- 3 ^ 2 = 3 x 3 = 9
+- 3 ** 2 = 3 x 3 = 9
 
-In python we have the following additional operations:
+再在做一些而外的操作：
+- 5 % 2 = 1 取模即求余数
+- 5 // 2 = 2 地板除即求商
 
-- 3 % 2 = 1 => which means finding the remainder
-- 3 // 2 = 1 => which means removing the remainder
+接下来让我们把上边的数学练习转成pthon代码。不过在这之前我们先在打开的python shell开头写下注释。
+_**注释 **_在python代码中是不被执行的，所以我们可以在合适的地方增加一些文字说明来增加代码可读性。python 中单行注释以 `hash(#)`符号开头。以下演示和如何在python写注释
 
-Let us change the above mathematical expressions to Python code. The Python shell has been opened and let us write a comment at the very beginning of the shell.
-
-A _comment_ is a part of the code which is not executed by python. So we can leave some text in our code to make our code more readable. Python does not run the comment part. A comment in python starts with hash(#) symbol.
-This is how you write a comment in python
-
-```shell
- # comment starts with hash
- # this is a python comment, because it starts with a (#) symbol
+```python
+# 注释以hash开头
+# 这是一个python的注解，因为它开头用了符号（#） 
 ```
 
-![Maths on python shell](./images/maths_on_python_shell.png)
+![Maths on python shell](./images/day111_maths_on_python_shell.png)
 
-Before we move on to the next section, let us practice more on the Python interactive shell. Close the opened shell by writing _exit()_ on the shell and open it again and let us practice how to write text on the Python shell.
+在继续下一节之前，让我们在Python shell 做更多的练习。通过`exit()`命令退出shell模式，然后再重新打开并尝试编写一些字符交互。
 
-![Writing String on python shell](./images/writing_string_on_shell.png)
+![Writing String on python shell](./images/day112_writing_string_on_shell.png)
 
-### Installing Visual Studio Code
+### 下载 Visual Studio
 
-The Python interactive shell is good to try and test small script codes but it will not be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days of Python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fan of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
+Python shell 非常适合尝试和测试小型脚本代码，但不适合大型项目开发。在实际工作环境中，开发人员使用不同的代码编辑器进行代码编写。在这30天的python编程学习挑战中，我们将使用非常流行的开源的Visual Studio代码编辑器，推荐使用官方[https://code.visualstudio.com/](https://code.visualstudio.com/)最新版本。当然如果电脑上已经有其他的编辑器，根据你的个人情况进行选择。
+> 💡 Tips：VS Code是一个非常不错的开源编辑器，虽然商国内商业版的Pycharm用的更多，但如果没你没有商业Key非常不建议花大量的时间取折腾一个IDE，编程学习重要的是学习语言语法和应用。
 
-[![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
+[![Visual Studio Code](./images/day113_vscode.png)](https://code.visualstudio.com/)
+假设你已经下载并安装好了VS Code IDE，让我们来看下是如何使用它。
 
-If you installed visual studio code, let us see how to use it.
-If you prefer a video, you can follow this Visual Studio Code for Python [Video tutorial](https://www.youtube.com/watch?v=bn7Cx4z-vSo)
+### 如何使用 VS Code
 
-#### How to use visual studio code
+通过桌面或者应用程序里点击Visual Stuido图标启动，当你打开它时你将看到这样的默认欢迎界面，你可以去掉勾选 **show welcome page on startup** 关闭，这样在每次启动后将不再出现。
+> 💡 Tips：由于网络原因可能网站打不开或或者下载失败，可以搜下已下载安装包或者找联系我发送你对应的包。
 
-Open the visual studio code by double clicking the visual studio icon. When you open it you will get this kind of interface. Try to interact with the labeled icons.
+![Visual studio Code](./images/day114_vscode_ui.png)
 
-![Visual studio Code](./images/vscode_ui.png)
+此时你可以打开现有项目，从git仓库中clone项目，也可以新建一个文件夹或文件。
 
-Create a folder named 30DaysOfPython on your desktop. Then open it using visual studio code.
+在电脑中合适的位置我们创建一个文名称为 30DaysOfPython 文件夹，然后使用Visual Studio打开它。如果提示信任警告，请选择Yes。
 
-![Opening Project on Visual studio](./images/how_to_open_project_on_vscode.png)
+![Opening Project on Visual studio](./images/day115_how_to_open_project_on_vscode.png)
 
-![Opening a project](./images/opening_project.png)
+打开项目文件夹后，在展开项目并且鼠标放在上边的时候会快捷按钮，正如图片中所示，我已经通过创建文件按钮，创建了一个helloworld.py尝试完成你的创建。
 
-After opening it you will see shortcuts for creating files and folders inside of 30DaysOfPython project's directory. As you can see below, I have created the very first file, helloworld.py. You can do the same.
+![project](./images/day116_project_file.png)
 
-![Creating a python file](./images/helloworld.png)
+事实上VS Code是支持多语言的，在对应区域下载默认会带有本地语言包，如果没有你可以通过切换到插件商店，搜索chinese安装进行安装。
 
-After a long day of coding, you want to close your code editor, right? This is how you will close the opened project.
+![project](./images/day117_language.png)
 
-![Closing project](./images/closing_opened_project.png)
+如果没安装或没完全中文化，可以通过快捷键`Command + Shift + P`(Window为Ctrl + Shift +P）打开命令配置，输入"configure language" 选中语言显示配置->` zh-cn `重新配置。
 
-Congratulations, you have finished setting up the development environment. Let us start coding.
+![project](./images/day118_language_set.png)
 
-## Basic Python
+重启后你就能看到全中文界面。
 
-### Python Syntax
+![project](./images/day119_chinese.png)
 
-A Python script can be written in Python interactive shell or in the code editor. A Python file has an extension .py.
+恭喜你，你已经完成开发环境的配置，让我们开始进行编码吧。
 
-### Python Indentation
+## Python基础
+代码可以在Python shell 或者IDE中编写。它的文件扩展名为`**.py**`
 
-An indentation is a white space in a text. Indentation in many languages is used to increase code readability, however Python uses indentation to create block of codes. In other programming languages curly brackets are used to create blocks of codes instead of indentation. One of the common bugs when writing python code is wrong indentation.
+### 缩进
+在文本中一个缩进是空白，许多语言中缩进用于增加代码的可读性，不过Python中用来创建代码块。其他语言中（如Java）通常用括号创建代码块。编写python代码时常见的错误之一就是错误的缩进。
 
-![Indentation Error](./images/indentation.png)
+![Indentation Error](./images/day120_indentation.png)
 
-### Comments
+### 注释
+在我们编写的代码中`注释`是非常重要，它使得代码变得更易读。Python中任何行以（#）开头的是一行注释，它在代码运行时候是不会被执行的。
 
-Comments are very important to make the code more readable and to leave remarks in our code. Python does not run comment parts of our code.
-Any text starting with hash(#) in Python is a comment.
-
-**Example: Single Line Comment**
-
-```shell
-    # This is the first comment
-    # This is the second comment
-    # Python is eating the world
+**示例：单行注释**
+``` python
+# 这是第一行注释
+# 这是第二行注释
+# Python是很受欢迎的语言
 ```
 
-**Example: Multiline Comment**
-
-Triple quote can be used for multiline comment if it is not assigned to a variable
-
-```shell
-"""This is multiline comment
-multiline comment takes multiple lines.
-python is eating the world
+**示例：多行注释**
+使用三个引号将文本引用以来，它将是一个多行的注释
+``` python
+"""这是多行注释
+它可以进行换行.
+Python变得越来越流行
 """
 ```
 
-### Data types
+### 数据类型
 
-In Python there are several types of data types. Let us get started with the most common ones. Different data types will be covered in detail in other sections. For the time being, let us just go through the different data types and get familiar with them. You do not have to have a clear understanding now.
+在Python中有几种数据类型，让我们从最常见一些开始学习。不同的数据类型在其他章节中得到详细讲解。目前来讲，先让我们来来了解下都有哪些数据类型，再次说明下，你现在无需立马弄懂每个类型。
 
-#### Number
+#### 数字
 
-- Integer: Integer(negative, zero and positive) numbers
-    Example:
-    ... -3, -2, -1, 0, 1, 2, 3 ...
-- Float: Decimal number
-    Example
-    ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
-- Complex
-    Example
-    1 + j, 2 + 4j
+- 整数int：整数（负、零和正）示例：... -3、-2、-1、0、1、2、3 ...
+- 浮点数float：十进制数 示例 ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
+- 复杂complex 示例 1 + j, 2 + 4j
 
-#### String
+#### 字符串str
 
-A collection of one or more characters under a single or double quote. If a string is more than one sentence then we use a triple quote.
-
-**Example:**
-
-```py
-'Asabeneh'
-'Finland'
+单引号或双引号里的一个或者多个字的集合。如果字符串多于一个句子或多行，则使用三个引号。
+```python
+'Hi'
+'MegaQi'
 'Python'
-'I love teaching'
+'我喜欢教学与分享'
 'I hope you are enjoying the first day of 30DaysOfPython Challenge'
 ```
 
-#### Booleans
+#### 布尔bool
 
-A boolean data type is either a True or False value. T and F should be always uppercase.
+布尔类型只有两个值 `True` 或 `Flase`，注意 T 和 F 始终是大写。
+```python
+True  # 逻辑举例：灯亮着吗? 如果它是开的，则值为 True
+False # 灯亮着吗?如果关闭，则值为 False
+```
 
-**Example:**
+#### 列表List
+
+Python list 是一个有序集合，它允许存储不同的数据类型项。类似于 JavaScript 中的数组。
 
 ```python
-    True  #  Is the light on? If it is on, then the value is True
-    False # Is the light on? If it is off, then the value is False
+# 所有类型均为数字
+[0, 1, 2, 3, 4, 5]
+
+# 所有项都是字符串类型（水果）
+['香蕉', '橙子', 'Mango'] 
+
+# 混合类型，包括了字符、整数、布尔和浮点
+['芒果', 10, False, 9.81]
 ```
 
-#### List
+#### 字典dict
 
-Python list is an ordered collection which allows to store different data type items. A list is similar to an array in JavaScript.
-
-**Example:**
-
-```py
-[0, 1, 2, 3, 4, 5]  # all are the same data types - a list of numbers
-['Banana', 'Orange', 'Mango', 'Avocado'] # all the same data types - a list of strings (fruits)
-['Finland','Estonia', 'Sweden','Norway'] # all the same data types - a list of strings (countries)
-['Banana', 10, False, 9.81] # different data types in the list - string, integer, boolean and float
-```
-
-#### Dictionary
-
-A Python dictionary object is an unordered collection of data in a key value pair format. 
-
-**Example:**
-
-```py
+Python 字典对象是键值对格式的无序数据集合。
+```python
 {
-'first_name':'Asabeneh',
-'last_name':'Yetayeh',
-'country':'Finland', 
-'age':250, 
+'name':'大奇',
+'country':'中国', 
+'age':35, 
 'is_married':True,
-'skills':['JS', 'React', 'Node', 'Python']
+'skills':['Python', 'React', 'Node', 'Java', 'Vue']
 }
 ```
 
-#### Tuple
+#### 元组tuple
 
-A tuple is an ordered collection of different data types like list but tuples can not be modified once they are created. They are immutable.
-
-**Example:**
-
-```py
-('Asabeneh', 'Pawel', 'Brook', 'Abraham', 'Lidiya') # Names
+元组也是一个有序集合，但它不同于List。元组一旦创建就不能修改，它们是不可变的。
+```python
+# 七大行星
+('地球', '木星', '海王星', '火星', '金星', '土星', '天王星', '水星') 
 ```
 
-```py
-('Earth', 'Jupiter', 'Neptune', 'Mars', 'Venus', 'Saturn', 'Uranus', 'Mercury') # planets
-```
-
-#### Set
-
-A set is a collection of data types similar to list and tuple. Unlike list and tuple, set is not an ordered collection of items. Like in Mathematics, set in Python stores only unique items.
-
-In later sections, we will go in detail about each and every Python data type.
-
-**Example:**
-
-```py
+#### 集合set
+集合是类似于列表和元组的数据类型的集合。与列表和元组不同，集合项不是有序的。与数学一样，`set`在python 仅保存不重复的值。
+```python
 {2, 4, 3, 5}
-{3.14, 9.81, 2.7} # order is not important in set
+{3.14, 9.81, 2.7} # 在set中顺序并不重要
 ```
 
-### Checking Data types
+### 查看数据类型
 
-To check the data type of certain data/variable we use the **type** function. In the following terminal you will see different python data types:
+要检查某些数据/变量的类型，我们使用`**type**`函数。在以下Python shell中，你将看到不同的 python 数据类型：
 
-![Checking Data types](./images/checking_data_types.png)
+![Checking Data types](./images/day121_checking_data_types.png)
 
-### Python File
+### Python文件
 
-First open your project folder, 30DaysOfPython. If you don't have this folder, create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
+假设已经创建好了python学习文件夹，如名为 `30DayOfPython`，但如果没有请通过编辑器创建它。并且在此文件夹中，创建一个名为`helloworld.py`的文件。现在让我们在Visual Studio上看下是如何进行代码交互的。
+Python Shell中打输出结果时没用使用print打印，但在VS Code中要看到结果需要使用`*print()`函数，print()括号内接受一个或多个参数，参考形式如 print('参数1','参数2')。具体可以看下边的例子。
+**例子**（文件为helloworld.py）
 
-The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function *print(). The *print()* built-in function takes one or more arguments as follows *print('arument1', 'argument2', 'argument3')*. See the examples below.
+```python
+# Day 1 - 30天Python学习挑战
+# 数据计算
+print(3 + 7)             # 加 addition(+)
+print(7 - 2)             # 减 subtraction(-)
+print(2 * 6)             # 乘 multiplication(*)
+print(3 / 2)             # 除 division(/)
+print(3 ** 2)            # 次方 exponential(**)
+print(5 % 2)             # 求余 modulus(%)
+print(5 // 2)            # 求商 Floor division operator(//)
 
-**Example:**
-
-The file name is helloworld.py
-
-```py
-# Day 1 - 30DaysOfPython Challenge
-
-print(2 + 3)             # addition(+)
-print(3 - 1)             # subtraction(-)
-print(2 * 3)             # multiplication(*)
-print(3 / 2)             # division(/)
-print(3 ** 2)            # exponential(**)
-print(3 % 2)             # modulus(%)
-print(3 // 2)            # Floor division operator(//)
-
-# Checking data types
-print(type(10))          # Int
-print(type(3.14))        # Float
-print(type(1 + 3j))      # Complex number
-print(type('Asabeneh'))  # String
-print(type([1, 2, 3]))   # List
-print(type({'name':'Asabeneh'})) # Dictionary
-print(type({9.8, 3.14, 2.7}))    # Set
-print(type((9.8, 3.14, 2.7)))    # Tuple
+# 打印数据类型
+print(type(10))          # 整数 Int
+print(type(3.14))        # 浮点 Float
+print(type(1 + 3j))      # 复数 Complex number
+print(type('MegaQi'))    # 字符串 String
+print(type([1, 2, 3]))   # 列表 List
+print(type({'名称':'大奇'})) # 字典 Dictionary
+print(type({9.8, 3.14, 2.7}))    # 集合 Set
+print(type((9.8, 3.14, 2.7)))    # 元组 Tuple
 ```
 
-To run the python file check the image below. You can run the python file either by running the green button on Visual Studio Code or by typing *python helloworld.py* in the terminal .
+要运行python文件，请参考下图。
 
-![Running python script](./images/running_python_script.png)
+- 方式1：通过点击VS Code上的三角▶️按钮运行
+- 方式2：在编辑底部打开的终端上输入 `python3 helloworld.py `来运行
+> 💡 提示：如果没显示终端，依次通过编辑器菜单->终端->新建终端 打开。
 
-🌕  You are amazing. You have just completed day 1 challenge and you are on your way to greatness. Now do some exercises for your brain and muscles.
+![Running python script](./images/day122_running_python_script.png)
 
-## 💻 Exercises - Day 1
+🌕 你太棒了，你已经完成了第1天的挑战，并且正在成功的路上前进。现在趁热做一些练习吧，来加强大脑和肌肉记忆。
 
-### Exercise: Level 1
+## 💻 第1天练习
 
-1. Check the python version you are using
-2. Open the python interactive shell and do the following operations. The operands are 3 and 4.
-   - addition(+)
-   - subtraction(-)
-   - multiplication(\*)
-   - modulus(%)
-   - division(/)
-   - exponential(\*\*)
-   - floor division operator(//)
-3. Write strings on the python interactive shell. The strings are the following:
-   - Your name
-   - Your family name
-   - Your country
+### 练习1级
+
+1. 请用命令查看你正在使用的python版本。
+2. 打开python shell并进行如下操作。操作数是 5 和 3。
+   - 加法（+）
+   - 减法（-）
+   - 乘法（*）
+   - 求余（%）
+   - 除法（/）
+   - 次方（**）
+   - 求商（//)
+3. 在 python shell 上编写如下字符串并输出：
+   - 你的姓名
+   - 你的国家
+   - 你喜欢的一句话
    - I am enjoying 30 days of python
-4. Check the data types of the following data:
+4. 检查以下数据类型：
    - 10
    - 9.8
    - 3.14
-   - 4 - 4j
-   - ['Asabeneh', 'Python', 'Finland']
-   - Your name
-   - Your family name
-   - Your country
+   - 5 - 5j
+   - ['Python'，'Java']
+   - (1,2,3)
+   - 你的国家
 
-### Exercise: Level 2
+### 练习2级
 
-1. Create a folder named day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloworld.py and repeat questions 1, 2, 3 and 4. Remember to use _print()_ when you are working on a python file. Navigate to the directory where you have saved your file, and run it.
+1. 在 30DaysOfPython 项目文件夹下创建一个名为 **day_1**的新文件夹。并在此文件下里创建一个新的文件 helloworld.py，然后重做练习1中2-4项。记得python文件打印结果要使用函数**print() 。**编写好你的代码后保存并用两种不同的方式运行它。
 
-### Exercise: Level 3
+### 练习3级
 
-1. Write an example for different Python data types such as Number(Integer, Float, Complex), String, Boolean, List, Tuple, Set and Dictionary.
-2. Find an [Euclidian distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between (2, 3) and (10, 8)
-
+1. 为不同python数据类型写一个示例，例如 Number(Integer, Float, Complex)、String、Boolean、List、Tuple、Set 和 Dictionary
+2. 计算出两点之间的距离（2,3) 和 (10,8)
+3. 
 🎉 CONGRATULATIONS ! 🎉
 
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
