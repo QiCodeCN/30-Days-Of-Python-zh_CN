@@ -7,6 +7,7 @@ res.py
 hello.py
 backup.md
 .DS_Store
+.idea
 __pycache__
 playground/
 playground

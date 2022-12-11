@@ -1,19 +1,3 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 13 - List Comprehension</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
-
-</div>
-</div>
 
 [<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
 
@@ -28,81 +12,117 @@
 
 # 📘 Day 13
 
-## List Comprehension
+## 列表推导式
 
-List comprehension in Python is a compact way of creating a list from a sequence. It is a short way to create a new list. List comprehension is considerably faster than processing a list using the _for_ loop.
+在Python中，列表推导式（又称列表解析式）提供了一种简明扼要的方法来创建列表。一种从序列创建列表的紧凑方式。列表推导式比使用 _for_ 循环处理列表要快得多。
 
 ```py
-# syntax
+# 语法形式
 [i for i in iterable if expression]
 ```
+它的结构是在一个中括号里包含一个表达式，然后是一个for语句，然后是 0 个或多个 for 或者 if 语句。简单来讲，是从第一个for开始依次向右推导，得出结果后给到最左边第一个变量。
 
-**Example:1**
+**基础实例1：**
 
-For instance if you want to change a string to a list of characters. You can use a couple of methods. Let's see some of them:
+如果你想将字符串转换为字符列表。你可以使用一些方法。让我们来看看其中的一些:
 
 ```py
-# One way
+# 方式一
 language = 'Python'
-lst = list(language) # changing the string to list
-print(type(lst))     # list
+lst = list(language) # 将字符串更改为list
+print(type(lst))     # <type 'list'>
 print(lst)           # ['P', 'y', 't', 'h', 'o', 'n']
 
-# Second way: list comprehension
+# 方式二: 列表推导式
 lst = [i for i in language]
 print(type(lst)) # list
 print(lst)       # ['P', 'y', 't', 'h', 'o', 'n']
 
 ```
 
-**Example:2**
+**基础实例2：**
 
-For instance if you want to generate a list of numbers
+例如，如果你想生成一个数字列表。
 
 ```py
-# Generating numbers
-numbers = [i for i in range(11)]  # to generate numbers from 0 to 10
+# 生成数列
+numbers = [i for i in range(11)]  # 生成0到10的数字
 print(numbers)                    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# It is possible to do mathematical operations during iteration
+# 在迭代过程中可以进行数学运算
 squares = [i * i for i in range(11)]
 print(squares)                    # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
-# It is also possible to make a list of tuples
+# 也可以创建一个元组列表
 numbers = [(i, i * i) for i in range(11)]
 print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
 
 ```
+为了更好的理解，我将上边的数学运算推导转换成普通的方式，通过对比或许帮助你理解其中逻辑
+```py
+squares = []
+for i in range(11):
+  compute = i * i
+  squares.append(compute)
 
-**Example:2**
+print(squares)
+```
 
-List comprehension can be combined with if expression
+**实例3：带条件**
 
+列表推导式可以与 _if_ 表达式结合使用
 
 ```py
-# Generating even numbers
-even_numbers = [i for i in range(21) if i % 2 == 0]  # to generate even numbers list in range 0 to 21
+# 奇数列表
+even_numbers = [i for i in range(21) if i % 2 == 0]  # 生成范围为0到21的偶数列表
 print(even_numbers)                    # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-# Generating odd numbers
-odd_numbers = [i for i in range(21) if i % 2 != 0]  # to generate odd numbers in range 0 to 21
+# 偶数列表
+odd_numbers = [i for i in range(21) if i % 2 != 0]  # 生成范围为0到21的奇数列表
 print(odd_numbers)                      # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
-# Filter numbers: let's filter out positive even numbers from the list below
+
+# 过滤数字：可以从下面的列表中过滤出正偶数
 numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
 positive_even_numbers = [i for i in range(21) if i % 2 == 0 and i > 0]
 print(positive_even_numbers)                    # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-# Flattening a three dimensional array
+# 将二维数组合并成一维数组
 list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flattened_list = [ number for row in list_of_lists for number in row]
 print(flattened_list)    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
+因为带条件稍微复杂了点，因此我将上边后三个例子进行顺序拆解，让我们看看是啥样:
+```py
+# 偶数列表
+even_numbers = []
+for i in range(21):
+    if i % 2 != 0:
+        even_numbers.append(i)
+print(even_numbers)
 
-## Lambda Function
+# 过滤出正整数
+numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
+positive_even_numbers = []
+for i in range(21):
+    if i % 2 == 0 and i > 0:
+        positive_even_numbers.append(i)
+print(positive_even_numbers) 
 
-Lambda function is a small anonymous function without a name. It can take any number of arguments, but can only have one expression. Lambda function is similar to anonymous functions in JavaScript. We need it when we want to write an anonymous function inside another function.
+# 将二维数组合并成一维数组
+list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened_list = []
+for row in list_of_lists:
+    for number in row:
+        flattened_list.append(number)
+print(flattened_list)
+```
+我想经过的拆解对比，应该对于列表的推导有一定了解了。这也算在学习Python路上接触的第一个所谓的语法糖了。它是否不是一下子就高级起来了。但需要提醒的是，如果你对这逻辑无法理解或不能熟练应用。建议还是老老实实写普通方法实现。
 
-### Creating a Lambda Function
+## Lambda函数
+
+Lambda函数是一个没有名字的小型匿名函数。它可以接受任意数量的参数，但只能有一个表达式。Lambda函数类似于JavaScript中的匿名函数。当我们想在另一个函数里面写一个匿名函数时，我们就需要它。
+
+### 创建Lambda函数
 
 To create a lambda function we use _lambda_ keyword followed by a parameter(s), followed by an expression. See the syntax and the example below. Lambda function does not use return but it explicitly returns the expression.
 
@@ -112,7 +132,7 @@ x = lambda param1, param2, param3: param1 + param2 + param2
 print(x(arg1, arg2, arg3))
 ```
 
-**Example:**
+**例子**
 
 ```py
 # Named function

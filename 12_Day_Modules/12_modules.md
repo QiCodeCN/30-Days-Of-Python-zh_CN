@@ -68,7 +68,6 @@ print(mymodule.generate_full_name('Mega', 'Qi')) # Mega Qi
 
 ### 从Module中导入函数
 
-We can have many functions in a file and we can import all the functions differently.
 在一个文件中兴许包含很多的函数方法，我们可以通过不同的方式进行导入。
 
 ```python
