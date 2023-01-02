@@ -4,11 +4,11 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 13](#-day-13)
-  - [List Comprehension](#list-comprehension)
-  - [Lambda Function](#lambda-function)
-    - [Creating a Lambda Function](#creating-a-lambda-function)
-    - [Lambda Function Inside Another Function](#lambda-function-inside-another-function)
-  - [💻 Exercises: Day 13](#-exercises-day-13)
+  - [列表推导式](#列表推导式)
+  - [Lambda函数](#lambda函数)
+    - [创建Lambda函数](#创建lambda函数)
+    - [在另一个函数中使用lambda](#在另一个函数中使用lambda)
+  - [💻 第13天练习](#-第13天练习)
 
 # 📘 Day 13
 
@@ -47,15 +47,15 @@ print(lst)       # ['P', 'y', 't', 'h', 'o', 'n']
 ```py
 # 生成数列
 numbers = [i for i in range(11)]  # 生成0到10的数字
-print(numbers)                    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(numbers)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # 在迭代过程中可以进行数学运算
 squares = [i * i for i in range(11)]
-print(squares)                    # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+print(squares)   # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 # 也可以创建一个元组列表
 numbers = [(i, i * i) for i in range(11)]
-print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
+print(numbers)  #[(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25), (6, 36), (7, 49), (8, 64), (9, 81), (10, 100)]
 
 ```
 为了更好的理解，我将上边的数学运算推导转换成普通的方式，通过对比或许帮助你理解其中逻辑
@@ -116,7 +116,7 @@ for row in list_of_lists:
         flattened_list.append(number)
 print(flattened_list)
 ```
-我想经过的拆解对比，应该对于列表的推导有一定了解了。这也算在学习Python路上接触的第一个所谓的语法糖了。它是否不是一下子就高级起来了。但需要提醒的是，如果你对这逻辑无法理解或不能熟练应用。建议还是老老实实写普通方法实现。
+我想经过的拆解对比，应该对于列表的推导有一定了解了。这也算在学习Python路上接触的第一个所谓的语法糖了。是不是一下子就高级起来了。但需要提醒的是，如果你对这逻辑无法理解或不能熟练应用。建议还是老老实实写普通方法实现。
 
 ## Lambda函数
 
@@ -124,10 +124,10 @@ Lambda函数是一个没有名字的小型匿名函数。它可以接受任意�
 
 ### 创建Lambda函数
 
-To create a lambda function we use _lambda_ keyword followed by a parameter(s), followed by an expression. See the syntax and the example below. Lambda function does not use return but it explicitly returns the expression.
+要创建lambda函数，我们使用 _lambda_ 关键字后跟一个形参和表达式。请参阅下面的语法和示例。Lambda函数不使用 return，它显式地返回表达式。
 
 ```py
-# syntax
+# 语法
 x = lambda param1, param2, param3: param1 + param2 + param2
 print(x(arg1, arg2, arg3))
 ```
@@ -135,60 +135,82 @@ print(x(arg1, arg2, arg3))
 **例子**
 
 ```py
-# Named function
+# 1.函数命名
 def add_two_nums(a, b):
     return a + b
 
-print(add_two_nums(2, 3))     # 5
-# Lets change the above function to a lambda function
+print(add_two_nums(2, 3))   # 5
+
+# 2.让我们把上面的函数换成 lambda 
 add_two_nums = lambda a, b: a + b
 print(add_two_nums(2,3))    # 5
 
-# Self invoking lambda function
-(lambda a, b: a + b)(2,3) # 5 - need to encapsulate it in print() to see the result in the console
+# 3.自调用 lambda 函数(将2中进一步简化)
+print((lambda a, b: a + b)(2,3)) # 5 - 需要将其封装在print()中，以便在控制台中查看结果
 
 square = lambda x : x ** 2
 print(square(3))    # 9
 cube = lambda x : x ** 3
 print(cube(3))    # 27
 
-# Multiple variables
+# 多变量
 multiple_variable = lambda a, b, c: a ** 2 - 3 * b + 4 * c
 print(multiple_variable(5, 5, 3)) # 22
 ```
 
-### Lambda Function Inside Another Function
+### 在另一个函数中使用lambda
 
-Using a lambda function inside another function.
+我们可以直接在一个函数里直接使用lambda表达式。具体举一个例子：
 
 ```py
 def power(x):
     return lambda n : x ** n
 
-cube = power(2)(3)   # function power now need 2 arguments to run, in separate rounded brackets
+cube = power(2)(3)   # 函数power在括号需求两个参数来运行
 print(cube)          # 8
 two_power_of_five = power(2)(5) 
 print(two_power_of_five)  # 32
 ```
 
-🌕 Keep up the good work. Keep the momentum going, the sky is the limit! You have just completed day 13 challenges and you are 13 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+可能有些晦涩难懂。这里同样进行拆解说明：
 
-## 💻 Exercises: Day 13
+1. 当调用power函数的时候先将第一个参数2赋值给 x
+2. x参数值传递给lambda表达式即 lambda n：2 ** n 并返回这个匿名函数
+3. 紧接着将第二个参数5赋值给匿名函数参数 n
+4. 匿名lambda进行表达式计算 2 ** 3 算的结果
+5. 将最终两次函数逻辑结果赋值给cube变量，最后通过print打印结果为 8
 
-1. Filter only negative and zero in the list using list comprehension
+```py
+# 如果将上边嵌套匿名函数用普通函数嵌套表示可转化为：
+def power(x, n):
+    def inner(n):
+        return x ** n
+    return inner(n)
+
+cube = power(2,3) 
+print(cube)
+```
+以上就是本节一些在python语法中高级的用法学习。希望多多体会，当然这一开始就说如果你对这不熟悉请回归到最基本的编程方法上。
+
+
+🌕 再接再厉。保持前进的势头，天空才是极限！你刚刚完成了第13天的挑战，和以往一样让我们做一些联系巩固学习成功吧。
+
+## 💻 第13天练习
+
+1. 使用列表推导式过滤出列表中零和负数
    ```py
    numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
    ```
-2. Flatten the following list of lists of lists to a one dimensional list :
+2. 利用推导式将下边的多维数组变成一维数组:
 
    ```py
    list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
 
-   output
+   # 输出
    [1, 2, 3, 4, 5, 6, 7, 8, 9]
    ```
 
-3. Using list comprehension create the following list of tuples:
+3. 使用列表推导式创建以下元组列表:
    ```py
    [(0, 1, 0, 0, 0, 0, 0),
    (1, 1, 1, 1, 1, 1, 1),
@@ -202,27 +224,29 @@ print(two_power_of_five)  # 32
    (9, 1, 9, 81, 729, 6561, 59049),
    (10, 1, 10, 100, 1000, 10000, 100000)]
    ```
-4. Flatten the following list to a new list:
+4. 将countries元组列表转换成目标输出列表:
    ```py
    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
-   output:
+
+   # 输出:
    [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]
    ```
-5. Change the following list to a list of dictionaries:
+5. 将下面的列表更改为字典列表:
    ```py
    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
-   output:
+   
+   # 输出:
    [{'country': 'FINLAND', 'city': 'HELSINKI'},
    {'country': 'SWEDEN', 'city': 'STOCKHOLM'},
    {'country': 'NORWAY', 'city': 'OSLO'}]
    ```
-6. Change the following list of lists to a list of concatenated strings:
+6. 将下面的列表列表更改为连接字符串的列表:
    ```py
    names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
-   output
+   # 输出
    ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
    ```
-7. Write a lambda function which can solve a slope or y-intercept of linear functions.
+7. 编写一个lambda函数，它能够解决线性函数的斜率计算。
 
 🎉 CONGRATULATIONS ! 🎉
 
