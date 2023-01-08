@@ -12,15 +12,15 @@
 | 06  |                      [数据类型-元组tuple](./06_Day_Tuples/06_tuples.md)                      |
 | 07  |                         [数据类型-集合set](./07_Day_Sets/07_sets.md)                         |
 | 08  |                [数据类型-字典dict](./08_Day_Dictionaries/08_dictionaries.md)                 |
-| 09  |                [Conditionals](./09_Day_Conditionals/09_conditionals.md)                |
-| 10  |                          [Loops](./10_Day_Loops/10_loops.md)                           |
-| 11  |                    [Functions](./11_Day_Functions/11_functions.md)                     |
-| 12  |                       [Modules](./12_Day_Modules/12_modules.md)                        |
-| 13  |       [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)       |
-| 14  | [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md) |     
-| 15  |       [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)       | 
+| 09  |                [条件](./09_Day_Conditionals/09_conditionals.md)                |
+| 10  |                          [循环](./10_Day_Loops/10_loops.md)                           |
+| 11  |                    [方法](./11_Day_Functions/11_functions.md)                     |
+| 12  |                       [模块](./12_Day_Modules/12_modules.md)                        |
+| 13  |       [列表推导式](./13_Day_List_comprehension/13_list_comprehension.md)       |
+| 14  | [高阶函数](./14_Day_Higher_order_functions/14_higher_order_functions.md) |     
+| 15  |       [Python错误类型](./15_Day_Python_type_errors/15_python_type_errors.md)       | 
 | 16  |          [Python Date time](./16_Day_Python_date_time/16_python_datetime.md)           |     
-| 17  |       [Exception Handling](./17_Day_Exception_handling/17_exception_handling.md)       |    
+| 17  |       [异常处理](./17_Day_Exception_handling/17_exception_handling.md)       |    
 | 18  |     [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)      |    
 | 19  |              [File Handling](./19_Day_File_handling/19_file_handling.md)               |
 | 20  | [Python Package Manager](./20_Day_Python_package_manager/20_python_package_manager.md) |

@@ -1,21 +1,6 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 17 - Exception Handling </h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> Second Edition: July, 2021</small>
-  </sub>
-</div>
 
 [<< Day 16](../16_Day_Python_date_time/16_python_datetime.md) | [Day 18 >>](../18_Day_Regular_expressions/18_regular_expressions.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 - [📘 Day 17](#-day-17)
   - [Exception Handling](#exception-handling)
   - [Packing and Unpacking Arguments in Python](#packing-and-unpacking-arguments-in-python)
@@ -32,7 +17,7 @@
 
 # 📘 Day 17
 
-## Exception Handling
+## 异常处理
 
 Python uses _try_ and _except_ to handle errors gracefully. A graceful exit (or graceful handling) of errors is a simple programming idiom - a program detects a serious error condition and "exits gracefully", in a controlled manner as a result. Often the program prints a descriptive error message to a terminal or log as part of the graceful exit, this makes our application more robust. The cause of an exception is often external to the program itself. An example of exceptions could be an incorrect input, wrong file name, unable to find a file, a malfunctioning IO device. Graceful handling of errors prevents our applications from crashing.
 
