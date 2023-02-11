@@ -1,25 +1,10 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 26 - Python for web </h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small>Second Edition: July, 2021</small>
-  </sub>
-</div>
-</div>
 
 [<< Day 25 ](../25_Day_Pandas/25_pandas.md) | [Day 27 >>](../27_Day_Python_with_mongodb/27_python_with_mongodb.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 26](#-day-26)
-  - [Python for Web](#python-for-web)
+  - [Python Web 服务](#Python-Web-服务)
     - [Flask](#flask)
       - [Folder structure](#folder-structure)
     - [Setting up your project directory](#setting-up-your-project-directory)
@@ -38,7 +23,7 @@
 
 # 📘 Day 26
 
-## Python for Web
+## Python Web 服务
 
 Python is a general purpose programming language and it can be used for many places. In this section, we will see how we use Python for the web. There are many Python web frame works. Django and Flask are the most popular ones. Today, we will see how to use Flask for web development.
 
@@ -566,7 +551,7 @@ Now, it is ready to be deployed. Steps to deploy the application on heroku
 
 After this step you will get an application like [this](http://thirdaysofpython-practice.herokuapp.com/)
 
-## Exercises: Day 26
+## 第26天练习
 
 1. You will build [this application](https://thirtydaysofpython-v1-final.herokuapp.com/). Only the text analyser part is left
 

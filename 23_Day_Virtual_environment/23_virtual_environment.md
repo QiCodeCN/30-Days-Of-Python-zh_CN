@@ -1,29 +1,15 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 23 - Virtual Environment </h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
-</div>
 
 [<< Day 22](../22_Day_Web_scraping/22_web_scraping.md) | [Day 24 >>](../24_Day_Statistics/24_statistics.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 23](#-day-23)
-  - [Setting up Virtual Environments](#setting-up-virtual-environments)
-  - [💻 Exercises: Day 23](#-exercises-day-23)
+  - [虚拟环境](#虚拟环境设置)
+  - [💻 第23天练习](#-第23天练习)
 
 # 📘 Day 23
 
-## Setting up Virtual Environments
+## 虚拟环境设置
 
 To start with project, it would be better to have a virtual environment. Virtual environment can help us to create an isolated or separate environment. This will help us to avoid conflicts in dependencies across projects. If you write pip freeze on your terminal you will see all the installed packages on your computer. If we use virtualenv, we will access only packages which are specific for that project. Open your terminal and install virtualenv
 
@@ -105,7 +91,7 @@ When you finish you should dactivate active project using _deactivate_.
 
 The necessary modules to work with flask are installed. Now, your project directory is ready for a flask project. You should include the venv to your .gitignore file not to push it to github.
 
-## 💻 Exercises: Day 23
+## 💻 第23天练习
 
 1. Create a project directory with a virtual environment based on the example given above.
 

@@ -1,2 +1,2 @@
 This is an example to show how to open a file and read.
-This is the second line of the text.I love python
+This is the second line of the text.I love pythonThis text has to be appended at the end这段话将被追加到末尾

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<person gender="male">
-  <name>Asabeneh</name>
-  <country>Finland</country>
-  <city>Helsinki</city>
+<person gender="男">
+  <name>MegaQi</name>
+  <country>China</country>
+  <city>ShangHai</city>
   <skills>
     <skill>JavaScrip</skill>
     <skill>React</skill>

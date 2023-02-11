@@ -14,7 +14,7 @@
 
 ## Python *datetime*
 
-Python内置有 _datetime_ 模块，可以用来处理日期和时间。在编程的世界里少不了与时间打交到，因此让我们来专门学习一下 _datetime_ 的使用。
+Python内置有 _datetime_ 模块，可以用来处理日期和时间。在编程的世界里少不了与时间打交道，因此让我们来专门学习一下 _datetime_ 的使用。
 
 ```py
 >>> import datetime
@@ -94,7 +94,7 @@ time two: 07/01/2023, 20:45:27
 
 ### 使用 *strptime* 将字符转时间
 
-这里有个建议阅读文档 [documentation](https://www.programiz.com/python-programming/datetime/strptimet)，或许它能帮助你更好的理解。
+这里有个建议阅读文档 [documentation](https://www.programiz.com/python-programming/datetime/strptimet)，或许它能帮助你更好地理解。
 
 ```py
 from datetime import datetime
