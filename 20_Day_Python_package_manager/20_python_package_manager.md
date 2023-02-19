@@ -2,189 +2,191 @@
 [<< Day 19](../19_Day_File_handling/19_file_handling.md) | [Day 21 >>](../21_Day_Classes_and_objects/21_classes_and_objects.md)
 
 - [📘 Day 20](#-day-20)
-  - [Python PIP - Python Package Manager](#python-pip---python-package-manager)
-    - [What is PIP ?](#what-is-pip-)
-    - [Installing PIP](#installing-pip)
-    - [Installing packages using pip](#installing-packages-using-pip)
-    - [Uninstalling Packages](#uninstalling-packages)
-    - [List of Packages](#list-of-packages)
-    - [Show Package](#show-package)
+  - [Python PIP 包管理](#Python-PIP-包管理)
+    - [什么是 PIP ?](#什么是-PIP)
+    - [安装 PIP](#安装-PIP)
+    - [使用pip安装包](#使用pip安装包)
+    - [卸载包](#卸载包)
+    - [查看包列表](#查看包列表)
+    - [查看包信息](#查看包信息)
     - [PIP Freeze](#pip-freeze)
-    - [Reading from URL](#reading-from-url)
-    - [Creating a Package](#creating-a-package)
-    - [Further Information About Packages](#further-information-about-packages)
-  - [Exercises: Day 20](#exercises-day-20)
+    - [从WEB中读取数据](#从WEB中读取数据)
+    - [创建包](#创建包)
+    - [关于更多包的信息](#关于更多包的信息)
 
 # 📘 Day 20
 
 ## Python PIP 包管理
 
-### What is PIP ?
+### 什么是 PIP ?
 
-PIP stands for Preferred installer program. We use _pip_ to install different Python packages.
-Package is a Python module that can contain one or more modules or other packages. A module or modules that we can install to our application is a package.
-In programming, we do not have to write every utility program, instead we install packages and import them to our applications.
+PIP是Python第三方库管理器，我们可以通过 _pip_ 来安装不同的Python包。
+包是一个Python模块，可以包含一个或多个模块或其他包。即可以安装到应用程序中的一个或多个模块就是一个包。
+在实际的编程中，我们不必去编写每一个实用程序，很多有别人已经封装好的，我们可以导入到程序中直接使用。
 
-### Installing PIP
+### 安装 PIP
 
-If you did not install pip, let us install it now. Go to your terminal or command prompt and copy and paste this:
-
-```sh
-asabeneh@Asabeneh:~$ pip install pip
-```
-
-Check if pip is installed by writing
+如果你是通过程序安装的python环境，那么默认pip已经在其中了，让我们打开终端查看：
 
 ```sh
-pip --version
+>pip --version
+pip 21.1.1 from c:\programdata\python38\lib\site-packages\pip (python 3.8)
 ```
 
-```py
-asabeneh@Asabeneh:~$ pip --version
-pip 21.1.3 from /usr/local/lib/python3.7/site-packages/pip (python 3.9.6)
-```
+如你所见, 我当前使用的 pip 版本是 21.1.1。如果你到其他版本数字都证明，pip已经被安装，可以正常使用。
 
-As you can see, I am using pip version 21.1.3, if you see some number a bit below or above that, means you have pip installed.
+让我们检查一下Python社区中用于不同编码的一些包。注意，这些演示只是想让你知道有很多包可以用于不同的应用程序，并不展开讲解。
 
-Let us check some of the packages used in the Python community for different purposes. Just to let you know that there are lots of packages available for use with different applications.
+### 使用pip安装包
 
-### Installing packages using pip
+让我们首先来安装一个叫 _numpy_ 的包。它是机器学习和数据科学社区中最受欢迎的软件包之一。
 
-Let us try to install _numpy_, called numeric python. It is one of the most popular packages in machine learning and data science community.
-
-- NumPy is the fundamental package for scientific computing with Python. It contains among other things:
-  - a powerful N-dimensional array object
-  - sophisticated (broadcasting) functions
-  - tools for integrating C/C++ and Fortran code
-  - useful linear algebra, Fourier transform, and random number capabilities
+NumPy是使用Python进行科学计算的基本包。它还包括:
+- 一个强大的n维数组对象
+- 复杂的(广播)功能
+- 集成C/ c++和Fortran代码的工具
+- 有用的线性代数\随机数等功能
 
 ```sh
-asabeneh@Asabeneh:~$ pip install numpy
+> pip install numpy
+Successfully installed numpy-1.24.2
 ```
 
-Let us start using numpy. Open your python interactive shell, write python and then import numpy as follows:
+当你看到提示successfully的字样表示安装成功，事实上可能你本地已经有了此包，你可以通过 `pip uninstall numpy` 先卸载，然后再体验安装过程。
 
-```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+包numpy安装成功后，让我们看下如何使用：
+
+```sh
+> python
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import numpy
 >>> numpy.version.version
-'1.20.1'
->>> lst = [1, 2, 3,4, 5]
->>> np_arr = numpy.array(lst)
+'1.24.2'
+>>> list = [1,2,3,4,5]
+>>> np_arr = numpy.array(list)
 >>> np_arr
 array([1, 2, 3, 4, 5])
 >>> len(np_arr)
 5
 >>> np_arr * 2
 array([ 2,  4,  6,  8, 10])
->>> np_arr  + 2
+>>> np_arr + 2
 array([3, 4, 5, 6, 7])
 >>>
 ```
 
-Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language. Let us install the big brother of numpy, _pandas_:
+Pandas是一个BSD许可开放源码库，为Python编程语言提供高性能、易于使用的数据结构和数据分析工具。让我们安装比numpy更高级的 _pandas_ ：
 
 ```sh
-asabeneh@Asabeneh:~$ pip install pandas
+> pip install pandas
+```
+终端上练习导入和使用
+```py
+> python
+
+>>> import pandas as pd
+>>> df = pd.Series(0, index=['1', '2', '3', '4'])
+>>> print(df)
+1    0
+2    0
+3    0
+4    0
+dtype: int64
 ```
 
-```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> import pandas
-```
+本节不细化关于numpy或pandas内置函数功能，在这里我们仅尝试学习如何安装软件包以及如何导入它们。如果需要，我们将在其他部分讨论不同的包。
 
-This section is not about numpy nor pandas, here we are trying to learn how to install packages and how to import them. If it is needed, we will talk about different packages in other sections.
-
-Let us import a web browser module, which can help us to open any website. We do not need to install this module, it is already installed by default with Python 3. For instance if you like to open any number of websites at any time or if you like to schedule something, this _webbrowser_ module can be used.
+接下来，让我们导入一个网页浏览器模块，它可以帮助我们打开任何网站。我们不需要安装这个模块，因为它已经在Python 3中默认安装了。例如，如果你想在任何时间打开任意数量的网站，或者如果你想安排一些事情，你可以利用 _webbrowser_ 模块。
 
 ```py
-import webbrowser # web browser module to open websites
+import webbrowser 
 
-# list of urls: python
+# url列表
 url_lists = [
     'http://www.python.org',
-    'https://www.linkedin.com/in/asabeneh/',
-    'https://github.com/Asabeneh',
-    'https://twitter.com/Asabeneh',
+    'https://github.com/QiCodeCN'
 ]
 
-# opens the above list of websites in a different tab
+# 浏览器通过标签页打开
 for url in url_lists:
     webbrowser.open_new_tab(url)
 ```
 
-### Uninstalling Packages
+### 卸载包
 
-If you do not like to keep the installed packages, you can remove them using the following command.
+如果您希望不再保留已安装的包，您可以使用以下命令删除它们。
 
 ```sh
 pip uninstall packagename
 ```
 
-### List of Packages
+### 查看包列表
 
-To see the installed packages on our machine. We can use pip followed by list.
+查看我们机器上已安装的包。我们可以用 pip list 命令。
 
 ```sh
 pip list
+
+Package               Version
+--------------------- -----------
+anyascii              0.3.1
+appdirs               1.4.4
+... 省略 ...
 ```
 
-### Show Package
+### 查看包信息
 
-To show information about a package
+查看包的详细信息，可以使用show + 包名
 
 ```sh
 pip show packagename
 ```
-
+比如查看上边安装好的pandas包详细
 ```sh
-asabeneh@Asabeneh:~$ pip show pandas
+>pip show pandas
 Name: pandas
-Version: 1.2.3
+Version: 1.5.2
 Summary: Powerful data structures for data analysis, time series, and statistics
-Home-page: http://pandas.pydata.org
-Author: None
-Author-email: None
-License: BSD
-Location: /usr/local/lib/python3.7/site-packages
-Requires: python-dateutil, pytz, numpy
-Required-by:
+Home-page: https://pandas.pydata.org
+Author: The Pandas Development Team
+Author-email: pandas-dev@python.org
+License: BSD-3-Clause
+Location: c:\programdata\python38\lib\site-packages
+Requires: python-dateutil, numpy, pytz
+Required-by: TTS
 ```
 
-If we want even more details, just add --verbose
+上边是列了基本的信息，如果你想看更多信息，请加上参数 --verbose
 
 ```sh
-asabeneh@Asabeneh:~$ pip show --verbose pandas
+>pip show --verbose pandas
 Name: pandas
-Version: 1.2.3
+Version: 1.5.2
 Summary: Powerful data structures for data analysis, time series, and statistics
-Home-page: http://pandas.pydata.org
-Author: None
-Author-email: None
-License: BSD
-Location: /usr/local/lib/python3.7/site-packages
-Requires: numpy, pytz, python-dateutil
-Required-by:
+Home-page: https://pandas.pydata.org
+Author: The Pandas Development Team
+Author-email: pandas-dev@python.org
+License: BSD-3-Clause
+Location: c:\programdata\python38\lib\site-packages
+Requires: pytz, python-dateutil, numpy
+Required-by: TTS
 Metadata-Version: 2.1
 Installer: pip
 Classifiers:
   Development Status :: 5 - Production/Stable
   Environment :: Console
-  Operating System :: OS Independent
   Intended Audience :: Science/Research
+  License :: OSI Approved :: BSD License
+  Operating System :: OS Independent
+  Programming Language :: Cython
   Programming Language :: Python
   Programming Language :: Python :: 3
-  Programming Language :: Python :: 3.5
-  Programming Language :: Python :: 3.6
-  Programming Language :: Python :: 3.7
+  Programming Language :: Python :: 3 :: Only
   Programming Language :: Python :: 3.8
-  Programming Language :: Cython
+  Programming Language :: Python :: 3.9
+  Programming Language :: Python :: 3.10
+  Programming Language :: Python :: 3.11
   Topic :: Scientific/Engineering
 Entry-points:
   [pandas_plotting_backends]
@@ -193,129 +195,72 @@ Entry-points:
 
 ### PIP Freeze
 
-Generate installed Python packages with their version and the output is suitable to use it in a requirements file. A requirements.txt file is a file that should contain all the installed Python packages in a Python project.
+当我们代码稳定稳定后，通常代码迁移时候，需要获取Python项目依赖包的安装列表，以便别人能够快速安装。这个列表要包括需要安装什么包、以及包的版本。通常我们输出到 requirements.txt 文件中。
 
 ```sh
-asabeneh@Asabeneh:~$ pip freeze
-docutils==0.11
-Jinja2==2.7.2
-MarkupSafe==0.19
-Pygments==1.6
-Sphinx==1.2.2
+> pip freeze > requirements.txt
+```
+注意：freeze默认是python环境所有包，如果想仅保持单独项目的，尽量使用虚拟环境。下边命令演示了如何根据requirements一键安装。
+
+```sh
+> pip install -r requirements.txt
 ```
 
-The pip freeze gave us the packages used, installed and their version. We use it with requirements.txt file for deployment.
 
-### Reading from URL
+### 从WEB中读取数据
 
-By now you are familiar with how to read or write on a file located on you local machine. Sometimes, we would like to read from a website using url or from an API.
-API stands for Application Program Interface. It is a means to exchange structured data between servers primarily as json data. To open a network connection, we need a package called _requests_ - it allows to open a network connection and to implement CRUD(create, read, update and delete) operations. In this section, we will cover only reading ore getting part of a CRUD.
+到目前为止，您已经熟悉了如何读取或写入本地计算机上的文件。但有时，我们想从一个网站读取信息，比如从url或API。
 
-Let us install _requests_:
+API是应用程序接口的缩写。它是一种在服务器之间交换结构化数据的方法，主要是为json数据。要打开一个网络连接，我们需要一个名为 _requests_ 的包——它允许打开一个网络连接并实现CRUD（创建、读取、更新和删除）操作。在本节中，我们将只讨论CRUD的读取和获取部分。
+
+同样首先安装 _requests_ 模块包:
 
 ```py
-asabeneh@Asabeneh:~$ pip install requests
+> pip install requests
 ```
 
-We will see _get_, _status_code_, _headers_, _text_ and _json_ methods in _requests_ module:
-  - _get()_: to open a network and fetch data from url - it returns a response object
-  - _status_code_: After we fetched data, we can check the status of the operation (success, error, etc)
-  - _headers_: To check the header types
-  - _text_: to extract the text from the fetched response object 
-  - _json_: to extract json data
-Let's read a txt file from this website, https://www.w3.org/TR/PNG/iso_8859-1.txt.
+我们可以了解它的 _get_, _status_code_, _headers_, _text_ 和 _json_ 方法：
+  - _get()_：打开一个网络并从url中获取数据-它返回一个响应对象
+  - _status_code_：在我们获取数据后，我们可以检查操作的状态(成功，错误等)
+  - _headers_：检查头信息类型
+  - _text_：从获取的响应对象中提取文本
+  - _json_：提取json数据
+
+让我们读取一个txt文件从这个网址中 https://www.w3.org/TR/WD-html40-970708/html40.txt
 
 ```py
-import requests # importing the request module
+import requests # 导入模块
 
-url = 'https://www.w3.org/TR/PNG/iso_8859-1.txt' # text from a website
+url = 'https://www.w3.org/TR/WD-html40-970708/html40.txt' # 定义要读取的地址变量
 
-response = requests.get(url) # opening a network and fetching a data
+response = requests.get(url) # 请求地址并获取返回数据
 print(response)
-print(response.status_code) # status code, success:200
-print(response.headers)     # headers information
-print(response.text) # gives all the text from the page
+print(response.status_code) # 打印状态, success:200
+print(response.headers)     # 头信息
+print(response.text) # 查看所返回的数据文本 注意如果地址无法访问时候内容是404
 ```
 
-```sh
-<Response [200]>
-200
-{'date': 'Sun, 08 Dec 2019 18:00:31 GMT', 'last-modified': 'Fri, 07 Nov 2003 05:51:11 GMT', 'etag': '"17e9-3cb82080711c0;50c0b26855880-gzip"', 'accept-ranges': 'bytes', 'cache-control': 'max-age=31536000', 'expires': 'Mon, 07 Dec 2020 18:00:31 GMT', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'access-control-allow-origin': '*', 'content-length': '1616', 'content-type': 'text/plain', 'strict-transport-security': 'max-age=15552000; includeSubdomains; preload', 'content-security-policy': 'upgrade-insecure-requests'}
-```
-
-- Let us read from an API. API stands for Application Program Interface. It is a means to exchange structure data between servers primarily a json data. An example of an API:https://restcountries.eu/rest/v2/all. Let us read this API using _requests_ module.
+- 让我们从API中读取。API是应用程序接口的缩写。它是一种在服务器之间交换结构数据的方法，主要是json数据。
 
 ```py
 import requests
-url = 'https://restcountries.eu/rest/v2/all'  # countries api
-response = requests.get(url)  # opening a network and fetching a data
-print(response) # response object
-print(response.status_code)  # status code, success:200
-countries = response.json()
-print(countries[:1])  # we sliced only the first country, remove the slicing to see all countries
+url = 'https://v0.yiketianqi.com/api?unescape=1&version=v91&appid=43656176&appsecret=I42og6Lm&ext=&cityid=&city='  # 国内可访问天气接口
+response = requests.get(url) 
+print(response) 
+print(response.status_code) 
+weather = response.json() 
+print(weather)
 ```
 
-```sh
-<Response [200]>
-200
-[{'alpha2Code': 'AF',
-  'alpha3Code': 'AFG',
-  'altSpellings': ['AF', 'Afġānistān'],
-  'area': 652230.0,
-  'borders': ['IRN', 'PAK', 'TKM', 'UZB', 'TJK', 'CHN'],
-  'callingCodes': ['93'],
-  'capital': 'Kabul',
-  'cioc': 'AFG',
-  'currencies': [{'code': 'AFN', 'name': 'Afghan afghani', 'symbol': '؋'}],
-  'demonym': 'Afghan',
-  'flag': 'https://restcountries.eu/data/afg.svg',
-  'gini': 27.8,
-  'languages': [{'iso639_1': 'ps',
-                 'iso639_2': 'pus',
-                 'name': 'Pashto',
-                 'nativeName': 'پښتو'},
-                {'iso639_1': 'uz',
-                 'iso639_2': 'uzb',
-                 'name': 'Uzbek',
-                 'nativeName': 'Oʻzbek'},
-                {'iso639_1': 'tk',
-                 'iso639_2': 'tuk',
-                 'name': 'Turkmen',
-                 'nativeName': 'Türkmen'}],
-  'latlng': [33.0, 65.0],
-  'name': 'Afghanistan',
-  'nativeName': 'افغانستان',
-  'numericCode': '004',
-  'population': 27657145,
-  'region': 'Asia',
-  'regionalBlocs': [{'acronym': 'SAARC',
-                     'name': 'South Asian Association for Regional Cooperation',
-                     'otherAcronyms': [],
-                     'otherNames': []}],
-  'subregion': 'Southern Asia',
-  'timezones': ['UTC+04:30'],
-  'topLevelDomain': ['.af'],
-  'translations': {'br': 'Afeganistão',
-                   'de': 'Afghanistan',
-                   'es': 'Afganistán',
-                   'fa': 'افغانستان',
-                   'fr': 'Afghanistan',
-                   'hr': 'Afganistan',
-                   'it': 'Afghanistan',
-                   'ja': 'アフガニスタン',
-                   'nl': 'Afghanistan',
-                   'pt': 'Afeganistão'}}]
-```
+两个请求中最后一个直接可以获取json对象。但如果不是JSON数据类型返回，我们通常都使用text获取，然后再根据需要进行转换或者处理。
 
-We use _json()_ method from response object, if the we are fetching JSON data. For txt, html, xml and other file formats we can use _text_.
+### 创建包
 
-### Creating a Package
+我们根据一些标准将大量的文件组织在不同的文件夹和子文件夹中，这样我们就可以很容易地找到和管理它们。如你所知，一个模块可以包含多个对象，比如类、函数等。一个包可以包含一个或多个相关模块。包实际上是一个包含一个或多个模块文件的文件夹。因此，如果我们开发的是一个通用的项目，我们可以自己的包用于自己或者他人使用。让我们以创建一个名为 mypackage 的包为例，使用以下步骤：、
 
-We organize a large number of files in different folders and sub-folders based on some criteria, so that we can find and manage them easily. As you know, a module can contain multiple objects, such as classes, functions, etc. A package can contain one or more relevant modules. A package is actually a folder containing one or more module files. Let us create a package named mypackage, using the following steps:
-
-Create a new folder named mypacakge inside 30DaysOfPython folder
-Create an empty **__init__**.py file in the mypackage folder.
-Create modules arithmetic.py and greet.py with following code:
+1. 30DaysOfPython-zh_CN 文件夹中创建一个名为 mypacakge 的新文件夹
+2. 在 mypacakge 文件夹中创建一个空的 **__init__**.py 文件
+3. 使用以下代码创建模块arithtic .py和greet.py 
 
 ```py
 # mypackage/arithmetics.py
@@ -354,7 +299,7 @@ def greet_person(firstname, lastname):
     return f'{firstname} {lastname}, welcome to 30DaysOfPython Challenge!'
 ```
 
-The folder structure of your package should look like this:
+最终包的文件夹结构应该是这样的：
 
 ```sh
 ─ mypackage
@@ -363,13 +308,11 @@ The folder structure of your package should look like this:
     └── greet.py
 ```
 
-Now let's open the python interactive shell and try the package we have created:
+现在让我们打开python交互式shell并尝试使用自定义包：
 
 ```sh
-asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+30DaysOfPython-zh-CN > python
+
 >>> from mypackage import arithmetics
 >>> arithmetics.add_numbers(1, 2, 3, 5)
 11
@@ -384,59 +327,52 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> arithmetics.power(5, 3)
 125
 >>> from mypackage import greet
->>> greet.greet_person('Asabeneh', 'Yetayeh')
-'Asabeneh Yetayeh, welcome to 30DaysOfPython Challenge!'
+>>> greet.greet_person('Mega', 'Qi')
+'Mega Qi, welcome to 30DaysOfPython Challenge!'
 >>>
 ```
 
-As you can see our package works perfectly. The package folder contains a special file called **__init__**.py - it stores the package's content. If we put **__init__**.py in the package folder, python start recognizes it as a package.
-The **__init__**.py exposes specified resources from its modules to be imported to other python files. An empty **__init__**.py file makes all functions available when a package is imported. The **__init__**.py is essential for the folder to be recognized by Python as a package.
+从上边的例子中可以看出，我们的包可以正常的工作。文件夹包含一个名为 **__init__** 空文件（py的特殊文件——它存储包的内容）。如果我们将 __init__.py 放在包文件夹中，python会将其识别为包。__init__.py 从其模块中公开指定的资源，以便导入到其他python文件中。一个空的__init__.py文件使所有函数在导入包时都可用。总而言之 __init__.py 对于被 Python 识别为包的文件夹是必不可少存在。
 
-### Further Information About Packages
+### 关于更多包的信息
 
-- Database
-  - SQLAlchemy or SQLObject - Object oriented access to several different database systems
+- 数据库
+  - SQLAlchemy or SQLObject - 对几个不同数据库系统的面向对象访问
     - _pip install SQLAlchemy_
-- Web Development
-  - Django - High-level web framework.
-    - _pip install django_
-  - Flask - micro framework for Python based on Werkzeug, Jinja 2. (It's BSD licensed)
-    - _pip install flask_
-- HTML Parser
-  - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - HTML/XML parser designed for quick turnaround projects like screen-scraping, will accept bad markup.
-    - _pip install beautifulsoup4_
-  - PyQuery - implements jQuery in Python; faster than BeautifulSoup, apparently.
 
-- XML Processing
-  - ElementTree - The Element type is a simple but flexible container object, designed to store hierarchical data structures, such as simplified XML infosets, in memory. --Note: Python 2.5 and up has ElementTree in the Standard Library
-- GUI
-  - PyQt - Bindings for the cross-platform Qt framework.
-  - TkInter - The traditional Python user interface toolkit.
-- Data Analysis, Data Science and Machine learning
-  - Numpy: Numpy(numeric python) is known as one of the most popular machine learning library in Python.
-  - Pandas: is a data analysis, data science and a machine learning library in Python that provides data structures of high-level and a wide variety of tools for analysis.
-  - SciPy: SciPy is a machine learning library for application developers and engineers. SciPy library contains modules for optimization, linear algebra, integration, image processing, and statistics.
-  - Scikit-Learn: It is NumPy and SciPy. It is considered as one of the best libraries for working with complex data.
-  - TensorFlow: is a machine learning library built by Google.
-  - Keras: is considered as one of the coolest machine learning libraries in Python. It provides an easier mechanism to express neural networks. Keras also provides some of the best utilities for compiling models, processing data-sets, visualization of graphs, and much more.
+- Web开发
+  - Django - 高级web框架
+    - _pip install django_
+  - Flask - 基于Werkzeug的Python微框架
+    - _pip install flask_
+
+- HTML爬虫
+  - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - 是一个HTML/XML的解析器，主要的功能也是如何解析和提取HTML/XML数据。
+    - _pip install beautifulsoup4_
+  - PyQuery - 在Python中实现jQuery;显然比BeautifulSoup快。
+
+- XML 语言
+  - ElementTree - Element类型是一种简单但灵活的容器对象，用于在内存中存储层次数据结构，例如简化的XML信息集。注意:Python 2.5及以上版本在标准库中带有ElementTree
+
+- GUI桌面程序
+  - PyQt - 跨平台的桌面程序框架
+  - TkInter - 传统的Python用户界面工具包（内置）
+
+- 数据分析，数据科学和机器学习
+  - Numpy: Numpy(numeric python) 被称为 python 中最受欢迎的机器学习库之一
+  - Pandas: 作为数据分析、数据科学和机器学习库，提供高级数据结构和各种各样的分析工具。
+  - SciPy: 是一个面向应用程序开发人员和工程师的机器学习库。SciPy库包含优化、线性代数、集成、图像处理和统计模块。
+  - Scikit-Learn: 针对Python 编程语言的免费软件机器学习库。通常被认为是处理复杂数据的最佳库之一
+  - TensorFlow: 谷歌建立了一个机器学习库
+  - Keras: 是一个 Python深度学习框架。
+
 - Network:
-  - requests: is a package which we can use to send requests to a server(GET, POST, DELETE, PUT)
+  - requests: 一个可以发送请求到服务器(GET, POST, DELETE, PUT)的包
     - _pip install requests_
 
-🌕 You are always progressing and you are a head of 20 steps to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 你一直在进步，到目前为止你已经成功学习20节内容。真棒！
 
-## Exercises: Day 20
-
-1. Read this url and find the 10 most frequent words. romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
-2. Read the cats API and cats_api = 'https://api.thecatapi.com/v1/breeds' and find :
-   1. the min, max, mean, median, standard deviation of cats' weight in metric units.
-   2. the min, max, mean, median, standard deviation of cats' lifespan in years.
-   3. Create a frequency table of country and breed of cats
-3. Read the [countries API](https://restcountries.eu/rest/v2/all) and find
-   1. the 10 largest countries
-   2. the 10 most spoken languages
-   3. the total number of languages in the countries API
-4. UCI is one of the most common places to get data sets for data science and machine learning. Read the content of UCL (https://archive.ics.uci.edu/ml/datasets.php). Without additional libraries it will be difficult, so you may try it with BeautifulSoup4
+受限制于练习的海外地址可能服务访问，本篇内容没有明确的练习题，请选择通过搜索引擎学习和练习一些库。
 
 🎉 CONGRATULATIONS ! 🎉
 

@@ -2,31 +2,31 @@
 
 # 🐍 挑战30天学完Python
 
-| # 天 |                                          文章目录                                          |
-|-----|:--------------------------------------------------------------------------------------:|
+| # 天 |                                          文章目录                                       |
+|-----|:---------------------------------------------------------------------------------------:|
 | 01  |                                [初识Python](./readme.md)                                 |
-| 02  |   [变量和内置函数](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)    |
-| 03  |                     [布尔值和运算符](./03_Day_Operators/03_operators.md)                      |
-| 04  |                     [数据类型-字符串str](./04_Day_Strings/04_strings.md)                      |
-| 05  |                       [数据类型-列表list](./05_Day_Lists/05_lists.md)                        |
-| 06  |                      [数据类型-元组tuple](./06_Day_Tuples/06_tuples.md)                      |
-| 07  |                         [数据类型-集合set](./07_Day_Sets/07_sets.md)                         |
-| 08  |                [数据类型-字典dict](./08_Day_Dictionaries/08_dictionaries.md)                 |
-| 09  |                [条件](./09_Day_Conditionals/09_conditionals.md)                |
-| 10  |                          [循环](./10_Day_Loops/10_loops.md)                           |
-| 11  |                    [方法](./11_Day_Functions/11_functions.md)                     |
-| 12  |                       [模块](./12_Day_Modules/12_modules.md)                        |
-| 13  |       [列表推导式](./13_Day_List_comprehension/13_list_comprehension.md)       |
-| 14  | [高阶函数](./14_Day_Higher_order_functions/14_higher_order_functions.md) |     
-| 15  |       [Python错误类型](./15_Day_Python_type_errors/15_python_type_errors.md)       | 
-| 16  |          [Python Date time](./16_Day_Python_date_time/16_python_datetime.md)           |     
-| 17  |       [异常处理](./17_Day_Exception_handling/17_exception_handling.md)       |    
-| 18  |     [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)      |    
-| 19  |              [File Handling](./19_Day_File_handling/19_file_handling.md)               |
-| 20  | [Python Package Manager](./20_Day_Python_package_manager/20_python_package_manager.md) |
-| 21  |     [Classes and Objects](./21_Day_Classes_and_objects/21_classes_and_objects.md)      |
-| 22  |                [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)                |
-| 23  |     [Virtual Environment](./23_Day_Virtual_environment/23_virtual_environment.md)      |
+| 02  |   [变量和内置函数](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
+| 03  |                     [布尔值和运算符](./03_Day_Operators/03_operators.md)                  |
+| 04  |                     [数据类型-字符串str](./04_Day_Strings/04_strings.md)                  |
+| 05  |                       [数据类型-列表list](./05_Day_Lists/05_lists.md)                     |
+| 06  |                      [数据类型-元组tuple](./06_Day_Tuples/06_tuples.md)                   |
+| 07  |                         [数据类型-集合set](./07_Day_Sets/07_sets.md)                      |
+| 08  |                [数据类型-字典dict](./08_Day_Dictionaries/08_dictionaries.md)              |
+| 09  |                [条件](./09_Day_Conditionals/09_conditionals.md)                          |
+| 10  |                          [循环](./10_Day_Loops/10_loops.md)                              |
+| 11  |                    [方法](./11_Day_Functions/11_functions.md)                            |
+| 12  |                       [模块](./12_Day_Modules/12_modules.md)                             |
+| 13  |       [列表推导式](./13_Day_List_comprehension/13_list_comprehension.md)                 |
+| 14  | [高阶函数](./14_Day_Higher_order_functions/14_higher_order_functions.md)                 |     
+| 15  |       [Python错误类型](./15_Day_Python_type_errors/15_python_type_errors.md)             | 
+| 16  |          [Python日期时间](./16_Day_Python_date_time/16_python_datetime.md)               |     
+| 17  |       [异常处理&参数打解包&Spread和枚举](./17_Day_Exception_handling/17_exception_handling.md)|    
+| 18  |               [正则表达式](./18_Day_Regular_expressions/18_regular_expressions.md)      |    
+| 19  |              [文件处理](./19_Day_File_handling/19_file_handling.md)               |
+| 20  | [Python PIP 包管理](./20_Day_Python_package_manager/20_python_package_manager.md) |
+| 21  |     [类和对象](./21_Day_Classes_and_objects/21_classes_and_objects.md)      |
+| 22  |                [Web爬虫](./22_Day_Web_scraping/22_web_scraping.md)                |
+| 23  |     [虚拟环境](./23_Day_Virtual_environment/23_virtual_environment.md)      |
 | 24  |                   [Statistics](./24_Day_Statistics/24_statistics.md)                   |
 | 25  |                         [Pandas](./25_Day_Pandas/25_pandas.md)                         |
 | 26  |                   [Python web](./26_Day_Python_web/26_python_web.md)                   |
