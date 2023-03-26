@@ -1,7 +1,6 @@
 
 [<< Day 25 ](../25_Day_Pandas/25_pandas.md) | [Day 27 >>](../27_Day_Python_with_mongodb/27_python_with_mongodb.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 26](#-day-26)
   - [Python Web 服务](#Python-Web-服务)
@@ -559,3 +558,4 @@ After this step you will get an application like [this](http://thirdaysofpython-
 🎉 CONGRATULATIONS ! 🎉
 
 [<< Day 25 ](../25_Day_Pandas/25_pandas.md) | [Day 27 >>](../27_Day_Python_with_mongodb/27_python_with_mongodb.md)
+

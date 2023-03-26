@@ -1,93 +1,95 @@
 
 [<< Day 21](../21_Day_Classes_and_objects/21_classes_and_objects.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 22](#-day-22)
   - [Python爬虫](#Python爬虫)
-    - [What is Web Scrapping](#what-is-web-scrapping)
   - [💻 第22天练习](#-第22天练习)
 
 # 📘 Day 22
 
 ## Python爬虫
 
-### What is Web Scrapping
+### 什么是数据抓取
 
-The internet is full of huge amount of data which can be used for different purposes. To collect this data we need to know how to scrape data from a website.
+互联网上充满了大量的数据，可以应用于不同的目的。为了收集这些数据，我们需要知道如何从一个网站抓取这些数据。
 
-Web scraping is the process of extracting and collecting data from websites and storing it on a local machine or in a database.
+网络抓取本质上是从网站中提取和收集数据，并将其存储在本地机器或数据库中的过程。
 
-In this section, we will use beautifulsoup and requests package to scrape data. The package version we are using is beautifulsoup 4.
+在本节中，我们将使用 beautifulsoup 和 requests 包来抓取数据。
 
-To start scraping websites you need _requests_, _beautifoulSoup4_ and a _website_.
+**友情提醒：数据抓取不合法，本篇内容请仅用于测试和学习用。**
 
+如果你的Python环境中还没如下两个库，请用pip进行安装。
 ```sh
 pip install requests
 pip install beautifulsoup4
 ```
 
-To scrape data from websites, basic understanding of HTML tags and CSS selectors is needed. We target content from a website using HTML tags, classes or/and ids.
-Let us import the requests and BeautifulSoup module
+要从网站抓取数据，需要对HTML标记和CSS选择器有基本的了解。我们使用HTML标签，类或id定位来自网站的内容。
+
+首先导入 requests 和 BeautifulSoup 模块
 
 ```py
 import requests
 from bs4 import BeautifulSoup
 ```
 
-Let us declare url variable for the website which we are going to scrape.
+接着将需要抓取的网页地址赋值给一个url变量，以下我们以手机新浪首页为例子。
 
 ```py
 
 import requests
 from bs4 import BeautifulSoup
-url = 'https://archive.ics.uci.edu/ml/datasets.php'
+url = 'http://wap.sina.cn/'
 
-# Lets use the requests get method to fetch the data from url
-
+# 让我们使用网络请求url，获取返回的数据
 response = requests.get(url)
-# lets check the status
+# 检查返回状态，200表示正常
 status = response.status_code
-print(status) # 200 means the fetching was successful
+print(status)
 ```
 
 ```sh
 200
 ```
 
-Using beautifulSoup to parse content from the page
+使用 beautifulSoup 解析页面内容。
 
 ```py
 import requests
+import re
 from bs4 import BeautifulSoup
-url = 'https://archive.ics.uci.edu/ml/datasets.php'
+url = 'http://wap.sina.cn/'
 
 response = requests.get(url)
-content = response.content # we get all the content from the website
-soup = BeautifulSoup(content, 'html.parser') # beautiful soup will give a chance to parse
-print(soup.title) # <title>UCI Machine Learning Repository: Data Sets</title>
-print(soup.title.get_text()) # UCI Machine Learning Repository: Data Sets
-print(soup.body) # gives the whole page on the website
-print(response.status_code)
-
-tables = soup.find_all('table', {'cellpadding':'3'})
-# We are targeting the table with cellpadding attribute with the value of 3
-# We can select using id, class or HTML tag , for more information check the beautifulsoup doc
-table = tables[0] # the result is a list, we are taking out data from it
-for td in table.find('tr').find_all('td'):
-    print(td.text)
+# 获取请求页面的所有内容
+content = response.content
+# 加载成beautiful对象
+soup = BeautifulSoup(content, 'html.parser')
+#解析标题并打印
+print(soup.title)
+# 获取标题里内容
+print("《" + soup.title.get_text() + "》")
+# 网站整个页面
+# print(soup.body)
+# 寻找要闻片段（通过网页右键查看源代码）
+yaowen = soup.find(id="yaowen_defense")
+# 要闻对象中查找所有<H2>标签，并循环获取概要标题
+for h2 in yaowen.find_all('h2'):
+    print(h2.contents[0])
 ```
 
-If you run this code, you can see that the extraction is half done. You can continue doing it because it is part of exercise 1.
-For reference check the [beautifulsoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
+如果运行这段代码，可以看到提取到了所有的新闻标题。
 
-🌕 You are so special, you are progressing everyday. You are left with only eight days to your way to greatness. Now do some exercises for your brain and muscles.
+本节只是抛砖隐喻，并不是python基础学习中核心部分。不过多展开，更多参考官方文档 [beautifulsoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
 
-## 💻 Exercises: Day 22
+🌕 你如此有能力，每一天都在进步，挑战还剩余8天，加油！本篇内容虽少，但练习不能少。
 
-1. Scrape the following website and store the data as json file(url = 'http://www.bu.edu/president/boston-university-facts-stats/').
-1. Extract the table in this url (https://archive.ics.uci.edu/ml/datasets.php) and change it to a json file
-2. Scrape the presidents table and store the data as json(https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States). The table is not very structured and the scrapping may take very long time.
+## 💻 第22天练习
+
+1. 抓取豆瓣电影排行版中电影前10个电影的基本信息 https://movie.douban.com/chart。
+2. 从Python网络爬虫靶场 http://www.spiderbuf.cn/ 选择任意一个无反扒的网站进行表数据获取。
 
 🎉 CONGRATULATIONS ! 🎉
 

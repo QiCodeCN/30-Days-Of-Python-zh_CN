@@ -1,146 +1,159 @@
 
 [<< Day 23](../23_Day_Virtual_environment/23_virtual_environment.md) | [Day 25 >>](../25_Day_Pandas/25_pandas.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-
 - [📘 Day 24](#-day-24)
-  - [Python统计](#Python统计)
-  - [Statistics](#statistics)
-  - [Data](#data)
-  - [Statistics Module](#statistics-module)
+  - [Python统计分析](#Python统计分析)
+  - [统计Statistics](#统计Statistics)
+  - [数据](#数据)
+  - [统计模型](#统计模型)
 - [NumPy](#numpy)
 
 # 📘 Day 24
 
-## Python for Statistical Analysis
+## Python统计分析
 
-## Statistics
+## 统计Statistics
 
-Statistics is the discipline that studies the _collection_, _organization_, _displaying_, _analysing_, _interpretation_ and _presentation_ of data.
-Statistics is a branch of Mathematics that is recommended to be a prerequisite for data science and machine learning. Statistics is a very broad field but we will focus in this section only on the most relevant part.
-After completing this challenge, you may go onto the web development, data analysis, machine learning and data science path. Whatever path you may follow, at some point in your career you will get data which you may work on. Having some statistical knowledge will help you to make decisions based on data, _data tells as they say_.
+统计学是研究数据的收集、组织、显示、分析、解释和表示的学科。
+统计学是数学的一个分支，被认为是数据和机器学习的先决条件。它是一个非常广泛的领域，但在我们的本篇的学习中值关心最相关的部分。
+在完成本挑战后，你可以进行web开发、数据分析、机器学习和数据科学任何你感兴趣的方面深入学习。接下来让我们看看如果你需要处理一些数据，我们要怎么做把。  
 
-## Data
+## 数据
 
-What is data? Data is any set of characters that is gathered and translated for some purpose, usually analysis. It can be any character, including text and numbers, pictures, sound, or video. If data is not put in a context, it doesn't make any sense to a human or computer. To make sense from data we need to work on the data using different tools.
+什么是数据？它是为了某种目的（通常是分析）而收集和转换的任何一组字符。数据可以是任何字符，包括文本和数字、图片、声音或视频。如果数据没有放在上下文中，那么它对人类或计算机来说就没有任何意义。为了从数据获得意义，我们使用不同的工具来处理数据。
 
-The work flow of data analysis, data science or machine learning starts from data. Data can be provided from some data source or it can be created. There are structured and unstructured data.
+数据分析、数据科学或机器学习的工作流程都是从数据开始的。可以从某些数据源提供数据，也可以创建数据。数据有结构化数据和非结构化。
 
-Data can be found in small or big format. Most of the data types we will get have been covered in the file handling section.
+数据可以是大小格式的。大多数数据类型已经在文件处理一节中介绍过。
 
-## Statistics Module
+## 统计模型
 
-The Python _statistics_ module provides functions for calculating mathematical statistics of numerical data. The module is not intended to be a competitor to third-party libraries such as NumPy, SciPy, or proprietary full-featured statistics packages aimed at professional statisticians such as Minitab, SAS and Matlab. It is aimed at the level of graphing and scientific calculators.
+Python _statistics_ 模块提供了用于计算数值数据的数学统计的函数。该模块不打算成为 NumPy、SciPy 等第三方库的竞争对手，也不打算成为针对专业统计人员的专有全功能统计软件包(如Minitab、SAS和Matlab)的竞争对手。它的目标是绘图和科学计算器。
 
 # NumPy
 
-In the first section we defined Python as a great general-purpose programming language on its own, but with the help of other popular libraries as(numpy, scipy, matplotlib, pandas etc) it becomes a powerful environment for scientific computing.
+在第一节中，我们将 Python 定义为一种伟大的通用编程语言，但在其他流行库(numpy、scipy、matplotlib、pandas等)的帮助下，它成为科学计算的强大环境。
 
-NumPy is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with arrays.
+**NumPy** 是 Python 中科学计算的核心库。它提供了一个高性能的多维数组对象，以及用于处理数组的工具。
 
-So far, we have been using vscode but from now on I would recommend using Jupyter Notebook. To access jupyter notebook let's install [anaconda](https://www.anaconda.com/). If you are using anaconda most of the common packages are included and you don't have install packages if you installed anaconda.
-
+到目前为止，我们一直在使用vscode，但从现在开始，我建议使用 Jupyter Notebook。 官方地址 https://jupyter.org/ 可以使用在线IDE也可以本地安装
 ```sh
-asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ pip install numpy
+pip install notebook
+jupyter-notebook
+# 如果提示不是内部命令需要将pyhon安装目录下\Scripts配置到系统环境变量
+```
+![jupyter-notebook](../images/day3001_jupyter.png)
+
+安装numpy
+```sh
+$ pip install numpy
 ```
 
-## Importing NumPy
-
-Jupyter notebook is available if your are in favor of [jupyter notebook](https://github.com/Asabeneh/data-science-for-everyone/blob/master/numpy/numpy.ipynb)
+## 导入 NumPy
 
 ```py
-    # How to import numpy
-    import numpy as np
-    # How to check the version of the numpy package
-    print('numpy:', np.__version__)
-    # Checking the available methods
-    print(dir(np))
+import numpy as np
+# 查看版本
+print('numpy:', np.__version__)
+# 查看可用的方法
+print(dir(np))
+```
+输出
+```shell
+numpy: 1.24.2
+['ALLOW_THREADS', 'AxisError',....
 ```
 
-## Creating numpy array using
+## 创建 numpy 数组
 
-### Creating int numpy arrays
+**int numpy**
 
 ```py
-    # Creating python List
-    python_list = [1,2,3,4,5]
+import numpy as np
 
-    # Checking data types
-    print('Type:', type (python_list)) # <class 'list'>
-    #
-    print(python_list) # [1, 2, 3, 4, 5]
+# 创建 List
+python_list = [1,2,3,4,5]
 
-    two_dimensional_list = [[0,1,2], [3,4,5], [6,7,8]]
+# 检查普通数组类型
+print('Type:', type (python_list)) # <class 'list'>
 
-    print(two_dimensional_list)  # [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+print(python_list) # [1, 2, 3, 4, 5]
 
-    # Creating Numpy(Numerical Python) array from python list
+two_dimensional_list = [[0,1,2], [3,4,5], [6,7,8]]
 
-    numpy_array_from_list = np.array(python_list)
-    print(type (numpy_array_from_list))   # <class 'numpy.ndarray'>
-    print(numpy_array_from_list) # array([1, 2, 3, 4, 5])
+print(two_dimensional_list)  # [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+
+# 将普通list转成python numpy 数组
+numpy_array_from_list = np.array(python_list)
+print(type (numpy_array_from_list))   # <class 'numpy.ndarray'>
+print(numpy_array_from_list) # array([1, 2, 3, 4, 5])
 ```
 
-### Creating float numpy arrays
+**float numpy**
 
 Creating a float numpy array from list with a float data type parameter
 
 ```py
-    # Python list
-    python_list = [1,2,3,4,5]
+import numpy as np
 
-    numy_array_from_list2 = np.array(python_list, dtype=float)
-    print(numy_array_from_list2) # array([1., 2., 3., 4., 5.])
+# Python list
+python_list = [1,2,3,4,5]
+
+numy_array_from_list2 = np.array(python_list, dtype=float)
+print(numy_array_from_list2) # array([1., 2., 3., 4., 5.])
 ```
 
-### Creating boolean numpy arrays
+**boolean numpy**
 
-Creating a boolean a numpy array from list
+从列表中创建一个布尔类型numpy数组
 
 ```py
-    numpy_bool_array = np.array([0, 1, -1, 0, 0], dtype=bool)
-    print(numpy_bool_array) # array([False,  True,  True, False, False])
+import numpy as np
+numpy_bool_array = np.array([0, 1, -1, 0, 0], dtype=bool)
+print(numpy_bool_array) # array([False,  True,  True, False, False])
 ```
 
-### Creating multidimensional array using numpy
+### 多维numpy数组
 
-A numpy array may have one or multiple rows and columns
-
+一个 numpy 数组或许有一行或多行和列。
 ```py
-    two_dimensional_list = [[0,1,2], [3,4,5], [6,7,8]]
-    numpy_two_dimensional_list = np.array(two_dimensional_list)
-    print(type (numpy_two_dimensional_list))
-    print(numpy_two_dimensional_list)
+import numpy as np
+two_dimensional_list = [[0,1,2], [3,4,5], [6,7,8]]
+numpy_two_dimensional_list = np.array(two_dimensional_list)
+print(type (numpy_two_dimensional_list))
+print(numpy_two_dimensional_list)
 ```
-
+输出
 ```sh
-    <class 'numpy.ndarray'>
-    [[0 1 2]
-     [3 4 5]
-     [6 7 8]]
+<class 'numpy.ndarray'>
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
 ```
 
-### Converting numpy array to list
+### 转numpy数组为list
 
 ```python
-# We can always convert an array back to a python list using tolist().
+import numpy as np
+
+python_list = [1,2,3,4,5]
+numpy_array_from_list = np.array(python_list)
+# 我们通过tolist将numpy列表转回为python list
 np_to_list = numpy_array_from_list.tolist()
 print(type (np_to_list))
 print('one dimensional array:', np_to_list)
-print('two dimensional array: ', numpy_two_dimensional_list.tolist())
 ```
 
 ```sh
-    <class 'list'>
-    one dimensional array: [1, 2, 3, 4, 5]
-    two dimensional array:  [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+<class 'list'>
+one dimensional array: [1, 2, 3, 4, 5]
 ```
 
-### Creating numpy array from tuple
+### 从tuple创建numpy数组
 
 ```py
-# Numpy array from tuple
-# Creating tuple in Python
+import numpy as np
+
 python_tuple = (1,2,3,4,5)
 print(type (python_tuple)) # <class 'tuple'>
 print('python_tuple: ', python_tuple) # python_tuple:  (1, 2, 3, 4, 5)
@@ -150,37 +163,44 @@ print(type (numpy_array_from_tuple)) # <class 'numpy.ndarray'>
 print('numpy_array_from_tuple: ', numpy_array_from_tuple) # numpy_array_from_tuple:  [1 2 3 4 5]
 ```
 
-### Shape of numpy array
+### numpy shape 
 
-The shape method provide the shape of the array as a tuple. The first is the row and the second is the column. If the array is just one dimensional it returns the size of the array.
+在numpy有换个 _shape_ 方法，它可以返回一个元组，表示数组（矩阵）的维度。第一个数表示行，第二个数表示列。如果数组是一维度额，则返回数字的大小。
 
 ```py
-    nums = np.array([1, 2, 3, 4, 5])
-    print(nums)
-    print('shape of nums: ', nums.shape)
-    print(numpy_two_dimensional_list)
-    print('shape of numpy_two_dimensional_list: ', numpy_two_dimensional_list.shape)
-    three_by_four_array = np.array([[0, 1, 2, 3],
-        [4,5,6,7],
-        [8,9,10, 11]])
-    print(three_by_four_array.shape)
+import numpy as np
+
+two_dimensional_list = [[0,1,2], [3,4,5], [6,7,8]]
+numpy_two_dimensional_list = np.array(two_dimensional_list)
+
+nums = np.array([1, 2, 3, 4, 5])
+print(nums)
+print('shape of nums: ', nums.shape)
+print(numpy_two_dimensional_list)
+print('shape of numpy_two_dimensional_list: ', numpy_two_dimensional_list.shape)
+three_by_four_array = np.array([[0, 1, 2, 3],
+    [4,5,6,7],
+    [8,9,10, 11]])
+print(three_by_four_array.shape)
 ```
 
 ```sh
-    [1 2 3 4 5]
-    shape of nums:  (5,)
-    [[0 1 2]
-     [3 4 5]
-     [6 7 8]]
-    shape of numpy_two_dimensional_list:  (3, 3)
-    (3, 4)
+[1 2 3 4 5]
+shape of nums:  (5,)
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+shape of numpy_two_dimensional_list:  (3, 3)
+(3, 4)
 ```
 
-### Data type of numpy array
+### numpy列表数据类型
 
-Type of data types: str, int, float, complex, bool, list, None
+数据的各种类型: str, int, float, complex, bool, list, None
 
 ```py
+import numpy as np
+
 int_lists = [-3, -2, -1, 0, 1, 2,3]
 int_array = np.array(int_lists)
 float_array = np.array(int_lists, dtype=float)
@@ -192,81 +212,78 @@ print(float_array.dtype)
 ```
 
 ```sh
-    [-3 -2 -1  0  1  2  3]
-    int64
-    [-3. -2. -1.  0.  1.  2.  3.]
-    float64
+[-3 -2 -1  0  1  2  3]
+int32
+[-3. -2. -1.  0.  1.  2.  3.]
+float64
 ```
 
-### Size of a numpy array
+### numpy数组大小
 
-In numpy to know the number of items in a numpy array list we use size
+在numpy中，要知道numpy数组列表中的项的数量，我们使用size
 
 ```py
+import numpy as np
+
 numpy_array_from_list = np.array([1, 2, 3, 4, 5])
 two_dimensional_list = np.array([[0, 1, 2],
                               [3, 4, 5],
                               [6, 7, 8]])
 
 print('The size:', numpy_array_from_list.size) # 5
-print('The size:', two_dimensional_list.size)  # 3
+print('The size:', two_dimensional_list.size)  # 9
 
 ```
 
-```sh
-    The size: 5
-    The size: 9
-```
+## 使用numpy进行数学运算
 
-## Mathematical Operation using numpy
+Numpy list 和 python list 不完全一样。要在Python列表中进行数学运算，我们必须循环遍历项目，但numpy可以在不循环的情况下进行任何数学运算。
 
-NumPy array is not like exactly like python list. To do mathematical operation in Python list we have to loop through the items but numpy can allow to do any mathematical operation without looping.
-Mathematical Operation:
+这些数学操作有:
+- 加 Addition (+)
+- 减 Subtraction (-)
+- 乘 Multiplication (\*)
+- 除 Division (/)
+- 余 Modules (%)
+- 向下取整 Floor Division(//)
+- 指数 Exponential(\*\*)
 
-- Addition (+)
-- Subtraction (-)
-- Multiplication (\*)
-- Division (/)
-- Modules (%)
-- Floor Division(//)
-- Exponential(\*\*)
-
-### Addition
+### 加法
 
 ```py
-# Mathematical Operation
-# Addition
+# 数学运算
+# 加操作
 numpy_array_from_list = np.array([1, 2, 3, 4, 5])
 print('original array: ', numpy_array_from_list)
 ten_plus_original = numpy_array_from_list  + 10
-print(ten_plus_original)
+print(ten_plus_original) 
 
 ```
-
+列表里的数据项均加 10
 ```sh
     original array:  [1 2 3 4 5]
     [11 12 13 14 15]
 ```
 
-### Subtraction
+### 减法
 
 ```python
-# Subtraction
+# 减操作
 numpy_array_from_list = np.array([1, 2, 3, 4, 5])
 print('original array: ', numpy_array_from_list)
 ten_minus_original = numpy_array_from_list  - 10
 print(ten_minus_original)
 ```
-
+列表项均减 10
 ```sh
-    original array:  [1 2 3 4 5]
-    [-9 -8 -7 -6 -5]
+original array:  [1 2 3 4 5]
+[-9 -8 -7 -6 -5]
 ```
 
-### Multiplication
+### 乘法
 
 ```python
-# Multiplication
+# 乘操作
 numpy_array_from_list = np.array([1, 2, 3, 4, 5])
 print('original array: ', numpy_array_from_list)
 ten_times_original = numpy_array_from_list * 10
@@ -274,14 +291,14 @@ print(ten_times_original)
 ```
 
 ```sh
-    original array:  [1 2 3 4 5]
-    [10 20 30 40 50]
+original array:  [1 2 3 4 5]
+[10 20 30 40 50]
 ```
 
-### Division
+### 除法
 
 ```python
-# Division
+# 除操作
 numpy_array_from_list = np.array([1, 2, 3, 4, 5])
 print('original array: ', numpy_array_from_list)
 ten_times_original = numpy_array_from_list / 10
@@ -289,14 +306,14 @@ print(ten_times_original)
 ```
 
 ```sh
-    original array:  [1 2 3 4 5]
-    [0.1 0.2 0.3 0.4 0.5]
+original array:  [1 2 3 4 5]
+[0.1 0.2 0.3 0.4 0.5]
 ```
 
 ### Modulus
 
 ```python
-# Modulus; Finding the remainder
+# 模, 求余数
 numpy_array_from_list = np.array([1, 2, 3, 4, 5])
 print('original array: ', numpy_array_from_list)
 ten_times_original = numpy_array_from_list % 3
@@ -304,24 +321,29 @@ print(ten_times_original)
 ```
 
 ```sh
-    original array:  [1 2 3 4 5]
-    [1 2 0 1 2]
+original array:  [1 2 3 4 5]
+[1 2 0 1 2]
 ```
 
-### Floor Division
+### 向下取整
 
 ```py
-# Floor division: the division result without the remainder
-numpy_array_from_list = np.array([1, 2, 3, 4, 5])
+# 没有余数的除法结果
+numpy_array_from_list = np.array([10, 20, 30, 40, 50, 5, 8])
 print('original array: ', numpy_array_from_list)
 ten_times_original = numpy_array_from_list // 10
 print(ten_times_original)
 ```
 
-### Exponential
+``` shell
+original array:  [10 20 30 40 50  5  8]
+[1 2 3 4 5 0 0]
+```
+
+### 指数
 
 ```py
-# Exponential is finding some number the power of another:
+# 指数指的是求一个数的幂:
 numpy_array_from_list = np.array([1, 2, 3, 4, 5])
 print('original array: ', numpy_array_from_list)
 ten_times_original = numpy_array_from_list  ** 2
@@ -329,14 +351,14 @@ print(ten_times_original)
 ```
 
 ```sh
-    original array:  [1 2 3 4 5]
-    [ 1  4  9 16 25]
+original array:  [1 2 3 4 5]
+[ 1  4  9 16 25]
 ```
 
-## Checking data types
+## 检查数据类型
 
 ```py
-#Int,  Float numbers
+#int,  float, bool
 numpy_int_arr = np.array([1,2,3,4])
 numpy_float_arr = np.array([1.1, 2.0,3.2])
 numpy_bool_arr = np.array([-3, -2, 0, 1,2,3], dtype='bool')
@@ -347,60 +369,53 @@ print(numpy_bool_arr.dtype)
 ```
 
 ```sh
-    int64
-    float64
-    bool
+int32
+float64
+bool
 ```
 
-### Converting types
+### 类型转换
 
-We can convert the data types of numpy array
+我们可以转换numpy数组的数据类型
 
-1. Int to Float
+1. Int 转 Float
 
 ```py
 numpy_int_arr = np.array([1,2,3,4], dtype = 'float')
-numpy_int_arr
+print(numpy_int_arr)
+# [1., 2., 3., 4.]
 ```
 
-    array([1., 2., 3., 4.])
-
-2. Float to Int
+2. Float 转 Int
 
 ```py
 numpy_int_arr = np.array([1., 2., 3., 4.], dtype = 'int')
-numpy_int_arr
+print(numpy_int_arr)
+# [1 2 3 4]
 ```
 
-```sh
-    array([1, 2, 3, 4])
-```
-
-3. Int ot boolean
+3. Int 转 boolean
 
 ```py
-np.array([-3, -2, 0, 1,2,3], dtype='bool')
+numpy_int_bool = np.array([-3, -2, 0, 1,2,3], dtype='bool')
+print(numpy_int_bool)
+# [ True  True False  True  True  True]
 
 ```
 
-```sh
-    array([ True,  True, False,  True,  True,  True])
-```
-
-4. Int to str
+4. Int 转 str
 
 ```py
-numpy_float_list.astype('int').astype('str')
+numpy_int_list = np.array([1,2,3], dtype='int')
+numpy_int_str = numpy_int_list.astype('str')
+print(numpy_int_str)
+# ['1' '2' '3']
 ```
 
-```sh
-    array(['1', '2', '3'], dtype='<U21')
-```
-
-## Multi-dimensional Arrays
+## 多维数组
 
 ```py
-# 2 Dimension Array
+# 2维矩阵
 two_dimension_array = np.array([(1,2,3),(4,5,6), (7,8,9)])
 print(type (two_dimension_array))
 print(two_dimension_array)
@@ -410,281 +425,307 @@ print('Data type:', two_dimension_array.dtype)
 ```
 
 ```sh
-    <class 'numpy.ndarray'>
-    [[1 2 3]
-     [4 5 6]
-     [7 8 9]]
-    Shape:  (3, 3)
-    Size: 9
-    Data type: int64
+<class 'numpy.ndarray'>
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+Shape:  (3, 3)
+Size: 9
+Data type: int32
 ```
 
-### Getting items from a numpy array
+### 从numpy数组中获取项
 
 ```py
-# 2 Dimension Array
+import numpy as np
+
 two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
 first_row = two_dimension_array[0]
 second_row = two_dimension_array[1]
 third_row = two_dimension_array[2]
-print('First row:', first_row)
-print('Second row:', second_row)
-print('Third row: ', third_row)
+print('第一行:', first_row)
+print('第二行:', second_row)
+print('第三行:', third_row)
 ```
 
 ```sh
-    First row: [1 2 3]
-    Second row: [4 5 6]
-    Third row:  [7 8 9]
+第一行: [1 2 3]
+第二行: [4 5 6]
+第三行: [7 8 9]
 ```
 
 ```py
+import numpy as np
+
+two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
 first_column= two_dimension_array[:,0]
 second_column = two_dimension_array[:,1]
 third_column = two_dimension_array[:,2]
-print('First column:', first_column)
-print('Second column:', second_column)
-print('Third column: ', third_column)
+print('第一列:', first_column)
+print('第二列:', second_column)
+print('第三列:', third_column)
 print(two_dimension_array)
 
 ```
 
 ```sh
-    First column: [1 4 7]
-    Second column: [2 5 8]
-    Third column:  [3 6 9]
-    [[1 2 3]
-     [4 5 6]
-     [7 8 9]]
+第一列: [1 4 7]
+第二列: [2 5 8]
+第三列: [3 6 9]
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
 ```
 
-## Slicing Numpy array
+## Numpy数组切片
 
-Slicing in numpy is similar to slicing in python list
+在numpy数组中可以像普通python数组一样进行切片操作
+
+```py
+import numpy as np
+
+two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
+# 取头两行前两列
+first_two_rows_and_columns = two_dimension_array[0:2, 0:2]
+print(first_two_rows_and_columns)
+
+# 取前三行第二列
+first_three_rows_and_columns = two_dimension_array[0:3, 1:2]
+print(first_three_rows_and_columns)
+```
+
+```sh
+[[1 2]
+ [4 5]]
+
+[[2]
+ [5]
+ [8]]
+```
+
+### 反转数组
+
+```py
+import numpy as np
+
+two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
+print(two_dimension_array[::])
+```
+原序输出
+```sh
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+```
+
+颠倒行和列的位置
 
 ```py
 two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
-first_two_rows_and_columns = two_dimension_array[0:2, 0:2]
-print(first_two_rows_and_columns)
+reverse = two_dimension_array[::-1,::-1]
+print(reverse)
 ```
 
 ```sh
-    [[1 2]
-     [4 5]]
+[[9 8 7]
+ [6 5 4]
+ [3 2 1]]
 ```
 
-### How to reverse the rows and the whole array?
-
-```py
-two_dimension_array[::]
-```
-
-```sh
-    array([[1, 2, 3],
-           [4, 5, 6],
-           [7, 8, 9]])
-```
-
-### Reverse the row and column positions
-
-```py
-    two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
-    two_dimension_array[::-1,::-1]
-```
-
-```sh
-    array([[9, 8, 7],
-           [6, 5, 4],
-           [3, 2, 1]])
-```
-
-## How to represent missing values ?
+## 改变值
 
 ```python
-    print(two_dimension_array)
-    two_dimension_array[1,1] = 55
-    two_dimension_array[1,2] =44
-    print(two_dimension_array)
+import numpy as np
+
+two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
+print(two_dimension_array)
+two_dimension_array[1,1] = 55
+two_dimension_array[1,2] = 44
+print(two_dimension_array)
 ```
 
 ```sh
-    [[1 2 3]
-     [4 5 6]
-     [7 8 9]]
-    [[ 1  2  3]
-     [ 4 55 44]
-     [ 7  8  9]]
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[ 1  2  3]
+ [ 4 55 44]
+ [ 7  8  9]]
 ```
 
+## 缺省值
 ```py
-    # Numpy Zeroes
-    # numpy.zeros(shape, dtype=float, order='C')
-    numpy_zeroes = np.zeros((3,3),dtype=int,order='C')
-    numpy_zeroes
-```
+import numpy as np
 
-```sh
-    array([[0, 0, 0],
-           [0, 0, 0],
-           [0, 0, 0]])
-```
-
-```py
 # Numpy Zeroes
+# numpy.zeros(shape, dtype=float, order='C')
+numpy_zeroes = np.zeros((3,3),dtype=int,order='C')
+print(numpy_zeroes)
+```
+生成一个缺省值为零的3行3列数组
+```sh
+[[0 0 0]
+ [0 0 0]
+ [0 0 0]]
+```
+
+生成1和2 numpy数组
+```py
+# Numpy ones
+import numpy as np
+
 numpy_ones = np.ones((3,3),dtype=int,order='C')
 print(numpy_ones)
+
+# Numpy twoes
+twoes = numpy_ones * 2
+print(twoes)
 ```
 
 ```sh
-    [[1 1 1]
-     [1 1 1]
-     [1 1 1]]
+[[1 1 1]
+ [1 1 1]
+ [1 1 1]]
+[[2 2 2]
+ [2 2 2]
+ [2 2 2]]
 ```
 
+数组改造
 ```py
-twoes = numpy_ones * 2
-```
-
-```py
-# Reshape
-# numpy.reshape(), numpy.flatten()
+import numpy as np
+# numpy.reshape()
 first_shape  = np.array([(1,2,3), (4,5,6)])
 print(first_shape)
 reshaped = first_shape.reshape(3,2)
 print(reshaped)
 
 ```
-
+2行3列改造成3行2列
 ```sh
-    [[1 2 3]
-     [4 5 6]]
-    [[1 2]
-     [3 4]
-     [5 6]]
+[[1 2 3]
+ [4 5 6]]
+[[1 2]
+ [3 4]
+ [5 6]]
 ```
 
+平铺一行
 ```py
+# numpy.flatten()
 flattened = reshaped.flatten()
-flattened
+print(flattened)
+# [1 2 3 4 5 6]
 ```
 
-```sh
-    array([1, 2, 3, 4, 5, 6])
-```
-
+水平堆叠
 ```py
-    ## Horitzontal Stack
-    np_list_one = np.array([1,2,3])
-    np_list_two = np.array([4,5,6])
+import numpy as np
 
-    print(np_list_one + np_list_two)
-
-    print('Horizontal Append:', np.hstack((np_list_one, np_list_two)))
+np_list_one = np.array([1,2,3])
+np_list_two = np.array([4,5,6])
+print(np_list_one + np_list_two) # 两个数组进行加运行
+print('Horizontal Append:', np.hstack((np_list_one, np_list_two))) # 效果为堆叠，相当于连接起来
 ```
 
 ```sh
-    [5 7 9]
-    Horizontal Append: [1 2 3 4 5 6]
+[5 7 9]
+Horizontal Append: [1 2 3 4 5 6]
 ```
 
+垂直堆叠
 ```py
-    ## Vertical Stack
-    print('Vertical Append:', np.vstack((np_list_one, np_list_two)))
+ import numpy as np
+
+np_list_one = np.array([1,2,3])
+np_list_two = np.array([4,5,6])
+print('Vertical Append:')
+print(np.vstack((np_list_one, np_list_two)))
 ```
 
 ```sh
-    Vertical Append: [[1 2 3]
-     [4 5 6]]
+Vertical Append:
+[[1 2 3]
+ [4 5 6]]
 ```
 
-#### Generating Random Numbers
-
+#### 随机数
+从float中生成随机数，默认一个
 ```py
-    # Generate a random float  number
-    random_float = np.random.random()
-    random_float
+random_float = np.random.random()
+print(random_float)
+# 0.44664924485618196 
 ```
 
-```sh
-    0.018929887384753874
+指定随机生成的个数
+```py 
+# 指定从浮点类型生成5个随机数,返回一个列表
+random_float_five = np.random.random(5)
+print(random_float_five)
+# [0.43111138 0.97050291 0.07330237 0.06041916 0.50213468]
 ```
 
+指定范围生成随机数
 ```py
-    # Generate a random float  number
-    random_floats = np.random.random(5)
-    random_floats
+ # 从0-11之间整数类型生成随机数
+random_int = np.random.randint(0, 11)
+print(random_int)
 ```
 
-```sh
-    array([0.26392192, 0.35842215, 0.87908478, 0.41902195, 0.78926418])
-```
-
+同时指定生成的个数
 ```py
-    # Generating a random integers between 0 and 10
-
-    random_int = np.random.randint(0, 11)
-    random_int
+# 生成一个2到11之间的随机整数，并创建一个单行数组
+random_int_size = np.random.randint(2,10, size=4)
+print(random_int_size)
+# [4 9 7 5] 注意每次生成的不一样
 ```
 
-```sh
-    4
-```
-
+可指定二维生成随机数
 ```py
-    # Generating a random integers between 2 and 11, and creating a one row array
-    random_int = np.random.randint(2,10, size=4)
-    random_int
+# 列子：在2-10之前生成3行3列随机数
+random_int_matrix = np.random.randint(2,10, size=(3,3))
+print(random_int_matrix)
 ```
-
+输出示例结果(每次随机)
 ```sh
-    array([8, 8, 8, 2])
+[[6 3 6]
+ [5 6 9]
+ [8 3 3]]
 ```
 
+### 正太分布随机数
+方法 random.normal(loc,scale,size)
+- loc：float 分布的均值，loc=0说明这一个以Y轴为对称轴的正态分布。
+- scale：float 标准差，对应于分布的宽度，scale越大越矮胖，scale越小，越瘦高
+size：int 输出的shape，默认为None，只输出一个值
 ```py
-    # Generating a random integers between 0 and 10
-    random_int = np.random.randint(2,10, size=(3,3))
-    random_int
-```
-
-```sh
-    array([[3, 5, 3],
-           [7, 3, 6],
-           [2, 3, 3]])
-```
-
-### Generationg random numbers
-
-```py
-    # np.random.normal(mu, sigma, size)
-    normal_array = np.random.normal(79, 15, 80)
-    normal_array
+normal_array = np.random.normal(79, 15, 80)
+print(normal_array)
 
 ```
 
 ```sh
-    array([ 89.49990595,  82.06056961, 107.21445842,  38.69307086,
-            47.85259157,  93.07381061,  76.40724259,  78.55675184,
-            72.17358173,  47.9888899 ,  65.10370622,  76.29696568,
-            95.58234254,  68.14897213,  38.75862686, 122.5587927 ,
-            67.0762565 ,  95.73990864,  81.97454563,  92.54264805,
-            59.37035153,  77.76828101,  52.30752166,  64.43109931,
-            62.63695351,  90.04616138,  75.70009094,  49.87586877,
-            80.22002414,  68.56708848,  76.27791052,  67.24343975,
-            81.86363935,  78.22703433, 102.85737041,  65.15700341,
-            84.87033426,  76.7569997 ,  64.61321853,  67.37244562,
-            74.4068773 ,  58.65119655,  71.66488727,  53.42458179,
-            70.26872028,  60.96588544,  83.56129414,  72.14255326,
-            81.00787609,  71.81264853,  72.64168853,  86.56608717,
-            94.94667321,  82.32676973,  70.5165446 ,  85.43061003,
-            72.45526212,  87.34681775,  87.69911217, 103.02831489,
-            75.28598596,  67.17806893,  92.41274447, 101.06662611,
-            87.70013935,  70.73980645,  46.40368207,  50.17947092,
-            61.75618542,  90.26191397,  78.63968639,  70.84550744,
-            88.91826581, 103.91474733,  66.3064638 ,  79.49726264,
-            70.81087439,  83.90130623,  87.58555972,  59.95462521])
+[ 87.69673405 107.15150486 117.76175667  84.52544926  90.85099924
+  80.89373726  75.11394115  69.74250189  75.25496676  63.50123572
+  76.87926004 101.68663554  50.41321    113.38842883  66.69072303
+  67.96236285  47.66805456  75.15632432  85.80893109  72.2920874
+  98.97825084  78.90214609  79.21725618  83.51340776  65.78026025
+  80.05562039  73.2135056   86.6814815   71.32926323 111.17403761
+  70.99640074  82.98386366  82.67228453 124.07593252  80.01686278
+  53.87025851  67.04048004  72.496946    81.53230266  86.70870669
+  69.00608601 100.95983277 102.05389952  98.7951424   63.63710226
+  58.87507317  94.16947265  94.4031826   43.10628212  91.33231247
+ 105.51951551  60.93216516  85.26248843  67.91991018 103.37306539
+  44.15594188  85.7525957   70.84165236 110.28336317  79.76387998
+  38.99218672  92.78558626 110.95407179  80.483154    83.77844961
+  75.12407839  67.48087134  93.37717091  89.34370822  84.10180793
+  82.96887692  72.36467889  87.38566759  76.25468276  88.46806303
+  82.81502778  83.58812027  60.94532555  80.1296791   75.56797353]
 ```
 
-## Numpy and Statistics
+## Numpy统计
+
+下面内容会用到 seaborn 模块，在做下边演示练习之前请先安装它 `pip install seaborn`  Seaborn是基于matplotlib开发的图形可视化python包。
 
 ```py
 import matplotlib.pyplot as plt
@@ -692,531 +733,282 @@ import seaborn as sns
 sns.set()
 plt.hist(normal_array, color="grey", bins=50)
 ```
+在jupyter上会生成一个图表
 
-```sh
-    (array([2., 0., 0., 0., 1., 2., 2., 0., 2., 0., 0., 1., 2., 2., 1., 4., 3.,
-            4., 2., 7., 2., 2., 5., 4., 2., 4., 3., 2., 1., 5., 3., 0., 3., 2.,
-            1., 0., 0., 1., 3., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 1.]),
-     array([ 38.69307086,  40.37038529,  42.04769973,  43.72501417,
-             45.4023286 ,  47.07964304,  48.75695748,  50.43427191,
-             52.11158635,  53.78890079,  55.46621523,  57.14352966,
-             58.8208441 ,  60.49815854,  62.17547297,  63.85278741,
-             65.53010185,  67.20741628,  68.88473072,  70.56204516,
-             72.23935959,  73.91667403,  75.59398847,  77.27130291,
-             78.94861734,  80.62593178,  82.30324622,  83.98056065,
-             85.65787509,  87.33518953,  89.01250396,  90.6898184 ,
-             92.36713284,  94.04444727,  95.72176171,  97.39907615,
-             99.07639058, 100.75370502, 102.43101946, 104.1083339 ,
-            105.78564833, 107.46296277, 109.14027721, 110.81759164,
-            112.49490608, 114.17222052, 115.84953495, 117.52684939,
-            119.20416383, 120.88147826, 122.5587927 ]),
-     <a list of 50 Patch objects>)
-```
+![seaborn](../images/day3002_seaborn.png)
 
-### Matrix in numpy
+### numpy格式矩阵
+python matrix 一个矩阵处理包
+![matrix](../images/day3003_matrix.png)
+
+### numpy.arange()
+
+有时，您希望创建在定义的间隔均匀值。例如，您希望创建从1到10内固定间隔值
 
 ```py
-
-four_by_four_matrix = np.matrix(np.ones((4,4), dtype=float))
-```
-
-```py
-four_by_four_matrix
-```
-
-```sh
-matrix([[1., 1., 1., 1.],
-            [1., 1., 1., 1.],
-            [1., 1., 1., 1.],
-            [1., 1., 1., 1.]])
-```
-
-```py
-np.asarray(four_by_four_matrix)[2] = 2
-four_by_four_matrix
-```
-
-```sh
-
-matrix([[1., 1., 1., 1.],
-            [1., 1., 1., 1.],
-            [2., 2., 2., 2.],
-            [1., 1., 1., 1.]])
-```
-
-### Numpy numpy.arange()
-
-#### What is Arrange?
-
-Sometimes, you want to create values that are evenly spaced within a defined interval. For instance, you want to create values from 1 to 10; you can use numpy.arange() function
-
-```py
-# creating list using range(starting, stop, step)
+# 普通的range方式range(starting, stop, step)
 lst = range(0, 11, 2)
-lst
-```
-
-```python
-range(0, 11, 2)
-```
-
-```python
 for l in lst:
     print(l)
 ```
+输出结果
 
 ```sh 0
-    2
-    4
-    6
-    8
-    10
+2
+4
+6
+8
+10
 ```
 
+使用numpy.arange()
 ```py
-# Similar to range arange numpy.arange(start, stop, step)
+# numpy.arange(start, stop, step)
 whole_numbers = np.arange(0, 20, 1)
-whole_numbers
+print(whole_numbers)
 ```
-
+输出结果
 ```sh
-array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
-           17, 18, 19])
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]
 ```
 
+演示练习2
 ```py
 natural_numbers = np.arange(1, 20, 1)
 natural_numbers
+# array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,18, 19])
 ```
 
+演示练习3
 ```py
 odd_numbers = np.arange(1, 20, 2)
 odd_numbers
+# array([ 1,  3,  5,  7,  9, 11, 13, 15, 17, 19])
 ```
 
-```sh
-    array([ 1,  3,  5,  7,  9, 11, 13, 15, 17, 19])
-```
-
+演示练习4
 ```py
 even_numbers = np.arange(2, 20, 2)
 even_numbers
+# array([ 2,  4,  6,  8, 10, 12, 14, 16, 18])
 ```
 
-```sh
-    array([ 2,  4,  6,  8, 10, 12, 14, 16, 18])
-```
+### numpy.linspace()
 
-### Creating sequence of numbers using linspace
+linspace：生成等差数列
 
+
+`linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)`
+- start 序列的起始值
+- stop 序列的终止值，如果endpoint为true，该值包含于数列中
+- num 要生成的等步长的样本数量，默认为50
+- endpoint 该值为 true 时，数列中包含stop值，反之不包含，默认是True
+- retstep 如果为 true 时，生成的数组中会显示间距，反之不显示
+
+演示练习1：
 ```py
-# numpy.linspace()
-# numpy.logspace() in Python with Example
-# For instance, it can be used to create 10 values from 1 to 5 evenly spaced.
-np.linspace(1.0, 5.0, num=10)
+# 
+linspace = np.linspace(1.0, 5.0, num=10)
+linspace
+# array([1.        , 1.44444444, 1.88888889, 2.33333333, 2.77777778, 3.22222222, 3.66666667, 4.11111111, 4.55555556, 5.        ])
 ```
 
-```sh
-    array([1.        , 1.44444444, 1.88888889, 2.33333333, 2.77777778,
-           3.22222222, 3.66666667, 4.11111111, 4.55555556, 5.        ])
-```
-
+演示练习2：
 ```py
-# not to include the last value in the interval
+# 不包括间隔中的最后一个值
 np.linspace(1.0, 5.0, num=5, endpoint=False)
+# array([1. , 1.8, 2.6, 3.4, 4.2])
 ```
 
-```
-array([1. , 1.8, 2.6, 3.4, 4.2])
-```
+logspace：生成等比数列
+`logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None,axis=0)`
+- start	序列的起始值为：base ** start
+- stop 序列的终止值为：base ** stop。如果endpoint为true，该值包含于数列中
+- num 要生成的等步长的样本数量，默认为50
+- endpoint 该值为 true 时，数列中中包含stop值，反之不包含，默认是True。
+- base 对数 log 的底数。默认为10
+- dtype ndarray 的数据类型
 
+演示练习：
 ```py
-# LogSpace
-# LogSpace returns even spaced numbers on a log scale. Logspace has the same parameters as np.linspace.
-
-# Syntax:
-
-# numpy.logspace(start, stop, num, endpoint)
-
 np.logspace(2, 4.0, num=4)
+# array([  100.        ,   464.15888336,  2154.43469003, 10000.        ])
 ```
 
-```sh
+### NumPy统计函数示例
 
-array([  100.        ,   464.15888336,  2154.43469003, 10000.        ])
-```
+NumPy有些非常有用的统计函数，用于从数组中给定元素中查找最小值、最大值、平均值、中位数、百分位数、标准偏差和方差等。
 
-```py
-# to check the size of an array
-x = np.array([1,2,3], dtype=np.complex128)
-```
-
-```py
-x
-```
-
-```sh
-    array([1.+0.j, 2.+0.j, 3.+0.j])
-```
-
-```py
-x.itemsize
-```
-
-```sh
-16
-```
-
-```py
-# indexing and Slicing NumPy Arrays in Python
-np_list = np.array([(1,2,3), (4,5,6)])
-np_list
-
-```
-
-```sh
-    array([[1, 2, 3],
-           [4, 5, 6]])
-```
-
-```py
-print('First row: ', np_list[0])
-print('Second row: ', np_list[1])
-
-```
-
-```sh
-
-    First row:  [1 2 3]
-    Second row:  [4 5 6]
-```
-
-```p
-print('First column: ', np_list[:,0])
-print('Second column: ', np_list[:,1])
-print('Third column: ', np_list[:,2])
-
-```
-
-```sh
-    First column:  [1 4]
-    Second column:  [2 5]
-    Third column:  [3 6]
-```
-
-### NumPy Statistical Functions with Example
-
-NumPy has quite useful statistical functions for finding minimum, maximum, mean, median, percentile,standard deviation and variance, etc from the given elements in the array.
-The functions are explained as follows −
-Statistical function
-Numpy is equipped with the robust statistical function as listed below
-
-- Numpy Functions
-  - Min np.min()
-  - Max np.max()
-  - Mean np.mean()
-  - Median np.median()
-  - Varience
-  - Percentile
-  - Standard deviation np.std()
+主要统计函数说明如下：
+  - 最小 numpy.min()
+  - 最大 numpy.max()
+  - 平均 numpy.mean()
+  - 百分位值 numpy.percentile()
+  - 标准差 numpy.std()
 
 ```python
 np_normal_dis = np.random.normal(5, 0.5, 100)
-np_normal_dis
-## min, max, mean, median, sd
-print('min: ', two_dimension_array.min())
-print('max: ', two_dimension_array.max())
-print('mean: ',two_dimension_array.mean())
-# print('median: ', two_dimension_array.median())
-print('sd: ', two_dimension_array.std())
+print(np_normal_dis)
+
+print('min:', np_normal_dis.min())
+print('max:', np_normal_dis.max())
+print('mean:',np_normal_dis.mean())
+print('sd:', np_normal_dis.std())
+print('per:', np.percentile(np_normal_dis, 80))
 ```
 
-    min:  1
-    max:  55
-    mean:  14.777777777777779
-    sd:  18.913709183069525
-
-```python
-min:  1
-max:  55
-mean:  14.777777777777779
-sd:  18.913709183069525
+```sh
+[5.15416805 4.92221997 4.91819364 4.43249091 5.548942   5.24804419
+ 6.0486654  3.89052065 5.42014058 4.8605251  5.1076719  4.07347093
+ 5.04840633 5.28249779 4.96072075 4.76470926 4.92252889 4.20811214
+ 4.13229481 4.96869032 4.36205607 4.59468824 5.58377131 5.49236484
+ 5.61153039 4.74644091 5.48056575 4.92115714 4.06797278 5.01088677
+ 4.69718335 5.18833585 5.12239522 4.22938168 4.8505853  4.69726308
+ 4.47201704 4.29579089 5.12222109 4.50989599 5.63462925 5.14555552
+ 5.23641677 5.93498806 5.12567003 3.54125827 5.89770511 6.16705668
+ 4.78041048 5.44868302 6.30911684 5.4748142  5.29864345 4.60522858
+ 4.84272039 5.04469172 5.64549773 4.94446036 4.26559994 5.371693
+ 5.69984009 4.85120469 4.46190682 4.50771506 3.85706865 4.87843923
+ 5.43554224 5.42083208 5.44403475 5.28852374 4.79174081 5.02908219
+ 5.48637583 3.47798379 4.85077761 5.46439452 4.05389785 4.38042787
+ 5.32882829 5.87229371 5.07583352 5.00125582 5.07805759 4.96111476
+ 4.20414358 4.75700661 5.74069554 5.13800031 4.75787144 4.79413197
+ 4.91656492 4.24980691 4.8179429  5.6244249  5.40598273 5.09942528
+ 4.6113166  5.51499282 5.07911265 4.8116954 ]
+min: 3.4779837860744482
+max: 6.309116837968659
+mean: 4.979046427772746
+sd: 0.5513389481065848
+per: 5.451825323914139
 ```
 
+还可以指定轴对多维数组做最大最小等查找操作
 ```python
+two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
 print(two_dimension_array)
-print('Column with minimum: ', np.amin(two_dimension_array,axis=0))
-print('Column with maximum: ', np.amax(two_dimension_array,axis=0))
+print('列最小值: ', np.amin(two_dimension_array,axis=0))
+print('列最大值: ', np.amax(two_dimension_array,axis=0))
 print('=== Row ==')
-print('Row with minimum: ', np.amin(two_dimension_array,axis=1))
-print('Row with maximum: ', np.amax(two_dimension_array,axis=1))
+print('行最小值: ', np.amin(two_dimension_array,axis=1))
+print('行最大值: ', np.amax(two_dimension_array,axis=1))
 ```
 
-    [[ 1  2  3]
-     [ 4 55 44]
-     [ 7  8  9]]
-    Column with minimum:  [1 2 3]
-    Column with maximum:  [ 7 55 44]
-    === Row ==
-    Row with minimum:  [1 4 7]
-    Row with maximum:  [ 3 55  9]
+```sh
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+列最小值:  [1 2 3]
+列最大值:  [7 8 9]
+=== Row ==
+行最小值:  [1 4 7]
+行最大值:  [3 6 9]
+```
 
-### How to create repeating sequences?
+### 创建重复序列
 
 ```python
 a = [1,2,3]
 
-# Repeat whole of 'a' two times
+# 整个“a”数组重复两次
 print('Tile:   ', np.tile(a, 2))
 
-# Repeat each element of 'a' two times
+# 重复“a”数组中的每个元素两次
 print('Repeat: ', np.repeat(a, 2))
 
 ```
 
-    Tile:    [1 2 3 1 2 3]
-    Repeat:  [1 1 2 2 3 3]
+```sh
+Tile:    [1 2 3 1 2 3]
+Repeat:  [1 1 2 2 3 3]
+```
 
-### How to generate random numbers?
+### 生成随机数
 
+在指定区间一个随机数 [0,1)
 ```python
-# One random number between [0,1)
 one_random_num = np.random.random()
-one_random_in = np.random
 print(one_random_num)
+
+0.026900597503567103
 ```
 
-    0.6149403282678213
-
+同时生成指定矩阵
 ```python
-0.4763968133790438
-```
-
-    0.4763968133790438
-
-```python
-# Random numbers between [0,1) of shape 2,3
 r = np.random.random(size=[2,3])
 print(r)
+
+[[0.35730105 0.58208373 0.50191823]
+ [0.10218801 0.6980243  0.85130101]]
 ```
 
-    [[0.13031737 0.4429537  0.1129527 ]
-     [0.76811539 0.88256594 0.6754075 ]]
-
+从指定列中随机生成指定个数列表
 ```python
 print(np.random.choice(['a', 'e', 'i', 'o', 'u'], size=10))
+
+['e' 'a' 'e' 'e' 'o' 'u' 'e' 'o' 'u' 'a']
 ```
 
-    ['u' 'o' 'o' 'i' 'e' 'e' 'u' 'o' 'u' 'a']
-
+rand 函数根据给定维度生成[0,1)之间的数据，包含0，不包含1
 ```python
-['i' 'u' 'e' 'o' 'a' 'i' 'e' 'u' 'o' 'i']
-```
-
-    ['iueoaieuoi']
-
-```python
-## Random numbers between [0, 1] of shape 2, 2
 rand = np.random.rand(2,2)
 rand
 ```
-
-    array([[0.97992598, 0.79642484],
-           [0.65263629, 0.55763145]])
-
+```sh
+array([[0.67551965, 0.0930039 ],
+       [0.7492172 , 0.44202525]])
+```
+randn 函数返回一个或一组样本，具有标准正态分布
 ```python
 rand2 = np.random.randn(2,2)
 rand2
-
+```
+```sh
+array([[-1.42995173,  1.65499567],
+       [ 0.70309363,  1.5139199 ]])
 ```
 
-    array([[ 1.65593322, -0.52326621],
-           [ 0.39071179, -2.03649407]])
-
+randint 函数返回随机整数，范围区间为[low,high）
 ```python
-# Random integers between [0, 10) of shape 2,5
 rand_int = np.random.randint(0, 10, size=[5,3])
 rand_int
 ```
-
-    array([[0, 7, 5],
-           [4, 1, 4],
-           [3, 5, 3],
-           [4, 3, 8],
-           [4, 6, 7]])
-
-```py
-from scipy import stats
-np_normal_dis = np.random.normal(5, 0.5, 1000) # mean, standard deviation, number of samples
-np_normal_dis
-## min, max, mean, median, sd
-print('min: ', np.min(np_normal_dis))
-print('max: ', np.max(np_normal_dis))
-print('mean: ', np.mean(np_normal_dis))
-print('median: ', np.median(np_normal_dis))
-print('mode: ', stats.mode(np_normal_dis))
-print('sd: ', np.std(np_normal_dis))
-```
-
 ```sh
-
-    min:  3.557811005458804
-    max:  6.876317743643499
-    mean:  5.035832048106663
-    median:  5.020161980441937
-    mode:  ModeResult(mode=array([3.55781101]), count=array([1]))
-    sd:  0.489682424165213
-
+array([[3, 1, 6],
+       [1, 6, 8],
+       [5, 6, 3],
+       [3, 5, 1],
+       [9, 1, 2]])
 ```
 
-```python
-plt.hist(np_normal_dis, color="grey", bins=21)
-plt.show()
-```
+### 线性代数
 
-![png](../test_files/test_121_0.png)
+大奇笔者高数基本还给老师了，这部分尝试去翻译和解释数学有点困难，所以就截取一个简单的例子了解下numpy有很多线性代数的计算方法即可。
 
-```python
-# numpy.dot(): Dot Product in Python using Numpy
-# Dot Product
-# Numpy is powerful library for matrices computation. For instance, you can compute the dot product with np.dot
-
-# Syntax
-
-# numpy.dot(x, y, out=None)
-```
-
-### Linear Algebra
-
-1. Dot Product
+**点积**：两个向量的内积，公式：a·b=a₁b₁+a₂b₂+……+aₙbₙ
 
 ```python
-## Linear algebra
-### Dot product: product of two arrays
+# 线性代数
+# 点积:两个数组的乘积
 f = np.array([1,2,3])
 g = np.array([4,5,3])
 ### 1*4+2*5 + 3*6
 np.dot(f, g)  # 23
 ```
 
-### NumPy Matrix Multiplication with np.matmul()
 
-```python
-### Matmul: matruc product of two arrays
-h = [[1,2],[3,4]]
-i = [[5,6],[7,8]]
-### 1*5+2*7 = 19
-np.matmul(h, i)
-```
+# 总结
 
-```sh
-    array([[19, 22],
-           [43, 50]])
+总结一下，numpy arrays 和 python list 的主要区别是：
 
-```
-
-```py
-## Determinant 2*2 matrix
-### 5*8-7*6np.linalg.det(i)
-```
-
-```python
-np.linalg.det(i)
-```
-
-    -1.999999999999999
-
-```python
-Z = np.zeros((8,8))
-Z[1::2,::2] = 1
-Z[::2,1::2] = 1
-```
-
-```python
-Z
-```
-
-    array([[0., 1., 0., 1., 0., 1., 0., 1.],
-           [1., 0., 1., 0., 1., 0., 1., 0.],
-           [0., 1., 0., 1., 0., 1., 0., 1.],
-           [1., 0., 1., 0., 1., 0., 1., 0.],
-           [0., 1., 0., 1., 0., 1., 0., 1.],
-           [1., 0., 1., 0., 1., 0., 1., 0.],
-           [0., 1., 0., 1., 0., 1., 0., 1.],
-           [1., 0., 1., 0., 1., 0., 1., 0.]])
-
-```python
-new_list = [ x + 2 for x in range(0, 11)]
-```
-
-```python
-new_list
-```
-
-    [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
-```python
-[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-```
-
-    [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
-```python
-np_arr = np.array(range(0, 11))
-np_arr + 2
-```
-
-array([ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-
-We use linear equation for quantities which have linear relationship. Let's see the example below:
-
-```python
-temp = np.array([1,2,3,4,5])
-pressure = temp * 2 + 5
-pressure
-```
-
-array([ 7, 9, 11, 13, 15])
-
-```python
-plt.plot(temp,pressure)
-plt.xlabel('Temperature in oC')
-plt.ylabel('Pressure in atm')
-plt.title('Temperature vs Pressure')
-plt.xticks(np.arange(0, 6, step=0.5))
-plt.show()
-```
-
-![png](../test_files/test_141_0.png)
-
-To draw the Gaussian normal distribution using numpy. As you can see below, the numpy can generate random numbers. To create random sample, we need the mean(mu), sigma(standard deviation), mumber of data points.
-
-```python
-mu = 28
-sigma = 15
-samples = 100000
-
-x = np.random.normal(mu, sigma, samples)
-ax = sns.distplot(x);
-ax.set(xlabel="x", ylabel='y')
-plt.show()
-```
-
-![png](../test_files/test_143_0.png)
-
-# Summery
-
-To summarize, the main differences with python lists are:
-
-1. Arrays support vectorized operations, while lists don’t.
-1. Once an array is created, you cannot change its size. You will have to create a new array or overwrite the existing one.
-1. Every array has one and only one dtype. All items in it should be of that dtype.
-1. An equivalent numpy array occupies much less space than a python list of lists.
-1. numpy arrays support boolean indexing.
+1. arrays 支持向量化操作，而 list 则不支持。
+2. 一旦创建了array，就不能更改它的大小。您必须创建一个新数组或覆盖现有数组。
+3. 每个array都有且只有一个dtype。其中的所有项都应该是该dtype。
+4. 一个等效的numpy array占用的空间比一个python的列表列表要小得多。
+5. numpy array支持布尔索引。
 
 ## 💻 第24天练习
 
-1. Repeat all the examples
+1. 根据兴趣重复练习本篇中的例子
 
 🎉 CONGRATULATIONS ! 🎉
 

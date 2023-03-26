@@ -1,37 +1,29 @@
 
 [<< Day 20](../20_Day_Python_package_manager/20_python_package_manager.md) | [Day 22 >>](../22_Day_Web_scraping/22_web_scraping.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-
 - [📘 Day 21](#-day-21)
   - [类和对象](#类和对象)
-    - [Creating a Class](#creating-a-class)
-    - [Creating an Object](#creating-an-object)
-    - [Class Constructor](#class-constructor)
-    - [Object Methods](#object-methods)
-    - [Object Default Methods](#object-default-methods)
-    - [Method to Modify Class Default Values](#method-to-modify-class-default-values)
-    - [Inheritance](#inheritance)
-    - [Overriding parent method](#overriding-parent-method)
+    - [创建类](#创建类)
+    - [创建对象](#创建对象)
+    - [类构造函数](#类构造函数)
+    - [对象方法](#对象方法)
+    - [对象默认方法](#对象默认方法)
+    - [用方法修改类的默认值](#用方法修改类的默认值)
+    - [继承](#继承)
+    - [重写父方法](#重写父方法)
   - [💻 第21天练习](#-第23天练习)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+    - [练习1级](#练习1级)
+    - [练习2级](#练习2级)
 
 # 📘 Day 21
 
 ## 类和对象
+Python是一种面向对象的编程语言。Python中的所有东西都是一个对象，包括它的属性和方法。程序中使用的数字、字符串、列表、字典、元组、集合等都是相应内置类对象。我们创建类来创建对象。类，类似于对象构造函数，或者创建对象的“蓝图”。我们实例化一个类来创建一个对象。类定义对象的属性和行为，而另一方面，对象表示类。
 
-Python is an object oriented programming language. Everything in Python is an object, with its properties and methods. A number, string, list, dictionary, tuple, set etc. used in a program is an object of a corresponding built-in class. We create class to create an object. A class is like an object constructor, or a "blueprint" for creating objects. We instantiate a class to create an object. The class defines attributes and the behavior of the object, while the object, on the other hand, represents the class.
+从接受这个系列挑战开始，我们就在不知不觉中使用类和对象。Python程序中的每个元素都是类的对象。让我们检查一下python中的所有内容是否都是类：
 
-We have been working with classes and objects right from the beginning of this challenge unknowingly. Every element in a Python program is an object of a class.
-Let us check if everything in python is a class:
-
-```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+```sh
+> python
 >>> num = 10
 >>> type(num)
 <class 'int'>
@@ -55,17 +47,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 <class 'dict'>
 ```
 
-### Creating a Class
+### 创建类
 
-To create a class we need the key word **class** followed by the name and colon. Class name should be **CamelCase**.
+要创建一个类，我们需要使用关键词 **class** 然后后边跟着名字和冒号，类的名字建议使用驼峰命名法。
 
 ```sh
-# syntax
+# 语法形式
 class ClassName:
-  code goes here
+  这里编写代码
 ```
 
-**Example:**
+**举例：**
 
 ```py
 class Person:
@@ -74,175 +66,177 @@ print(Person)
 ```
 
 ```sh
-<__main__.Person object at 0x10804e510>
+<class '__main__.Person'>
 ```
 
-### Creating an Object
+### 创建对象
 
-We can create an object by calling the class.
+我们可以通过调用初始化类来创建对象。
 
 ```py
 p = Person()
 print(p)
+# <__main__.Person object at 0x000002084C138490>
 ```
 
-### Class Constructor
+### 类构造函数
 
-In the examples above, we have created an object from the Person class. However, a class without a constructor is not really useful in real applications. Let us use constructor function to make our class more useful. Like the constructor function in Java or JavaScript, Python has also a built-in **__init__**() constructor function. The **__init__** constructor function has self parameter which is a reference to the current instance of the class
-**Examples:**
+在上面的例子中，我们已经从Person类创建了一个对象。然而，没有构造函数的类，在实际应用程序中并没有真正的用处。让我们使用构造函数函数使我们的类更有用。与Java或JavaScript中的构造函数类似，Python也有内置的 `__init__()` 构造函数。**__init__** 构造函数带有self形参，它表示类的当前实例的引用。
+
+**例子：**
 
 ```py
 class Person:
       def __init__ (self, name):
-        # self allows to attach parameter to the class
           self.name =name
 
-p = Person('Asabeneh')
+p = Person('MegaQi')
 print(p.name)
 print(p)
 ```
-
+输出
 ```sh
-# output
-Asabeneh
-<__main__.Person object at 0x2abf46907e80>
+MegaQi
+<__main__.Person object at 0x000002DA62D18490>
 ```
 
-Let us add more parameters to the constructor function.
+让我们在构造函数中再添加一些参数
 
 ```py
 class Person:
-      def __init__(self, firstname, lastname, age, country, city):
+      def __init__(self, firstname, lastname, country, city):
           self.firstname = firstname
           self.lastname = lastname
-          self.age = age
           self.country = country
           self.city = city
 
 
-p = Person('Asabeneh', 'Yetayeh', 250, 'Finland', 'Helsinki')
+p = Person('Mega', 'Qi', 'China', 'ShangHai')
 print(p.firstname)
 print(p.lastname)
-print(p.age)
 print(p.country)
 print(p.city)
 ```
-
+输出
 ```sh
-# output
-Asabeneh
-Yetayeh
-250
-Finland
-Helsinki
+Mega
+Qi
+China
+ShangHai
 ```
 
-### Object Methods
+### 对象方法
 
-Objects can have methods. The methods are functions which belong to the object.
+对象可以有方法。方法属于对象的函数。
 
-**Example:**
+**举例:**
 
 ```py
 class Person:
-      def __init__(self, firstname, lastname, age, country, city):
-          self.firstname = firstname
-          self.lastname = lastname
-          self.age = age
+      def __init__(self, name, country, city):
+          self.name = name
           self.country = country
           self.city = city
-      def person_info(self):
-        return f'{self.firstname} {self.lastname} is {self.age} years old. He lives in {self.city}, {self.country}'
 
-p = Person('Asabeneh', 'Yetayeh', 250, 'Finland', 'Helsinki')
+      def person_info(self):
+        return f'{self.name} 居住在{self.country} {self.city}'
+
+p = Person('Qi','中国', '上海')
 print(p.person_info())
+# Qi 居住在中国 上海
 ```
 
-```sh
-# output
-Asabeneh Yetayeh is 250 years old. He lives in Helsinki, Finland
-```
+### 对象默认方法
 
-### Object Default Methods
-
-Sometimes, you may want to have a default values for your object methods. If we give default values for the parameters in the constructor, we can avoid errors when we call or instantiate our class without parameters. Let's see how it looks:
-
-**Example:**
-
+有时候，你可能想为你的对象方法设置一个默认值。如果在构造函数中为形参指定默认值，就可以避免在不带形参的情况下调用或实例化类时出现错误。让我们看看它是什么样子的：
 ```py
 class Person:
-      def __init__(self, firstname='Asabeneh', lastname='Yetayeh', age=250, country='Finland', city='Helsinki'):
-          self.firstname = firstname
-          self.lastname = lastname
-          self.age = age
-          self.country = country
-          self.city = city
+  def __init__(self, name='Qi', country='中国', city='上海'):
+      self.name = name
+      self.country = country
+      self.city = city
 
-      def person_info(self):
-        return f'{self.firstname} {self.lastname} is {self.age} years old. He lives in {self.city}, {self.country}.'
+  def person_info(self):
+    return f'{self.name} 居住在{self.country} {self.city}'
 
 p1 = Person()
 print(p1.person_info())
-p2 = Person('John', 'Doe', 30, 'Nomanland', 'Noman city')
+p2 = Person('MeagaQi', '法国', '巴黎')
 print(p2.person_info())
 ```
-
+输出
 ```sh
-# output
-Asabeneh Yetayeh is 250 years old. He lives in Helsinki, Finland.
-John Doe is 30 years old. He lives in Noman city, Nomanland.
+# 默认给定参值
+Qi 居住在中国 上海
+# 指定参数值
+MeagaQi 居住在法国 巴黎
 ```
 
-### Method to Modify Class Default Values
+### 用方法修改类的默认值
 
-In the example below, the person class, all the constructor parameters have default values. In addition to that, we have skills parameter, which we can access using a method. Let us create add_skill method to add skills to the skills list.
+在下面的例子person类中，所有构造函数参数都有默认值。除此之外，我们还添加了一个技能参数，我们可以使用方法访问和修改它，比如向其中添加新的技能。
 
 ```py
 class Person:
-      def __init__(self, firstname='Asabeneh', lastname='Yetayeh', age=250, country='Finland', city='Helsinki'):
-          self.firstname = firstname
-          self.lastname = lastname
-          self.age = age
-          self.country = country
-          self.city = city
-          self.skills = []
+  def __init__(self, name='Qi',country='China'):
+      self.name = name
+      self.country = country
+      self.skills = []
+  
+  def person_info(self):
+      return f'{self.name} 住在 {self.country} 我的新技能树有 {self.skills}'
+  
+  def add_skill(self, skill):
+      self.skills.append(skill)
 
-      def person_info(self):
-        return f'{self.firstname} {self.lastname} is {self.age} years old. He lives in {self.city}, {self.country}.'
-      def add_skill(self, skill):
-          self.skills.append(skill)
+class Student(Person):
+  pass
 
-p1 = Person()
-print(p1.person_info())
-p1.add_skill('HTML')
-p1.add_skill('CSS')
-p1.add_skill('JavaScript')
-p2 = Person('John', 'Doe', 30, 'Nomanland', 'Noman city')
-print(p2.person_info())
-print(p1.skills)
-print(p2.skills)
+s1 = Student('MegaQi', 'China')
+s2 = Student('Tom', 'Finland')
+
+print(s1.person_info())
+s1.add_skill('JavaScript')
+s1.add_skill('React')
+s1.add_skill('Python')
+print(s1.skills)
+
+print(s2.person_info())
+s2.add_skill('Organizing')
+s2.add_skill('Marketing')
+s2.add_skill('Digital Marketing')
+print(s2.skills)
+
+p = Person()
+print(p.person_info())
+p.add_skill('HTML')
+p.add_skill('CSS')
+p.add_skill('JavaScript')
+print(p)
+print(p.person_info())
+print(p.skills)
 ```
-
+输出
 ```sh
-# output
-Asabeneh Yetayeh is 250 years old. He lives in Helsinki, Finland.
-John Doe is 30 years old. He lives in Noman city, Nomanland.
+Qi 住在 China 我的新技能树有 []
+<__main__.Person object at 0x0000023202118490>
+Qi 住在 China 我的新技能树有 ['HTML', 'CSS', 'JavaScript']
 ['HTML', 'CSS', 'JavaScript']
-[]
 ```
 
-### Inheritance
+### 继承
 
-Using inheritance we can reuse parent class code. Inheritance allows us to define a class that inherits all the methods and properties from parent class. The parent class or super or base class is the class which gives all the methods and properties. Child class is the class that inherits from another or parent class.
-Let us create a student class by inheriting from person class.
+继承允许我们定义一个从父类继承所有方法和属性的类。父类或基类是提供所有方法和属性的类。子类是继承自另一个类或父类的类。
+
+让我们通过继承 person 类来创建一个 student 类。
 
 ```py
 class Student(Person):
     pass
 
+s1 = Student('MegaQi', 'China')
+s2 = Student('Tom', 'Finland')
 
-s1 = Student('Eyob', 'Yetayeh', 30, 'Finland', 'Helsinki')
-s2 = Student('Lidiya', 'Teklemariam', 28, 'Finland', 'Espoo')
 print(s1.person_info())
 s1.add_skill('JavaScript')
 s1.add_skill('React')
@@ -256,37 +250,50 @@ s2.add_skill('Digital Marketing')
 print(s2.skills)
 
 ```
-
+输出
 ```sh
-output
-Eyob Yetayeh is 30 years old. He lives in Helsinki, Finland.
+MegaQi 住在 China 我的新技能树有 []
 ['JavaScript', 'React', 'Python']
-Lidiya Teklemariam is 28 years old. He lives in Espoo, Finland.
+Tom 住在 Finland 我的新技能树有 []
 ['Organizing', 'Marketing', 'Digital Marketing']
 ```
 
-We did not call the **__init__**() constructor in the child class. If we didn't call it then we can still access all the properties from the parent. But if we do call the constructor we can access the parent properties by calling _super_.  
-We can add a new method to the child or we can override the parent class methods by creating the same method name in the child class. When we add the **__init__**() function, the child class will no longer inherit the parent's **__init__**() function.
+我们没有在子类中调用 **__init__()** 构造函数。虽然我们不调用它，但我们仍然可以从父类访问所有属性。但是如果我们调用构造函数，我们可以通过调用 _super_ 来访问父属性。
 
-### Overriding parent method
+我们可以给子类添加一个新方法，也可以通过在子类中创建相同的方法名来覆盖父类方法。比如当我们添加 **__init__**() 函数时，子类将不再继承父类的 **__init__**() 函数。
+
+### 重写父方法
 
 ```py
-class Student(Person):
-    def __init__ (self, firstname='Asabeneh', lastname='Yetayeh',age=250, country='Finland', city='Helsinki', gender='male'):
-        self.gender = gender
-        super().__init__(firstname, lastname,age, country, city)
-    def person_info(self):
-        gender = 'He' if self.gender =='male' else 'She'
-        return f'{self.firstname} {self.lastname} is {self.age} years old. {gender} lives in {self.city}, {self.country}.'
+class Person:
+  def __init__(self, name='Qi',country='China'):
+      self.name = name
+      self.country = country
+      self.skills = []
+  
+  def person_info(self):
+      return f'{self.name} 住在 {self.country} 我的新技能树有 {self.skills}'
+  
+  def add_skill(self, skill):
+      self.skills.append(skill)
 
-s1 = Student('Eyob', 'Yetayeh', 30, 'Finland', 'Helsinki','male')
-s2 = Student('Lidiya', 'Teklemariam', 28, 'Finland', 'Espoo', 'female')
+class Student(Person):
+    def __init__ (self, name='MegaQi', country='中国', gender="male"):
+        self.gender = gender
+        super().__init__(name, country)
+
+    def person_info(self):
+        gender = "他" if self.gender =='male' else '她'
+        return f'{gender} 居住在 {self.country}。'
+
+s1 = Student('ZhangSan', 'Finland','male')
 print(s1.person_info())
 s1.add_skill('JavaScript')
 s1.add_skill('React')
 s1.add_skill('Python')
 print(s1.skills)
 
+s2 = Student('Lidiya', 'England', 'female')
 print(s2.person_info())
 s2.add_skill('Organizing')
 s2.add_skill('Marketing')
@@ -295,59 +302,25 @@ print(s2.skills)
 ```
 
 ```sh
-Eyob Yetayeh is 30 years old. He lives in Helsinki, Finland.
+他 居住在 Finland。
 ['JavaScript', 'React', 'Python']
-Lidiya Teklemariam is 28 years old. She lives in Espoo, Finland.
+她 居住在 England。
 ['Organizing', 'Marketing', 'Digital Marketing']
 ```
 
-We can use super() built-in function or the parent name Person to automatically inherit the methods and properties from its parent. In the example above we override the parent method. The child method has a different feature, it can identify, if the gender is male or female and assign the proper pronoun(He/She).
+我们可以使用super()内置函数或父类名称Person自动从父类继承方法和属性。在上面的例子中，我们重写了父方法。子方法有一个不同的特点，它可以识别性别，根据输入的性别来决定使用哪个代词他或她。
 
-🌕 Now, you are fully charged with a super power of programming.  Now do some exercises for your brain and muscles.
+🌕 现在，您已经完全拥有了编程的超级能力。现在来做些练习巩固下成果把。
 
 ## 💻 第21天练习
 
-### Exercises: Level 1
+### 练习1级
+1. Python有一个名为 _statistics_ 的模块，我们可以使用这个模块来进行统计计算。然而，为了学习如何制作函数和重用函数，让我们尝试开发一个程序，它可以计算样本的中趋势(均值，中位数，模态)和可变性(方差，标准偏差)的度量。除了这些测量之外，还要找到样本的最小值、最大值、计数、百分位数。您可以创建一个名为 **Statistics** 的类，并将所有执行统计计算函数创建为 Statistics 类的方法。
 
-1. Python has the module called _statistics_ and we can use this module to do all the statistical calculations. However, to learn how to make function and reuse function let us try to develop a program, which calculates the measure of central tendency of a sample (mean, median, mode) and measure of variability (range, variance, standard deviation). In addition to those measures, find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions that do statistical calculations as methods for the Statistics class. Check the output below.
+### 练习2级
 
-```py
-ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+1. 创建一个名为 _PersonAccount_ 的类，它有名字、收入、 花销属性，并且有类方法 total_income, total_expense, account_info, add_income, add_expense 和 account_balance。编写代码实现记账业务。
 
-print('Count:', data.count()) # 25
-print('Sum: ', data.sum()) # 744
-print('Min: ', data.min()) # 24
-print('Max: ', data.max()) # 38
-print('Range: ', data.range() # 14
-print('Mean: ', data.mean()) # 30
-print('Median: ', data.median()) # 29
-print('Mode: ', data.mode()) # {'mode': 26, 'count': 5}
-print('Standard Deviation: ', data.std()) # 4.2
-print('Variance: ', data.var()) # 17.5
-print('Frequency Distribution: ', data.freq_dist()) # [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
-```
-
-```sh
-# you output should look like this
-print(data.describe())
-Count: 25
-Sum:  744
-Min:  24
-Max:  38
-Range:  14
-Mean:  30
-Median:  29
-Mode:  (26, 5)
-Variance:  17.5
-Standard Deviation:  4.2
-Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
-```
-
-### Exercises: Level 2
-
-1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has total_income, total_expense, account_info, add_income, add_expense and account_balance methods. Incomes is a set of incomes and its description. The same goes for expenses.
-
-### Exercises: Level 3
 
 
 🎉 CONGRATULATIONS ! 🎉
