@@ -5,44 +5,37 @@
 - [📘 Day 26](#-day-26)
   - [Python Web 服务](#Python-Web-服务)
     - [Flask](#flask)
-      - [Folder structure](#folder-structure)
-    - [Setting up your project directory](#setting-up-your-project-directory)
-    - [Creating routes](#creating-routes)
-    - [Creating templates](#creating-templates)
-    - [Python Script](#python-script)
-    - [Navigation](#navigation)
-    - [Creating a layout](#creating-a-layout)
-      - [Serving Static File](#serving-static-file)
-    - [Deployment](#deployment)
-      - [Creating Heroku account](#creating-heroku-account)
-      - [Login to Heroku](#login-to-heroku)
-      - [Create requirements and Procfile](#create-requirements-and-procfile)
-      - [Pushing project to heroku](#pushing-project-to-heroku)
-  - [Exercises: Day 26](#exercises-day-26)
+      - [项目结构](#项目结构)
+    - [配置项目目录](#配置项目目录)
+    - [创建路由](#创建路由)
+    - [创建 templates](#创建-templates)
+    - [Python Web优化](#Python Web优化)
+    - [导航](#导航)
+    - [通用布局](#通用布局)
+      - [静态服务文件](#静态服务文件)
+    - [部署](#部署)
+  - [第26天练习](#第26天练习)
 
 # 📘 Day 26
 
 ## Python Web 服务
 
-Python is a general purpose programming language and it can be used for many places. In this section, we will see how we use Python for the web. There are many Python web frame works. Django and Flask are the most popular ones. Today, we will see how to use Flask for web development.
+Python本身是一种通用的语言，可以用于很多的地方。在本篇中，我们将看到如何在Web开发中使用Python。它有很多的web架构框架。Django和Flask是比较流行。接下来我们就看看如何使用Flask进行web的开发。
 
 ### Flask
 
-Flask is a web development framework written in Python. Flask uses Jinja2 template engine. Flask can be also used with other modern front libraries such as React.
+Flask是一个用Python编写的web开发框架。Flask使用Jinja2模板引擎。Flask也可以与其他现代前端库(如React\VUE)一起使用。
 
-If you did not install the virtualenv package yet install it first. Virtual environment will allows to isolate project dependencies from the local machine dependencies.
+如果您还没有安装virtualenv包，请先安装它。我们将在虚拟环境中进行项目依的隔离开发。
 
-#### Folder structure
+#### 项目结构
 
-After completing all the step, your project file structure should look like this:
+在稍后完成所有步骤后，你的项目文件结构应该是这样的:
 
 ```sh
-
-├── Procfile
 ├── app.py
 ├── env
 │   ├── bin
-├── requirements.txt
 ├── static
 │   └── css
 │       └── main.css
@@ -54,100 +47,101 @@ After completing all the step, your project file structure should look like this
     └── result.html
 ```
 
-### Setting up your project directory
+### 配置项目目录
 
-Follow the following steps to get started with Flask.
+按照以下步骤开始使用Flask。
 
-Step 1: install virtualenv using the following command.
+**步骤 1:** 安装virtualenv。
 
 ```sh
 pip install virtualenv
 ```
 
-Step 2:
+**步骤 2:** 创建项目目录并安装依赖
 
 ```sh
-asabeneh@Asabeneh:~/Desktop$ mkdir python_for_web
-asabeneh@Asabeneh:~/Desktop$ cd python_for_web/
-asabeneh@Asabeneh:~/Desktop/python_for_web$ virtualenv venv
-asabeneh@Asabeneh:~/Desktop/python_for_web$ source venv/bin/activate
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip install Flask
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
-Click==7.0
-Flask==1.1.1
-itsdangerous==1.1.0
-Jinja2==2.10.3
-MarkupSafe==1.1.1
-Werkzeug==0.16.0
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$
+# window powershell 上的操作记录
+> mkdir python_for_web
+> cd .\python_for_web\
+> virtualenv venv
+# source venv/bin/activate
+> .\venv\Scripts\activate.ps1
+> pip freeze
+> pip install Flask
+> pip freeze
+
+click==8.1.3
+colorama==0.4.6
+Flask==2.2.3
+importlib-metadata==6.1.0
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.2
+Werkzeug==2.2.3
+zipp==3.15.0
 ```
+我们创建了一个名为 python_for_web的项目文件夹。并且在项目中创建了一个虚拟 *venv* 环境，然后我们激活虚拟环境。接着使用pip freeze来检查项目目录中已安装的包。最后安装Flask，并且再次检查此环境中包安装的情况。
 
-We created a project director named python_for_web. Inside the project we created a virtual environment *venv* which could be any name but I prefer to call it _venv_. Then we activated the virtual environment. We used pip freeze to check the installed packages in the project directory. The result of pip freeze was empty because a package was not installed yet.
+现在，让我们在项目目录中创建一个 *app.py* 文件，并编写以下代码。app.py将是项目中的主文件。代码中会有flask模块和os模块。
 
-Now, let's create app.py file in the project directory and write the following code. The app.py file will be the main file in the project. The following code has flask module, os module.
+### 创建路由
 
-### Creating routes
-
-The home route.
+创建主路由。这其中如果你一点也不了解web服务和接口http协议的话，请自行先花点时间去了解下，否则你接下来的一些学习内容会很难。
 
 ```py
-# let's import the flask
+# 导入框架模块 flask
 from flask import Flask
-import os # importing operating system module
+import os
 
 app = Flask(__name__)
 
-@app.route('/') # this decorator create the home route
+@app.route('/') # 通过这个装饰器创建主(跟)路由
 def home ():
     return '<h1>Welcome</h1>'
 
-@app.route('/about')
-def about():
-    return '<h1>About us</h1>'
-
-
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
+    # 部署运行
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-To run the flask application, write python app.py in the main flask application directory.
+要运行flask应用程序，请在flask应用程序主目录执行 python app.py 或者通过IDE快速启动。
 
-After you run _python app.py_ check local host 5000.
+运行_python app.py_后，检查本地主机5000。
+```sh
+> curl localhost:5000
+<h1>Welcome</h1>
+```
 
-Let us add additional route.
-Creating about route
+让我们再加一条路线，比如创建 */about* 路由。
 
 ```py
-# let's import the flask
 from flask import Flask
-import os # importing operating system module
+import os 
 
 app = Flask(__name__)
 
-@app.route('/') # this decorator create the home route
+@app.route('/') 
 def home ():
     return '<h1>Welcome</h1>'
 
-@app.route('/about')
+@app.route('/about') # 创建一个关于路由
 def about():
     return '<h1>About us</h1>'
 
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-Now, we added the about route in the above code. How about if we want to render an HTML file instead of string? It is possible to render HTML file using the function *render_templae*. Let us create a folder called templates and create home.html and about.html in the project directory. Let us also import the *render_template* function from flask.
+现在，我们在上面的代码中添加了about路由，重新运行app.py，然后这次我们通过浏览器请求看下响应。
+![about](../images/day2601_route_about.png)
 
-### Creating templates
+如果想渲染HTML文件而不是字符串呢？我们可以使用 *render_templae* 函数渲染HTML文件。让我们创建一个名为 templates 的文件夹，并在项目目录中创建 home.html 和 about.html 两个网页文件。这里需要从flask再导入 *render_template* 函数。
 
-Create the HTML files inside templates folder.
+### 创建 templates
+
+在templates文件夹中创建HTML文件。HTML不熟的可以直接拷贝两个代码创建两个网页文件。
 
 home.html
 
@@ -183,18 +177,18 @@ about.html
 </html>
 ```
 
-### Python Script
+### Python Web优化
 
-app.py
+在 app.py 代码路由代码中直接改成返回HTML模板。
 
 ```py
-# let's import the flask
+# 导入框架模块 flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 
 app = Flask(__name__)
 
-@app.route('/') # this decorator create the home route
+@app.route('/') # 通过这个装饰器创建主(跟)路由
 def home ():
     return render_template('home.html')
 
@@ -202,28 +196,35 @@ def home ():
 def about():
     return render_template('about.html')
 
+
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
+    # 部署运行
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-As you can see to go to different pages or to navigate we need a navigation. Let's add a link to each page or let's create a layout which we use to every page.
+打开浏览器访问 http://localhost:5000/ 或 http://localhost:5000/about 查看效果。
 
-### Navigation
+如你所见，访问不同的页面或导航，我们需要一个route。接下来让我们新增一个导航页，用于链接跳转到不同的页面。
 
-```html
+### 导航
+
+让我在 home.html 的body里增加如下代码：
+
+
+```
 <ul>
   <li><a href="/">Home</a></li>
   <li><a href="/about">About</a></li>
 </ul>
 ```
 
-Now, we can navigate between the pages using the above link. Let us create additional page which handle form data. You can call it any name, I like to call it post.html.
+现在，我们可以使用上面的链接在页面之间导航。
+![layout](../images/day2602_route_layout.png)
 
-We can inject data to the HTML files using Jinja2 template engine.
+继续丰富Web服务，让我们创建一个能处理表单数据的页面。你可以叫它任何名字，这里我取名为 *post.html* 。
 
+我们可以使用 *Jinja2* 模板引擎向HTML文件中注入数据。也就是要传递参数，想来改造app.py
 ```py
 # let's import the flask
 from flask import Flask, render_template, request, redirect, url_for
@@ -255,7 +256,7 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-Let's see the templates too:
+在html代码中通过{{key}}来获取python程序中给定的参数值，三个页面的代码参考如下：
 
 home.html
 
@@ -265,13 +266,14 @@ home.html
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>{{title}}</title>
   </head>
 
   <body>
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
+      <li><a href="/post">Post</a></li>
     </ul>
     <h1>Welcome to {{name}}</h1>
      <ul>
@@ -291,13 +293,14 @@ about.html
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
+    <title>{{title}}</title>
   </head>
 
   <body>
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
+      <li><a href="/post">Post</a></li>
     </ul>
     <h1>About Us</h1>
     <h2>{{name}}</h2>
@@ -305,14 +308,208 @@ about.html
 </html>
 ```
 
-### Creating a layout
+post.html
 
-In the template files, there are lots of repeated codes, we can write a layout and we can remove the repetition. Let's create layout.html inside the templates folder.
-After we create the layout we will import to every file.
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+  </head>
 
-#### Serving Static File
+  <body>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/post">Post</a></li>
+    </ul>
+    <h1>{{name}}</h1>
+    <form action="http://localhost:5000/post" method="POST">
+        <div>
+            <textarea rows='25' name="content" autofocus></textarea>
+        </div>
+        <div>
+            <input type='submit' class="btn" value="Process Text" />
+        </div>
+    </form>
+  </body>
+</html>
+```
+重新运行服务，看其中刚才新增post的页面的效果
+![post.html](../images/day2603_post.png)
 
-Create a static folder in your project directory. Inside the static folder create CSS or styles folder and create a CSS stylesheet. We use the *url_for* module to serve the static file. 
+### 通用布局
+
+在模板文件中，有很多重复的代码，我们可以写一个布局来减少重复。让我们在模板文件夹中创建layout.html。创建布局页面后，我们将导入到每个页面中中。
+
+#### 静态服务文件
+
+在项目目录中创建一个static文件夹。在静态文件夹中创建CSS或styles文件夹，并创建一个CSS样式表。我们通过模块 *url_for* 来提供静态文件的使用。
+
+static\css\main.css 此代码你需要一行行编写和了解，你只需要拷贝过去就行。
+```css
+/* === GENERAL === */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === css variables === */
+:root {
+    --header-bg-color: #4a7799;
+    --textarea-bg-color: rgb(250, 246, 246);
+    --body-bg-color: rgb(210, 214, 210);
+    --nav-link-color: #bbb;
+}
+
+/* === body style === */
+body {
+    background: var(--body-bg-color);
+    margin: auto;
+    line-height: 1.75;
+    font-weight: 900;
+    word-spacing: 1.5px;
+    font-family: 'Lato',sans-serif;
+    font-weight: 300;
+}
+
+/* === header style === */
+header {
+    background: var(--header-bg-color);
+}
+/* === title and subtitle style === */
+h1,
+h2 {
+    margin: 20px;
+    font-weight: 300;
+    font-family: Nunito;
+}
+
+/* === header menu style === */
+
+.menu-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(221, 215, 215);
+    padding: 25px;
+}
+
+.nav-lists {
+    display: flex;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 22px;
+    padding: 0 5px;
+    color: var(--nav-link-color);
+    font-weight: 400;
+}
+
+.brand-name {
+    font-size: 28px;
+    font-weight: bolder;
+}
+/* === paragraph text style === */
+p {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+/* === main style === */
+main {
+    width: 90%;
+    margin: auto;
+}
+
+/* === container div inside main style === */
+
+.container {
+    background: rgb(210, 214, 210);
+    padding: 20px;
+    margin: auto;
+}
+
+.tech-lists {
+    margin: 10px auto;
+    text-align: left;
+    font-size: 20px;
+}
+.tech {
+    list-style: none;
+}
+/* === button style === */
+.btn {
+    width: 150px;
+    height: 50px;
+    background: var(--header-bg-color);
+    color: var(--nav-link-color);
+    font-size: 20px;
+    margin: 5px;
+    border: 1px solid var(--header-bg-color);
+    font-family: Lato;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: 2px solid #2a70a5;
+    cursor: pointer;
+}
+/* === textarea style === */
+textarea {
+    width: 65%;
+    margin: auto;
+    padding: 10px 15px;
+    outline: 2px solid rgba(207, 203, 203, 0.25);
+    border: none;
+    font-size: 18px;
+    font-family: Lato;
+    font-weight: 300;
+}
+
+textarea:focus {
+    border: none;
+    outline: 2px solid rgba(74, 119, 153, 0.45);
+    background: var(--textarea-bg-color);
+    font-size: 18px;
+    caret-color: var(--header-bg-color);
+    font-family: Lato;
+    font-weight: 300;
+
+}
+
+/* === responsiveness === */
+@media (max-width:600px) {
+
+    .menu-container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    h1{
+        font-size: 22px;
+    }
+
+    .nav-lists {
+        flex-direction: column;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+}
+```
 
 layout.html
 
@@ -364,8 +561,7 @@ layout.html
   </body>
 </html>
 ```
-
-Now, lets remove all the repeated code in the other template files and import the layout.html. The href is using _url_for_ function with the name of the route function to connect each navigation route.
+现在，让我们删除其他模板文件中重复的代码，并导入layout.html。href 使用 _url_for_ 函数和路由函数的名称来连接每个导航路由。
 
 home.html
 
@@ -409,7 +605,7 @@ post.html
 {% extends 'layout.html' %} {% block content %}
 <div class="container">
   <h1>Text Analyzer</h1>
-  <form action="https://thirtydaysofpython-v1.herokuapp.com/post" method="POST">
+  <form action="http://localhost:5000/post" method="POST">
     <div>
       <textarea rows="25" name="content" autofocus></textarea>
     </div>
@@ -418,141 +614,77 @@ post.html
     </div>
   </form>
 </div>
-
 {% endblock %}
 ```
+按惯例重启服务，访问下home页面查看实现
+![layout](../images/day2604_layout.png)
 
-Request methods, there are different request methods(GET, POST, PUT, DELETE) are the common request methods which allow us to do CRUD(Create, Read, Update, Delete) operation.
+接下来在学习一点HTTP的内容。对于请求方法有很多，其中GET, POST, PUT, DELETE是常见的请求方法，允许我们做CRUD(创建，读取，更新，删除)操作。
 
-In the post, route we will use GET and POST method alternative depending on the type of request, check how it looks in the code below. The request method is a function to handle request methods and also to access form data.
+在路由post中，我们可以添加指定请求方式，比如 GET和POST均支持。编写如下代码运行并测试，检查请求方法是如何接收数据的。
+
 app.py
 
 ```py
-# let's import the flask
+# 导入框架模块 flask
 from flask import Flask, render_template, request, redirect, url_for
-import os # importing operating system module
+import os
 
 app = Flask(__name__)
-# to stop caching static file
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # 停止缓存静态文件
 
-
-
-@app.route('/') # this decorator create the home route
+@app.route('/') # 通过这个装饰器创建主(跟)路由
 def home ():
     techs = ['HTML', 'CSS', 'Flask', 'Python']
-    name = '30 Days Of Python Programming'
+    name = '挑战30天学完Python'
     return render_template('home.html', techs=techs, name = name, title = 'Home')
 
 @app.route('/about')
 def about():
-    name = '30 Days Of Python Programming'
+    name = '挑战30天学完Python'
     return render_template('about.html', name = name, title = 'About Us')
-
-@app.route('/result')
-def result():
-    return render_template('result.html')
 
 @app.route('/post', methods= ['GET','POST'])
 def post():
-    name = 'Text Analyzer'
-    if request.method == 'GET':
+    name = '文本分析'
+    if request.method == 'GET': # 请求方法为GET的处理逻辑
          return render_template('post.html', name = name, title = name)
-    if request.method =='POST':
+    if request.method =='POST': # 请求方法为POST时候获取请求数据并指向结果页面
         content = request.form['content']
         print(content)
-        return redirect(url_for('result'))
+        return render_template('result.html', result = content)
 
 if __name__ == '__main__':
-    # for deployment
-    # to make it work for both production and development
+    # 部署运行
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-So far, we have seen how to use template and how to inject data to template, how to a common layout.
-Now, lets handle static file. Create a folder called static in the project director and create a folder called css. Inside css folder create main.css. Your main. css file will be linked to the layout.html.
+result.html
 
-You don't have to write the css file, copy and use it. Let's move on to deployment.
-
-### Deployment
-
-#### Creating Heroku account
-
-Heroku provides a free deployment service for both front end and fullstack applications. Create an account on [heroku](https://www.heroku.com/) and install the heroku [CLI](https://devcenter.heroku.com/articles/heroku-cli) for you machine.
-After installing heroku write the following command
-
-#### Login to Heroku
-
-```sh
-asabeneh@Asabeneh:~$ heroku login
-heroku: Press any key to open up the browser to login or q to exit:
+```html
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+    <h1>Text Analysis Result </h1>
+    <p> {{result}} </p>
+</div>
+{% endblock %}
 ```
 
-Let's see the result by clicking any key from the keyboard. When you press any key from you keyboard it will open the heroku login page and click the login page. Then you will local machine will be connected to the remote heroku server. If you are connected to remote server, you will see this.
+到目前为止，我们已经了解了如何使用模板以及如何向模板中注入数据，如何使用共用布局。
+
+### 部署
+
+一旦你的Web程序编写完成，并且在本地通过了测试，你可以选择一个云服务或者单机上进行发布，发布的方式也有很多中，这里就不展开讲解了。在本篇中你只需要在本地通过命令或者IDE启动app.py文件即可。
 
 ```sh
-asabeneh@Asabeneh:~$ heroku login
-heroku: Press any key to open up the browser to login or q to exit:
-Opening browser to https://cli-auth.heroku.com/auth/browser/be12987c-583a-4458-a2c2-ba2ce7f41610
-Logging in... done
-Logged in as asabeneh@gmail.com
-asabeneh@Asabeneh:~$
+python app.py
 ```
-
-#### Create requirements and Procfile
-
-Before we push our code to remote server, we need requirements
-
-- requirements.txt
-- Procfile
-
-```sh
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
-Click==7.0
-Flask==1.1.1
-itsdangerous==1.1.0
-Jinja2==2.10.3
-MarkupSafe==1.1.1
-Werkzeug==0.16.0
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ touch requirements.txt
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze > requirements.txt
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ cat requirements.txt
-Click==7.0
-Flask==1.1.1
-itsdangerous==1.1.0
-Jinja2==2.10.3
-MarkupSafe==1.1.1
-Werkzeug==0.16.0
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ touch Procfile
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ ls
-Procfile          env/              static/
-app.py            requirements.txt  templates/
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$
-```
-
-The Procfile will have the command which run the application in the web server in our case on Heroku.
-
-```sh
-web: python app.py
-```
-
-#### Pushing project to heroku
-
-Now, it is ready to be deployed. Steps to deploy the application on heroku
-
-1. git init
-2. git add .
-3. git commit -m "commit message"
-4. heroku create 'name of the app as one word'
-5. git push heroku master
-6. heroku open(to launch the deployed application)
-
-After this step you will get an application like [this](http://thirdaysofpython-practice.herokuapp.com/)
 
 ## 第26天练习
 
-1. You will build [this application](https://thirtydaysofpython-v1-final.herokuapp.com/). Only the text analyser part is left
+1. 参照本片入门内容写一个有几个简单页面的WEB程序，如果有可能尝试通过自学找个云服务完成你的部署发布。
 
 
 🎉 CONGRATULATIONS ! 🎉

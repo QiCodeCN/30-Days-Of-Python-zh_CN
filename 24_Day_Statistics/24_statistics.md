@@ -15,8 +15,8 @@
 ## 统计Statistics
 
 统计学是研究数据的收集、组织、显示、分析、解释和表示的学科。
-统计学是数学的一个分支，被认为是数据和机器学习的先决条件。它是一个非常广泛的领域，但在我们的本篇的学习中值关心最相关的部分。
-在完成本挑战后，你可以进行web开发、数据分析、机器学习和数据科学任何你感兴趣的方面深入学习。接下来让我们看看如果你需要处理一些数据，我们要怎么做把。  
+统计学是数学的一个分支，被认为是数据和机器学习的先决条件。它是一个非常广泛的领域，但在本篇的学习中只关心最相关的部分。
+在完成本挑战后，你可以进行web开发、数据分析、机器学习和数据科学任何你感兴趣的方面深入学习。接下来让我们看看如果你需要处理一些数据，我们要怎么做吧。  
 
 ## 数据
 
@@ -42,7 +42,7 @@ pip install notebook
 jupyter-notebook
 # 如果提示不是内部命令需要将pyhon安装目录下\Scripts配置到系统环境变量
 ```
-![jupyter-notebook](../images/day3001_jupyter.png)
+![jupyter-notebook](../images/day2401_jupyter.png)
 
 安装numpy
 ```sh
@@ -165,7 +165,7 @@ print('numpy_array_from_tuple: ', numpy_array_from_tuple) # numpy_array_from_tup
 
 ### numpy shape 
 
-在numpy有换个 _shape_ 方法，它可以返回一个元组，表示数组（矩阵）的维度。第一个数表示行，第二个数表示列。如果数组是一维度额，则返回数字的大小。
+在numpy有换个 _shape_ 方法，它可以返回一个元组，表示数组（矩阵）的维度。第一个数表示行，第二个数表示列。如果数组是一维的，则返回数字的大小。
 
 ```py
 import numpy as np
@@ -735,15 +735,15 @@ plt.hist(normal_array, color="grey", bins=50)
 ```
 在jupyter上会生成一个图表
 
-![seaborn](../images/day3002_seaborn.png)
+![seaborn](../images/day2402_seaborn.png)
 
 ### numpy格式矩阵
 python matrix 一个矩阵处理包
-![matrix](../images/day3003_matrix.png)
+![matrix](../images/day2403_matrix.png)
 
 ### numpy.arange()
 
-有时，您希望创建在定义的间隔均匀值。例如，您希望创建从1到10内固定间隔值
+有时，希望创建时定义间隔均匀值。例如，您希望创建从1到10内固定间隔值
 
 ```py
 # 普通的range方式range(starting, stop, step)

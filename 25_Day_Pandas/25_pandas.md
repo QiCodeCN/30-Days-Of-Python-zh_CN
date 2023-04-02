@@ -15,7 +15,7 @@
 
 Pandas是Python程序语言中一种开源、高性能、易于使用的数据结构和数据分析工具。
 Pandas添加了数据结构和工具，用于处理类似表格的数据，即 *Series* 和 *Data Frames*。
-它主要提供了数据操作工具有：
+它主要提供的数据操作工具有：
 - reshaping
 - merging
 - sorting
@@ -280,7 +280,7 @@ print(df.tail())
 9999  Female  61.944246  113.649103
 ```
 
-正如您所看到的csv文件有3列：性别、身高和体重。并且1000行，如果 *DataFrame* 有很多行列，我们就需要一种方法来知晓行列数据，对此我们使用 *shape* 方法。
+正如您所看到的csv文件有3列：性别、身高和体重。且有1000行，如果 *DataFrame* 有很多行列，我们就需要一种方法来知晓行列数据，对此我们使用 *shape* 方法。
 
 ```python
 df = pd.read_csv('./data/weight-height.csv')
@@ -368,7 +368,7 @@ max       78.998742    269.989699
 
 ### 创建
 
-像往常一样，首先我们要导入依赖包。现在，让我们导入pandas和numpy，通常它俩是和好的组合。
+像往常一样，首先我们要导入依赖包。现在，让我们导入pandas和numpy，通常它俩是很好的组合。
 
 ```python
 import pandas as pd
@@ -392,7 +392,7 @@ print(df)
 
 ### 添加列
 
-让我们像其上边的姓名国家和城市的DataFrame添加一列体重信息
+让我们向其上边的姓名国家和城市的DataFrame添加一列体重信息
 
 ```python
 weights = [74, 78, 69]
