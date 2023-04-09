@@ -30,10 +30,10 @@
 | 24  |                   [Statistics](./24_Day_Statistics/24_statistics.md)                   |
 | 25  |                         [Pandas](./25_Day_Pandas/25_pandas.md)                         |
 | 26  |                   [Python web](./26_Day_Python_web/26_python_web.md)                   |
-| 27  |     [Python with MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)      |
-| 28  |                             [API](./28_Day_API/28_API.md)                              |
-| 29  |                [Building API](./29_Day_Building_API/29_building_API.md)                |
-| 30  |                 [Conclusions](./30_Day_Conclusions/30_conclusions.md)                  |
+| 27  |     [Python MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)      |
+| 28  |                             [Python Mysql](./28_Day_API/28_python_with_mysql.md)                              |
+| 29  |                [Python API](./29_Day_Building_API/29_API.md)                |
+| 30  |                 [总结](./30_Day_Conclusions/30_conclusions.md)                  |
 
 🧡🧡🧡 祝君编码学习愉快 🧡🧡🧡
 

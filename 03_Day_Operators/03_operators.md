@@ -1,110 +1,129 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 3 - Operators</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
-</div>
-
 [<< Day 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-
 - [📘 Day 3](#-day-3)
-  - [Boolean](#boolean)
-  - [Operators](#operators)
-    - [Assignment Operators](#assignment-operators)
-    - [Arithmetic Operators:](#arithmetic-operators)
-    - [Comparison Operators](#comparison-operators)
-    - [Logical Operators](#logical-operators)
-  - [💻 Exercises - Day 3](#-exercises---day-3)
+  - [布尔值](#布尔值)
+  - [运算符](#运算符)
+    - [赋值运算](#赋值运算)
+    - [算数运算](#算数运算)
+    - [比较运算](#比较运算)
+    - [逻辑运算](#逻辑运算)
+  - [💻 第3天练习](#-第3天练习)
 
 # 📘 Day 3
 
-## Boolean
+## 布尔值
 
-A boolean data type represents one of the two values: _True_ or _False_. The use of these data types will be clear once we start using the comparison operator. The first letter **T** for True and **F** for False should be capital unlike JavaScript.
-**Example: Boolean Values**
-
+布尔数据类型表示以下两个值之一：`True`或`False`。
+请注意，与 JavaScript 不同Python中的布尔值首字要 **大写**。 
 ```py
+# 示例：布尔值
 print(True)
 print(False)
 ```
 
-## Operators
-
-Python language supports several types of operators. In this section, we will focus on few of them.
-
-### Assignment Operators
-
-Assignment operators are used to assign values to variables. Let us take = as an example. Equal sign in mathematics shows that two values are equal, however in Python it means we are storing a value in a certain variable and we call it assignment or a assigning value to a variable. The table below shows the different types of python assignment operators, taken from [w3school](https://www.w3schools.com/python/python_operators.asp).
-
-![Assignment Operators](../images/assignment_operators.png)
-
-### Arithmetic Operators:
-
-- Addition(+): a + b
-- Subtraction(-): a - b
-- Multiplication(*): a * b
-- Division(/): a / b
-- Modulus(%): a % b
-- Floor division(//): a // b
-- Exponentiation(**): a ** b
-
-![Arithmetic Operators](../images/arithmetic_operators.png)
-
-**Example:Integers**
+在比较两个值时，将对表达式求值，Python 返回布尔值答案，比较运算符下面就会讲到。
 
 ```py
-# Arithmetic Operations in Python
-# Integers
-
-print('Addition: ', 1 + 2)        # 3
-print('Subtraction: ', 2 - 1)     # 1
-print('Multiplication: ', 2 * 3)  # 6
-print ('Division: ', 4 / 2)       # 2.0  Division in Python gives floating number
-print('Division: ', 6 / 2)        # 3.0         
-print('Division: ', 7 / 2)        # 3.5
-print('Division without the remainder: ', 7 // 2)   # 3,  gives without the floating number or without the remaining
-print ('Division without the remainder: ',7 // 3)   # 2
-print('Modulus: ', 3 % 2)         # 1, Gives the remainder
-print('Exponentiation: ', 2 ** 3) # 9 it means 2 * 2 * 2
+print(10 > 9)  # True
+print(10 == 9) # False
+print(10 < 9)  # False
 ```
 
-**Example:Floats**
+值得一提的是大多数值都为 `True`
+- 如果有某种内容（如Object、Class），则几乎所有值都将评估为 True。
+- 除空字符串外，任何字符串均为 True。
+- 除 0 外，任何数字均为 True。
+- 除空列表外，任何列表、元组、集合和字典均为 True。
+
+以下实例都将返回 True
 
 ```py
-# Floating numbers
-print('Floating Point Number, PI', 3.14)
-print('Floating Point Number, gravity', 9.81)
+bool("Hello")
+bool(123456)
+bool(["apple", "cherry", "banana"])
 ```
 
-**Example:Complex numbers**
+以下实例都将返回 False
 
 ```py
-# Complex numbers
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+bool({})
+```
+## 运算符
+
+运算符用于对变量和值的执行操作。Python 语言支持多种类型的运算符，在本节将重点介绍其中的几个。
+
+### 赋值运算
+
+赋值运算符用于为变量赋值。我们以=为例。数学中的它表示两个值相等，但在 Python 则意味着将一个值存储在某个变量中，我们称之为赋值或给变量赋值。下表显示了不同类型的 python 赋值运算符，取自w3school。
+📖[https://www.w3schools.cn/python/python_operators.asp](https://www.w3schools.cn/python/python_operators.asp)
+
+
+![Assignment Operators](../images/day301_assignment_operators.png)
+
+### 算数运算
+
+- 加法（+）：a + b
+- 减法（-）：a - b
+- 乘法（*）：a * b
+- 除法（/）：a / b
+- 求余（%）：a % b
+- 求商（//）： a // b
+- 求幂（**）：a ** b
+
+![Arithmetic Operators](../images/day302_arithmetic_operators.png)
+
+**示例：整数**
+
+```py
+# Python中的算数运算
+# 整数
+
+print('加法Addition: ', 1 + 2)          # 3
+print('减法Subtraction: ', 2 - 1)       # 1
+print('求幂miMultiplication: ', 2 * 3)  # 6
+
+# 在Python中除法得到结果是浮点类型
+print('除法Division: ', 4 / 2)       # 2.0  
+print('除法Division: ', 7 / 2)        # 3.5
+print('求商: ', 7 // 2)               # 3
+print('Division without the remainder: ',7 // 3)   # 2
+print('求余Modulus: ', 3 % 2)         # 1
+print('幂: ', 2 ** 3) # 8， 可理解为 2 * 2 * 2
+```
+
+**示例：浮点**
+
+```py
+# 浮点数
+print('PI', 3.14)
+print('gravity', 9.81)
+```
+
+**示例：复数**
+
+```py
+# 复数
 print('Complex number: ', 1 + 1j)
 print('Multiplying complex numbers: ',(1 + 1j) * (1 - 1j))
 ```
 
-Let's declare a variable and assign a number data type. I am going to use single character variable but remember do not develop a habit of declaring such types of variables. Variable names should be all the time mnemonic.
+继续让我们声明一个变量并分配一个数字数据类型。笔者将使用单个字符变量，**但请记住不要养成声明此类变量的习惯。变量名应该始终便于记忆。**
 
-**Example:**
+代码例子1:
 
 ```python
-# Declaring the variable at the top first
+# 首先在顶部声明变量
 
-a = 3 # a is a variable name and 3 is an integer data type
-b = 2 # b is a variable name and 3 is an integer data type
+a = 3 # a是变量名，3是整数
+b = 2 # b是变量名，2是整数
 
-# Arithmetic operations and assigning the result to a variable
+# 进行运算并将结果赋值给新的变量
 total = a + b
 diff = a - b
 product = a * b
@@ -113,34 +132,33 @@ remainder = a % b
 floor_division = a // b
 exponential = a ** b
 
-# I should have used sum instead of total but sum is a built-in function - try to avoid overriding built-in functions
-print(total) # if you do not label your print with some string, you never know where the result is coming from
+# 总数表示本应该用sum，但是它是pyhon的关键词，为了避免重复用了total代替
 print('a + b = ', total)
 print('a - b = ', diff)
 print('a * b = ', product)
 print('a / b = ', division)
 print('a % b = ', remainder)
 print('a // b = ', floor_division)
-print('a ** b = ', exponentiation)
+print('a ** b = ', exponential)
 ```
 
-**Example:**
+代码例子2:
 
 ```py
 print('== Addition, Subtraction, Multiplication, Division, Modulus ==')
 
-# Declaring values and organizing them together
+# 声明变量值，并将他们进行组合运算
 num_one = 3
 num_two = 4
 
-# Arithmetic operations
+# 算术运算
 total = num_one + num_two
 diff = num_two - num_one
 product = num_one * num_two
 div = num_two / num_one
 remainder = num_two % num_one
 
-# Printing values with label
+# 打印计算后并赋值给新变量的值
 print('total: ', total)
 print('difference: ', diff)
 print('product: ', product)
@@ -148,50 +166,50 @@ print('division: ', div)
 print('remainder: ', remainder)
 ```
 
-Let us start start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
+接着让我们利用学到的知识点，计算面积、体积、密度、重量、周长、距离、力等。
 
-**Example:**
+代码例子3:
 
 ```py
-# Calculating area of a circle
-radius = 10                                 # radius of a circle
-area_of_circle = 3.14 * radius ** 2         # two * sign means exponent or power
+# 计算圆的面积
+radius = 10                                 # 圆的半径
+area_of_circle = 3.14 * radius ** 2         # 两个星(**)表示指数
 print('Area of a circle:', area_of_circle)
 
-# Calculating area of a rectangle
+# 计算矩形的面积
 length = 10
 width = 20
 area_of_rectangle = length * width
 print('Area of rectangle:', area_of_rectangle)
 
-# Calculating a weight of an object
+# 计算物体的重量
 mass = 75
 gravity = 9.81
 weight = mass * gravity
-print(weight, 'N')                         # Adding unit to the weight
+print(weight, 'N')
 
-# Calculate the density of a liquid
-mass = 75 # in Kg
-volume = 0.075 # in cubic meter
+# 计算液体的密度
+mass = 75 # KG
+volume = 0.075 # 立方米
 density = mass / volume # 1000 Kg/m^3
-
 ```
 
-### Comparison Operators
+### 比较运算
 
-In programming we compare values, we use comparison operators to compare two values. We check if a value is greater or less or equal to other value. The following table shows Python comparison operators which was taken from [w3shool](https://www.w3schools.com/python/python_operators.asp).
+在编程中我们比较值时，使用比较运算符进行比较。即检查一个值是否大于或小于或等于其他值。
 
-![Comparison Operators](../images/comparison_operators.png)
-**Example: Comparison Operators**
+![Comparison Operators](../images/day304_comparison_operators.png)
+
+示例：比较运算符
 
 ```py
-print(3 > 2)     # True, because 3 is greater than 2
-print(3 >= 2)    # True, because 3 is greater than 2
-print(3 < 2)     # False,  because 3 is greater than 2
-print(2 < 3)     # True, because 2 is less than 3
-print(2 <= 3)    # True, because 2 is less than 3
-print(3 == 2)    # False, because 3 is not equal to 2
-print(3 != 2)    # True, because 3 is not equal to 2
+print(3 > 2)     # True, 因为 3 大于 2
+print(3 >= 2)    # True, 因为 3 大于 2
+print(3 < 2)     # False,  因为 3 大于 2
+print(2 < 3)     # True, 因为 2 小于 3
+print(2 <= 3)    # True, 因为 2 小于 3
+print(3 == 2)    # False, 因为 3 不等于 2
+print(3 != 2)    # True, 因为 3 确实不等于 2
 print(len('mango') == len('avocado'))  # False
 print(len('mango') != len('avocado'))  # True
 print(len('mango') < len('avocado'))   # True
@@ -201,108 +219,103 @@ print(len('tomato') == len('potato'))  # True
 print(len('python') > len('dragon'))   # False
 
 
-# Comparing something gives either a True or False
-
-print('True == True: ', True == True)
-print('True == False: ', True == False)
-print('False == False:', False == False)
+# 比较两个对象并给出值
+print('True == True: ', True == True)    # True
+print('True == False: ', True == False)  # False
+print('False == False:', False == False) # True
 ```
 
-In addition to the above comparison operator Python uses:
-
-- _is_: Returns true if both variables are the same object(x is y)
-- _is not_: Returns true if both variables are not the same object(x is not y)
-- _in_: Returns True if the queried list contains a certain item(x in y)
-- _not in_: Returns True if the queried list doesn't have a certain item(x in y)
+除了上面的比较操作符，在Python还使用这些:
+- is：如果两个变量是同一个对象，则返回 true（x 是 y）
+- is not：如果两个变量不是同一个对象（x 不是 y），则返回 true
+- in：如果查询的列表包含某个项（x in y），则返回 True
+- not in：如果查询的列表没有某个项（x in y），则返回 True
 
 ```py
-print('1 is 1', 1 is 1)                   # True - because the data values are the same
-print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
-print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
-print('coding' in 'coding for all') # True - because coding for all has the word coding
+print('1 is 1', 1 is 1)                   # True 
+# 第一条 如果python shell 中运行此条会有个警告 （下面数值比较也类似）
+# <stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+# 忽略即可，也就是值比较的时候建议用==
+
+print('1 is not 2', 1 is not 2)           # True
+print('M in MegaQi', 'M' in 'MegaQi') # True
+print('B in MegaQi', 'B' in 'MegaQi') # False 
+print('coding' in 'coding for all') # True
 print('a in an:', 'a' in 'an')      # True
 print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
 ```
 
-### Logical Operators
+### 逻辑运算
 
-Unlike other programming languages python uses keywords _and_, _or_ and _not_ for logical operators. Logical operators are used to combine conditional statements:
-
-![Logical Operators](../images/logical_operators.png)
+与其他编程语言不同，python 使用关键字and , or 和 not作为逻辑运算符。逻辑运算符用于组合条件语句：
+![Logical Operators](../images/day305_logical_operators.png)
 
 ```py
 print(3 > 2 and 4 > 3) # True - because both statements are true
-print(3 > 2 and 4 < 3) # False - because the second statement is false
-print(3 < 2 and 4 < 3) # False - because both statements are false
+print(3 > 2 and 4 > 3) # True - 因为两个比较结果都是True
+print(3 > 2 and 4 < 3) # False - 因为第二比较为False
+print(3 < 2 and 4 < 3) # False - 因为两个比较都为False
 print('True and True: ', True and True)
-print(3 > 2 or 4 > 3)  # True - because both statements are true
-print(3 > 2 or 4 < 3)  # True - because one of the statements is true
-print(3 < 2 or 4 < 3)  # False - because both statements are false
+print(3 > 2 or 4 > 3)  # True - 因为两个比较结果都是True
+print(3 > 2 or 4 < 3)  # True - 因为第一个表述为真
+print(3 < 2 or 4 < 3)  # False - 因为两个比较表述都为假
 print('True or False:', True or False)
-print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
-print(not True)      # False - Negation, the not operator turns true to false
+print(not 3 > 2)     # False - 因为 3 > 2 是 true, 然后 True 反向为 False
+print(not True)      # False - 反转操作  不为 true 则 false
 print(not False)     # True
 print(not not True)  # True
 print(not not False) # False
-
 ```
 
-🌕 You have boundless energy. You have just completed day 3 challenges and you are three steps ahead on your way to greatness. Now do some exercises for your brain and your muscles.
+🌕 你有无限的能量。你刚刚完成了第3天的挑战。按照惯例现在做一些练习来巩固下所学内容吧。
 
-## 💻 Exercises - Day 3
+## 💻 第3天练习
 
-1. Declare your age as integer variable
-2. Declare your height as a float variable
-3. Declare a variable that store a complex number
-4. Write a script that prompts the user to enter base and height of the triangle and calculate an area of this triangle (area = 0.5 x b x h).
+1. 将你的年龄声明为整数变量
+2. 将你的身高声明为浮点变量
+3. 声明一个存储复数的变量
+4. 编写一个脚本，提示用户输入三角形的底和高，并计算这个三角形的面积（面积 = 0.5 x 底 x 高）
 
 ```py
-    Enter base: 20
-    Enter height: 10
-    The area of the triangle is 100
+输入三角形底长 base: 20
+输入三角形垂直高 height: 10
+计算三角形面积是 100
 ```
 
-5. Write a script that prompts the user to enter side a, side b, and side c of the triangle. Calculate the perimeter of the triangle (perimeter = a + b + c).
+5. 编写一个脚本，提示用户输入三角形的 a 边、b 边和 c 边。计算三角形的周长（周长 = a + b + c）
 
 ```py
-Enter side a: 5
-Enter side b: 4
-Enter side c: 3
-The perimeter of the triangle is 12
+输入边 a: 5
+输入边 b: 4
+输入边 c: 3
+三角形周长计算得 12
 ```
 
-6. Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
-7. Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
-8. Calculate the slope, x-intercept and y-intercept of y = 2x -2
-9. Slope is (m = y2-y1/x2-x1). Find the slope and [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between point (2, 2) and point (6,10) 
-10. Compare the slopes in tasks 8 and 9.
-11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0.
-12. Find the length of 'python' and 'dragon' and make a falsy comparison statement.
-13. Use _and_ operator to check if 'on' is found in both 'python' and 'dragon'
-14. _I hope this course is not full of jargon_. Use _in_ operator to check if _jargon_ is in the sentence.
-15. There is no 'on' in both dragon and python
-16. Find the length of the text _python_ and convert the value to float and convert it to string
-17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
-19. Check if type of '10' is equal to type of 10
-20. Check if int('9.8') is equal to 10
-21. Writ a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+6. 使用提示获取矩形的长度和宽度。计算它的面积（面积 = 长 x 宽）和周长（周长 = 2 x（长 + 宽））
+7. 使用提示获取圆的半径。计算面积（面积 = pi * r * r）和周长（c = 2 * pi * r），其中 pi = 3.14
+8. 计算y = 2x -2 的斜率，以及x截距和y截距
+9. 斜率 k =(y2-y1)/(x2-x1) 求点(2,2)和点(6,10)之间的斜率K和欧氏距离（二维空间两点距离）
+10. 比较练习题 8 和 9 的所得得斜率
+11. 对于公式y = x^2 + 6x + 9 尝试x带入几个不同的值计算出y值，并找出x等于多少的时候y=0
+12. 对字符串 "python" 和 "dragon" 计算出长度，并做一种运算使得结果等于False
+13. 使用 and符号检查 "on" 是否同时存在"python"和"dragon"
+14. 使用 in 符号检查字符串 jargon 是否存在 I hope this course is not full of jargon 这句话中
+15. 实现运算符表达：字符串 "on" 都不存在 dragon 和 python
+16. 计算字符串"python"的长度，并将其转成 float ，然后再转成字符串类型
+17. 一个偶数是能被2整数余数为0，所以在python中如何判断一个是偶数还是奇数呢？
+18. 检查以下 7 除以 2 转成 int 类型的值与 2.7 转成 int 的值是否相等
+19. 检查 "10" 的类型 和 10 的类型是否相同(提示使用type)
+20. 检查 int(9.8) 是否与等于 10
+21. 写一个脚本，让用户输入工作时长（小时）和每小时的费用，计算应得的工资
 
 ```py
-Enter hours: 40
-Enter rate per hour: 28
-Your weekly earning is 1120
+请输入时长(小时): 40
+请输入时薪水: 28
+您应得的费用为：1120
 ```
 
-22. Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
-
-```py
-Enter number of years you have lived: 100
-You have lived for 3153600000 seconds.
-```
-
-23. Write a Python script that displays the following table
+22. 写一个脚本，从用户输入得到N年，然后计算出总共有多少秒
+23. 写一个Python脚本完成下边的表格打印
 
 ```py
 1 1 1 1 1

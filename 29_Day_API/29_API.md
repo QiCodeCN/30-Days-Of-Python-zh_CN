@@ -11,7 +11,7 @@
     - [请求方法](#请求方法)
   - [构建API](#构建API)
     - [使用GET检索数据](#使用GET检索数据)
-    - [通过id获取学生详细](# 通过id获取学生详细)
+    - [通过id获取学生详细](#通过id获取学生详细)
     - [使用POST创建数据](#使用POST创建数据)
     - [使用PUT更新数据](#使用PUT更新数据)
     - [使用DELETE删除数据](#使用DELETE删除数据)  
@@ -192,7 +192,7 @@ if __name__ == '__main__':
 
 ![Get on browser](../images/day2904_get_on_browser.png)
 
-你也可通通过pastman工具进行请求 http://localhost:5000/api/v1.0/students 它将得到同样的返回结果：
+你也可通过pastman工具进行请求 http://localhost:5000/api/v1.0/students 它将得到同样的返回结果：
 
 ![Get on postman](../images/day2905_get_on_postman.png)
 

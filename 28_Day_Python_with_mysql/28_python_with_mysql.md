@@ -79,10 +79,10 @@ DESCRIBE students;
 5 rows in set (0.00 sec)
 ```
 
-以上就是在Windows系统上下载和配置MySQL的步骤。数据库环境准备好了，接下来就让我们看看 Python 对 Mysql 是如何操作的把。
+以上就是在Windows系统上下载和配置MySQL的步骤。数据库环境准备好了，接下来就让我们看看 Python 对 Mysql 是如何操作的吧。
 
 ### 连接MySQL
-在Python中有几个库可以帮助我们快速操作mysql数据库。例如 mysql-connector、MySQLdb和pymysql。本篇内容将使用 mysql-connector 做为重点使用讲解。
+在Python中有几个库可以帮助我们快速操作mysql数据库。例如 mysql-connector、MySQLdb和pymysql。本篇内容将使用 mysql-connector 作为重点使用讲解。
 
 首先，需要使用Python的MySQL Connector模块来连接到MySQL数据库。可以通过以下命令来安装该模块：
 ```sh
@@ -166,7 +166,7 @@ mysql> show tables;
 1 row in set (0.00 sec)
 ```
 
-从表列表中可以看到，students学生表已经被成功的创建。
+从表列表中可以看到，students学生表已经被成功地创建。
 
 ### 插入数据
 有了表之后，我们就可以向其插入一条或者多条数据。这里演示插入一条记录的代码：
@@ -184,7 +184,7 @@ print(mycursor.rowcount, "record inserted.")
 
 在上边的代码中我们分别创建一个sql字符语句和元组值变量，在传入execute后执行了sql insert语句。这里特别注意的是要多一步 commit()，否则增操作不会生效。
 
-同样，我们同通过SQL命令行终端，查看下一条学生数据是否被正确插入。
+同样，我们通过SQL命令行终端，查看下一条学生数据是否被正确插入。
 
 ```sh
 mysql> SELECT * FROM students;
