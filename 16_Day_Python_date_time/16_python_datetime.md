@@ -12,6 +12,8 @@
   - [💻 第16天练习](#-第16天练习)
 # 📘 Day 16
 
+> 🎉 本系列为Python基础学习，原稿来源于 [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) 英文项目，大奇主要是对其本地化翻译、逐条验证和补充，想通过30天完成正儿八经的系统化实践。此系列适合零基础同学，或仅了解Python一点知识，但又没有系统学习的使用者。总之如果你想提升自己的Python技能，欢迎加入《挑战30天学完Python》
+
 ## Python *datetime*
 
 Python内置有 _datetime_ 模块，可以用来处理日期和时间。在编程的世界里少不了与时间打交道，因此让我们来专门学习一下 _datetime_ 的使用。

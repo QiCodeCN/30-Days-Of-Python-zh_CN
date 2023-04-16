@@ -1,7 +1,6 @@
 
 [<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 13](#-day-13)
   - [列表推导式](#列表推导式)
@@ -11,6 +10,8 @@
   - [💻 第13天练习](#-第13天练习)
 
 # 📘 Day 13
+
+> 🎉 本系列为Python基础学习，原稿来源于 [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) 英文项目，大奇主要是对其本地化翻译、逐条验证和补充，想通过30天完成正儿八经的系统化实践。此系列适合零基础同学，或仅了解Python一点知识，但又没有系统学习的使用者。总之如果你想提升自己的Python技能，欢迎加入《挑战30天学完Python》
 
 ## 列表推导式
 

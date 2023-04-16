@@ -1,22 +1,5 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 7 - Sets</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
-
-</div>
 
 [<< Day 6](../06_Day_Tuples/06_tuples.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
-
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 7](#-day-7)
   - [Sets](#sets)
@@ -42,246 +25,212 @@
 
 # 📘 Day 7
 
-## Sets
+> 🎉 本系列为Python基础学习，原稿来源于 [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) 英文项目，大奇主要是对其本地化翻译、逐条验证和补充，想通过30天完成正儿八经的系统化实践。此系列适合零基础同学，或仅了解Python一点知识，但又没有系统学习的使用者。总之如果你想提升自己的Python技能，欢迎加入《挑战30天学完Python》
 
-Set is a collection of items. Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of a set can be applied also in Python. Set is a collection of unordered and un-indexed distinct elements. In Python set is used to store unique items, and it is possible to find the _union_, _intersection_, _difference_, _symmetric difference_, _subset_, _super set_ and _disjoint set_ among sets.
+## 集合Set
 
-### Creating a Set
+Set是项的合集。让我带你回到小学或者高中的数学课，集合的数学定义可以应用在python上。Set是无序且没有索引的集合。在Python中，集合用于存储唯一项，可以在集合之间查找并集、交集、差集、对称差集、子集、超集和不相交集。
 
-We use curly brackets, {} to create a set or the *set()* built-in function.
+> 百度百科概念：集合是指具有某种特定性质的具体的或抽象的对象汇总而成的集体。其中，构成集合的这些对象则称为该集合的元素。详细请搜索词条。
 
-- Creating an empty set
+### 创建set
+
+我们使用花括号 `{ }` 来创建一个set或 `set()` 内置函数。
+
+- 创建一个空的 set
 
 ```py
-# syntax
+# 语法1: 直接等于号
 st = {}
-# or
+# 或 初始化内置set函数
 st = set()
 ```
 
-- Creating a set with initial items
+- 创建一个带初始值的 set
 
 ```py
-# syntax
-st = {'item1', 'item2', 'item3', 'item4'}
+# 方法1：花括号内直接给项值
+st = {'item1', 'item2', 'item3'}
+# 例子1:
+fruits = {'banana', 'orange', 'mango'}
+
+# 方法2: set方法给定一个list作为初始值
+st = set(['item1','item2'])
+# 例子2:
+fruits = set('banana','orange')
 ```
 
-**Example:**
+### 获取长度
+
+我们使用 `len()` 方法来获取 Set 的长度。
 
 ```py
-# syntax
-fruits = {'banana', 'orange', 'mango', 'lemon'}
-```
-
-### Getting Set's Length
-
-We use **len()** method to find the length of a set.
-
-```py
-# syntax
-st = {'item1', 'item2', 'item3', 'item4'}
+# 语法使用
+st = {'item1', 'item2', 'item3'}
 len(set)
-```
 
-**Example:**
-
-```py
+# 实际列子
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 len(fruits)
 ```
 
-### Accessing Items in a Set
+### 访问和检索
 
-We use loops to access items. We will see this in loop section
-
-### Checking an Item
-
-To check if an item exist in a list we use _in_ membership operator.
+我们使用循环来访问项。具体将在循环部分看到如何使用。
+而对于检查一项是否在set中我们使用操作符 `in`
 
 ```py
 # syntax
 st = {'item1', 'item2', 'item3', 'item4'}
-print("Does set st contain item3? ", 'item3' in st) # Does set st contain item3? True
-```
+# st中是否包含item3? 结果是 True
+print("Does set st contain item3? ", 'item3' in st) 
 
-**Example:**
-
-```py
+# 具体例子
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 print('mango' in fruits ) # True
 ```
 
-### Adding Items to a Set
+### 项添加
 
-Once a set is created we cannot change any items and we can also add additional items.
+Set一旦被创建，内部的项是不可以改变的。但是我们可以向其添加新项。
 
-- Add one item using _add()_
-
-```py
-# syntax
-st = {'item1', 'item2', 'item3', 'item4'}
-st.add('item5')
-```
-
-**Example:**
+- 添加一个项使用 add()
 
 ```py
-fruits = {'banana', 'orange', 'mango', 'lemon'}
+# 语法演示
+st = {'item1', 'item2', 'item3'}
+st.add('new_item')
+
+# 具体例子
+fruits = {'banana', 'orange', 'mango', 'lemon'} # len() 4
 fruits.add('lime')
+print(fruits) # len() 5
 ```
 
-- Add multiple items using _update()_
-  The *update()* allows to add multiple items to a set. The *update()* takes a list argument.
+- 使用 update() 添加多个项，函数参数是一个list。
 
 ```py
-# syntax
+# 语法：一次添加多个，最终st结果为item1～item7
 st = {'item1', 'item2', 'item3', 'item4'}
 st.update(['item5','item6','item7'])
-```
 
-**Example:**
-
-```py
+# 具体例子
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 vegetables = ('tomato', 'potato', 'cabbage','onion', 'carrot')
 fruits.update(vegetables)
+print(fruits)
+print(len(fruits))
 ```
 
-### Removing Items from a Set
+### 移删清空
 
-We can remove an item from a set using _remove()_ method. If the item is not found _remove()_ method will raise errors, so it is good to check if the item exist in the given set. However, _discard()_ method doesn't raise any errors.
+### remove
+
+我们可以使用 `remove()` 方法将set中某项进行移除。 其中如果移除的项不存在则会抛出一个错误，因此在做此操作前做好检查下项是否存在set中。不过我嗯可以使用 `discard()` 方法来进行同样操作但不会引起错误。
 
 ```py
-# syntax
-st = {'item1', 'item2', 'item3', 'item4'}
+# 语法
+st = {'item1', 'item2', 'item3'}
 st.remove('item2')
+
+# 具体例子
+fruits = {'banana', 'orange', 'mango'}
+fruits.remove('orange') # 剩余 {'banana', 'mango'}
+fruits.remove('lemon')  # 异常 Traceback (most recent call last):File "<stdin>", line 1, in <module> KeyError: 'lemon'
+
+fruits.discard('lemon')  # 不会有任何异常提示
+fruits.discard('banana') # 剩余 {'mango'}
 ```
 
-The pop() methods remove a random item from a list and it returns the removed item.
-
-**Example:**
+还有一种 pop() 方法，它的作用是移除一个随机的项，并且返回移除项。
 
 ```py
+# pop 举例
 fruits = {'banana', 'orange', 'mango', 'lemon'}
-fruits.pop()  # removes a random item from the set
-
-```
-
-If we are interested in the removed item.
-
-```py
-fruits = {'banana', 'orange', 'mango', 'lemon'}
-removed_item = fruits.pop() 
+fruits.pop()
+# 如果我们项得到随机移除项是什么直接赋值
+removed_item = fruits.pop()
+# 查看后两次pop剩余项 和 最后一次移除项值
+print(fruits, removed_item)
 ```
 
 
-### Clearing Items in a Set
+#### clear
 
-If we want to clear or empty the set we use _clear_ method.
+如果想清空或清除set集合，我们使用 `clear()` 方法。
 
 ```py
-# syntax
-st = {'item1', 'item2', 'item3', 'item4'}
+# 语法使用
+st = {'item1', 'item2', 'item3'}
 st.clear()
-```
 
-**Example:**
-
-```py
+# 使用例子
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 fruits.clear()
 print(fruits) # set()
 ```
 
-### Deleting a Set
+### del
 
-If we want to delete the set itself we use _del_ operator.
+如果我们想彻底删除set本身，我们使用 `del` 操作关键词。
 
 ```py
-# syntax
-st = {'item1', 'item2', 'item3', 'item4'}
+# 语法演示
+st = {'item1', 'item2', 'item3'}
 del st
-```
 
-**Example:**
-
-```py
-fruits = {'banana', 'orange', 'mango', 'lemon'}
+# 举例
+fruits = {'banana', 'orange', 'mango'}
 del fruits
+print(fruits) # NameError: name 'fruits' is not defined
 ```
 
-### Converting List to Set
+### list转set
 
-We can convert list to set and set to list. Converting list to set removes duplicates and only unique items will be reserved.
+我们可以在list和set之间相互转换。将list转set的时候会移除重复项，仅有唯一值将被保留。
 
 ```py
-# syntax
+# 语法
 lst = ['item1', 'item2', 'item3', 'item4', 'item1']
-st = set(lst)  # {'item2', 'item4', 'item1', 'item3'} - the order is random, because sets in general are unordered
-```
+# 转后排序将是随机的，因为set是无序集合
+st = set(lst)
 
-**Example:**
-
-```py
+# 具体例子
 fruits = ['banana', 'orange', 'mango', 'lemon','orange', 'banana']
-fruits = set(fruits) # {'mango', 'lemon', 'banana', 'orange'}
+# 注意多试几次转换和打印看看每次转换后的排序输出
+fruits = set(fruits) 
+print(fruits) 
 ```
 
-### Joining Sets
+### 连接set
 
-We can join two sets using the _union()_ or _update()_ method.
+我们如果想将两个set组合在一起，可以使用union() 或 update() 方法。
 
-- Union
-  This method returns a new set
+- union 方法将两个set连接并返回一个新的set
 
 ```py
-# syntax
-st1 = {'item1', 'item2', 'item3', 'item4'}
-st2 = {'item5', 'item6', 'item7', 'item8'}
-st3 = st1.union(st2)
+# 实战例子
+fruits = {'banana', 'orange'} 
+vegetables = {'tomato', 'potato', 'cabbage',}
+print(fruits.union(vegetables)) # 注意无序这个关键点
 ```
 
-**Example:**
+- update 方法是将参数中set插入给定的set中
 
 ```py
-fruits = {'banana', 'orange', 'mango', 'lemon'}
-vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
-print(fruits.union(vegetables)) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
-```
-
-- Update
-  This method inserts a set into a given set
-
-```py
-# syntax
-st1 = {'item1', 'item2', 'item3', 'item4'}
-st2 = {'item5', 'item6', 'item7', 'item8'}
-st1.update(st2) # st2 contents are added to st1
-```
-
-**Example:**
-
-```py
-fruits = {'banana', 'orange', 'mango', 'lemon'}
-vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
+# 实战例子
+fruits = {'mango', 'lemon'}
+vegetables = {'tomato', 'onion', 'carrot'}
 fruits.update(vegetables)
-print(fruits) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
+print(fruits) # {'lemon', 'onion', 'tomato', 'carrot', 'mango'}
 ```
 
-### Finding Intersection Items
+### 交集/差集
 
-Intersection returns a set of items which are in both the sets. See the example
-
-```py
-# syntax
-st1 = {'item1', 'item2', 'item3', 'item4'}
-st2 = {'item3', 'item2'}
-st1.intersection(st2) # {'item3', 'item2'}
-```
-
-**Example:**
+- 方法 `intersection()` 返回两个集合中的相同项的集合。
 
 ```py
+# intersection 实战例子
 whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 even_numbers = {0, 2, 4, 6, 8, 10}
 whole_numbers.intersection(even_numbers) # {0, 2, 4, 6, 8, 10}
@@ -291,27 +240,31 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.intersection(dragon)     # {'o', 'n'}
 ```
 
-### Checking Subset and Super Set
-
-A set can be a subset or super set of other sets:
-
-- Subset: _issubset()_
-- Super set: _issuperset_
+- 使用方法 `difference()` 它返回两个集合之间的差值。
 
 ```py
-# syntax
-st1 = {'item1', 'item2', 'item3', 'item4'}
-st2 = {'item2', 'item3'}
-st2.issubset(st1) # True
-st1.issuperset(st2) # True
-```
-
-**Example:**
-
-```py
+# difference 实战例子
 whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 even_numbers = {0, 2, 4, 6, 8, 10}
-whole_numbers.issubset(even_numbers) # False, because it is a super set
+whole_numbers.difference(even_numbers) # {1, 3, 5, 7, 9}
+
+python = {'p', 'y', 't', 'o','n'}
+dragon = {'d', 'r', 'a', 'g', 'o','n'}
+python.difference(dragon)     # {'t', 'y', 'p'} 结果是无序的输出和你的可能顺序不一致
+dragon.difference(python)     # {'r', 'd', 'a', 'g'} 答案仅供参考，无序
+```
+
+### 检查子集/超集
+
+集合可以是其他集合的子集或超集：
+- 子集: `issubset()`
+- 超集: `issuperset()`
+
+```py
+# 实战例子
+whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+even_numbers = {0, 2, 4, 6, 8, 10}
+whole_numbers.issubset(even_numbers) # False, 因为whole_numbers是个超集
 whole_numbers.issuperset(even_numbers) # True
 
 python = {'p', 'y', 't', 'h', 'o','n'}
@@ -319,113 +272,86 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.issubset(dragon)     # False
 ```
 
-### Checking the Difference Between Two Sets
+### 对称差集合
 
-It returns the difference between two sets.
-
-```py
-# syntax
-st1 = {'item1', 'item2', 'item3', 'item4'}
-st2 = {'item2', 'item3'}
-st2.difference(st1) # set()
-st1.difference(st2) # {'item1', 'item4'} => st1\st2
-```
-
-**Example:**
+方法 `symmetric_difference()` 返回两个set之间的对称差。它意味着返回一个集合，其中包含两个集合中的所有项，然后除去两个都存在项，数学上对照：(A\B) ∪ (B\A)
 
 ```py
-whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-even_numbers = {0, 2, 4, 6, 8, 10}
-whole_numbers.difference(even_numbers) # {1, 3, 5, 7, 9}
-
-python = {'p', 'y', 't', 'o','n'}
-dragon = {'d', 'r', 'a', 'g', 'o','n'}
-python.difference(dragon)     # {'p', 'y', 't'}  - the result is unordered (characteristic of sets)
-dragon.difference(python)     # {'d', 'r', 'a', 'g'}
-```
-
-### Finding Symmetric Difference Between Two Sets
-
-It returns the the symmetric difference between two sets. It means that it returns a set that contains all items from both sets, except items that are present in both sets, mathematically: (A\B) ∪ (B\A)
-
-```py
-# syntax
-st1 = {'item1', 'item2', 'item3', 'item4'}
-st2 = {'item2', 'item3'}
-# it means (A\B)∪(B\A)
-st2.symmetric_difference(st1) # {'item1', 'item4'}
-```
-
-**Example:**
-
-```py
+# 同样举个实际操作例子
 whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 some_numbers = {1, 2, 3, 4, 5}
 whole_numbers.symmetric_difference(some_numbers) # {0, 6, 7, 8, 9, 10}
+some_numbers.symmetric_difference(whole_numbers) # {0, 6, 7, 8, 9, 10}
 
 python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
-python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
+# 再次强调set项无序，以下结果结果项相同
+python.symmetric_difference(dragon)  # {'t', 'p', 'r', 'g', 'h', 'a', 'd', 'y'} 
+dragon.symmetric_difference(python)  # {'t', 'p', 'r', 'g', 'h', 'a', 'y', 'd'}
 ```
+> 这里请特别对照difference()弄清楚差和对称差的不同。
 
-### Joining Sets
 
-If two sets do not have a common item or items we call them disjoint sets. We can check if two sets are joint or disjoint using _isdisjoint()_ method.
+### 检查是否相同元素
+
+如果两个集合没有一个或多个共同项，我们称它们为不相交集。我们可以使用 `isdisjoint()` 方法检查两个集合是连接的还是不连接的。或者可理解为用于判断两个集合是否包含相同的元素，如果没有返回 True，否则返回 False。
 
 ```py
-# syntax
+# 使用语法
 st1 = {'item1', 'item2', 'item3', 'item4'}
-st2 = {'item2', 'item3'}
+st2 = {'item2', 'item3','item5'}
+
 st2.isdisjoint(st1) # False
+st1.isdisjoint(st2) # False
 ```
 
-**Example:**
+实战操作例子
 
 ```py
 even_numbers = {0, 2, 4 ,6, 8}
-even_numbers = {1, 3, 5, 7, 9}
-even_numbers.isdisjoint(odd_numbers) # True, because no common item
+odd_numbers = {1, 3, 5, 7, 9}
+even_numbers.isdisjoint(odd_numbers) # True, 因为没有相同的项
 
 python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
-python.isdisjoint(dragon)  # False, there are common items {'o', 'n'}
+python.isdisjoint(dragon)  # False, 有相同的项 {'o', 'n'}
 ```
 
-🌕 You are a rising star . You have just completed day 7 challenges and you are 7 steps ahead in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 坚持到现在的你，就像一个冉冉升起的新星。你刚刚完成了第7天的挑战，你在通往伟大的道路上领先了7步。按照以往惯例，让我们来做一些练习，巩固下知识点。
 
-## 💻 Exercises: Day 7
+## 💻 第7天练习
 
 ```py
-# sets
+# 已知有如下集合set
 it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
 A = {19, 22, 24, 20, 25, 26}
 B = {19, 22, 20, 25, 26, 24, 28, 27}
 age = [22, 19, 24, 25, 26, 24, 25, 24]
 ```
 
-### Exercises: Level 1
+### 练习1级
 
-1. Find the length of the set it_companies
-2. Add 'Twitter' to it_companies
-3. Insert multiple IT companies at once to the set it_companies
-4. Remove one of the companies from the set it_companies
-5. What is the difference between remove and discard
+1. 输出集合 it_companies 的长度
+2. 添加 'Twitter' 到 it_companies
+3. 一次添加多个公司到 it_companies
+4. 从 it_companies 移除一家公司
+5. 在移除set项操作中remove和difference方法有什么不同？
 
-### Exercises: Level 2
+### 练习2级
 
-1. Join A and B
-1. Find A intersection B
-1. Is A subset of B
-1. Are A and B disjoint sets
-1. Join A with B and B with A
-1. What is the symmetric difference between A and B
-1. Delete the sets completely
+1. 连接A和B
+2. 找出 A intersection（交集） B 
+3. 判断 A 是否是 B 子集
+4. 判断 A 和 B 是否有相同元素（disjoint）
+5. 实现 A join B 和 B join A
+6. 在 A 和 B 的对称差
+7. 完全的删除掉上边使用的过的集合
 
-### Exercises: Level 3
+### 练习3级
 
-1. Convert the ages to a set and compare the length of the list and the set, which one is bigger?
-1. Explain the difference between the following data types: string, list, tuple and set
-2. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? Use the split methods and set to get the unique words.
+1. 将年龄list转成set，并比较两者长度，哪个更大？
+2. 解释以下数据类型的区别：字符串str、列表list、元组tuple和集合set
+3. 有这样一个语句 " I am a teacher and I love to inspire and teach people "。 使用字符串split 和 set 得到唯一的单词集合。
 
 
 🎉 CONGRATULATIONS ! 🎉

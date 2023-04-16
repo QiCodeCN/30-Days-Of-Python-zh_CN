@@ -1,4 +1,6 @@
 
+[<< Day 13](../13_Day_List_comprehension/13_list_comprehension.md) | [Day 15>>](../15_Day_Python_type_errors/15_python_type_errors.md)
+
 > 目 录
 - [📘 Day 14](#-day-14)
   - [高阶函数](#高阶函数)
@@ -19,6 +21,8 @@
     - [练习3级](#练习3级)
 
 # 📘 Day 14
+
+> 🎉 本系列为Python基础学习，原稿来源于 [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) 英文项目，大奇主要是对其本地化翻译、逐条验证和补充，想通过30天完成正儿八经的系统化实践。此系列适合零基础同学，或仅了解Python一点知识，但又没有系统学习的使用者。总之如果你想提升自己的Python技能，欢迎加入《挑战30天学完Python》
 
 ## 高阶函数
 

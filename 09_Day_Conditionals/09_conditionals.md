@@ -1,8 +1,6 @@
 
 [<< Day 8](../08_Day_Dictionaries/08_dictionaries.md) | [Day 10 >>](../10_Day_Loops/10_loops.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-
 - [📘 Day 9](#-day-9)
   - [Conditionals](#conditionals)
     - [If Condition](#if-condition)
@@ -17,246 +15,215 @@
 
 # 📘 Day 9
 
-## Conditionals
+> 🎉 本系列为Python基础学习，原稿来源于 [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) 英文项目，大奇主要是对其本地化翻译、逐条验证和补充，想通过30天完成正儿八经的系统化实践。此系列适合零基础同学，或仅了解Python一点知识，但又没有系统学习的使用者。总之如果你想提升自己的Python技能，欢迎加入《挑战30天学完Python》
 
-By default, statements in Python script are executed sequentially from top to bottom. If the processing logic require so, the sequential flow of execution can be altered in two way:
+## 条件语句
+默认情况下，Python脚本中的语句从上到下依次执行。如果有逻辑处理需要，可以通过以下两种方式改变执行的顺序：
 
-- Conditional execution: a block of one or more statements will be executed if a certain expression is true
-- Repetitive execution: a block of one or more statements will be repetitively executed as long as a certain expression is true. In this section, we will cover _if_, _else_, _elif_ statements. The comparison and logical operators we learned in previous sections will be useful here.
+- 条件执行：如果某个表达式为真，则执行这个语句块；
+- 重复执行：只要某个表式一直为真，则会重复执行一个语句或块。
 
-### If Condition
+在这节中，我们将学习到 if/else/elif 语句。因此前几节掌握的比较运算符和逻辑运算符在这里就会变得很有用。
 
-In python and other programming languages the key word _if_ is used to check if a condition is true and to execute the block code. Remember the indentation after the colon.
+### if
+在python和其他程序语言中，关键词 `if`用于检查条件是否真，并依此结果决定是否执行代码块。记住冒号后换行代码要缩进。
 
-```py
-# syntax
+```python
+# 语法形式
 if condition:
     this part of code runs for truthy conditions
 ```
 
-**Example: 1**
-
-```py
+**演示例子：**
+```python
 a = 3
 if a > 0:
-    print('A is a positive number')
-# A is a positive number
+    print('A 是正数')
+# A 是正数
 ```
 
-As you can see in the example above, 3 is greater than 0. The condition was true and the block code was executed. However, if the condition is false, we do not see the result. In order to see the result of the falsy condition, we should have another block, which is going to be _else_.
-
-### If Else
-
-If condition is true the first block will be executed, if not the else condition will run.
-
-```py
-# syntax
+### if else
+如果 `if` 条件是 `true` 那么第一个代码块将被执行，否则 else 条件将被运行。
+```python
+# 语法形式
 if condition:
     this part of code runs for truthy conditions
 else:
      this part of code runs for false conditions
 ```
 
-**Example: **
-
-```py
+**演示例子：**
+``` python
 a = 3
 if a < 0:
-    print('A is a negative number')
+    print('A 是负数')
 else:
-    print('A is a positive number')
+    print('A 是正数')
 ```
+上边的逻辑判断为假，因此else块被执行。但如果我们的田间超出两个呢？这时候就会用到 elif
 
-The condition above proves false, therefore the else block was executed. How about if our condition is more than two? We could use _ elif_.
-
-### If Elif Else
-
-In our daily life, we make decisions on daily basis. We make decisions not by checking one or two conditions but multiple conditions. As similar to life, programming is also full of conditions. We use _elif_ when we have multiple conditions.
-
-```py
-# syntax
+### if elif else
+在日常生活中，我们每天都要做决定。其中一些结果我们不能通过一两个条件得出，而是通过检查多个条件。编程和生活一样，也是充满条件的。当我们有多个条件时，我们使用 `elif`。
+```python
+# 语法形式
 if condition:
     code
 elif condition:
     code
 else:
     code
-
 ```
-
-**Example: **
-
-```py
+**演示例子：**
+```python
 a = 0
 if a > 0:
-    print('A is a positive number')
+    print('A 是正数')
 elif a < 0:
-    print('A is a negative number')
+    print('A 是负数')
 else:
-    print('A is zero')
+    print('A 是零')
 ```
 
-### Short Hand
+### 短条件语句
+通常条件和语句块比较简单的时候，也可以使用短语句形式（类比其他语言中的三目运算符）。
+```python
+# 语法形式
+code1 if condition else code2
 
-```py
-# syntax
-code if condition else code
-```
-
-**Example: **
-
-```py
+# 实际举例
 a = 3
-print('A is positive') if a > 0 else print('A is negative') # first condition met, 'A is positive' will be printed
+print('A is positive') if a > 0 else print('A is negative') 
+# 上边短条件语句满足第一个条件，“A是正的”将被打印
 ```
 
-### Nested Conditions
-
-Conditions can be nested
-
-```py
-# syntax
+### 嵌套条件语句
+条件语句是可以多层嵌套的
+```python
+# 语法形式
 if condition:
     code
     if condition:
     code
-```
 
-**Example: **
-
-```py
+# 具体举例
 a = 0
 if a > 0:
     if a % 2 == 0:
-        print('A is a positive and even integer')
+        print('A是一个正整数且是偶数')
     else:
-        print('A is a positive number')
+        print('A是一个正整数)
 elif a == 0:
-    print('A is zero')
+    print('A是零')
 else:
-    print('A is a negative number')
-
+    print('A是负数')
 ```
 
-We can avoid writing nested condition by using logical operator _and_.
+但其实我们可以通过使用逻辑运算符，来避免过多的写嵌套条件代码。
 
-### If Condition and Logical Operators
-
-```py
-# syntax
+### if 条件 and 逻辑运算符
+``` python
+# 语法形式
 if condition and condition:
     code
 ```
 
-**Example: **
-
-```py
+*将上边嵌套代码改写举例：*
+```python
 a = 0
 if a > 0 and a % 2 == 0:
-        print('A is an even and positive integer')
+        print('A是一个正整数且是偶数')
 elif a > 0 and a % 2 !=  0:
-     print('A is a positive integer')
+     print('A是一个正整数')
 elif a == 0:
-    print('A is zero')
+    print('A是零')
 else:
-    print('A is negative')
+    print('A是负数')
 ```
 
-### If and Or Logical Operators
-
-```py
-# syntax
+### if 条件 or 逻辑运算符
+```python
+# 语法形式
 if condition or condition:
     code
 ```
 
-**Example: **
-
-```py
+*演示举例：*
+```python
 user = 'James'
 access_level = 3
 if user == 'admin' or access_level >= 4:
-        print('Access granted!')
+        print('权限通过!')
 else:
-    print('Access denied!')
+    print('无权限!')
 ```
 
-🌕 You are doing great.Never give up because great things take time. You have just completed day 9 challenges and you are 9 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 你做得很好。永远不要放弃，因为伟大的事情需要时间。你刚刚完成了第9天的挑战，你在通往伟大的道路上前进了9步。现在为你的大脑和肌肉做一些锻炼。
 
-## 💻 Exercises: Day 9
+## 第9天练习
+### 练习1级
+1. 使用`input("输入你的年龄：")`获取用户输入。如果用户年龄在18岁以上，请给出反馈为：你的年龄可以学开车了。如果得到的年龄在18或以下，请给出还差几岁可以开车。 输出如：
+    ```python
+    输入你的年龄: 30
+    你的年龄可以学开车了。
 
-### Exercises: Level 1
-
-1.  Get user input using input(“Enter your age: ”). If user is 18 or older, give feedback: You are old enough to drive. If below 18 give feedback to wait for the missing amount of years. Output:
-    ```sh
-    Enter your age: 30
-    You are old enough to learn to drive.
-    Output:
-    Enter your age: 15
-    You need 3 more years to learn to drive.
+    输入你的年龄: 15
+    你还需要 3 年才可以学开车。
     ```
-2.  Compare the values of my_age and your_age using if … else. Who is older (me or you)? Use input(“Enter your age: ”) to get the age as input. You can use a nested condition to print 'year' for 1 year difference in age, 'years' for bigger differences, and a custom text if my_age = your_age. Output:
-    ```sh
-    Enter your age: 30
-    You are 5 years older than me.
+
+2. 使用 `if...else` 比较 `my_age` 和 `your_age`。谁的年龄更大呢？同样使用input来获取你的年龄，其中我的年龄内置。你可以使用嵌嵌套条件打印 `year` 表示相差1岁，years表示相差更多，同时支持一个条件 my_age = your_age 即年龄相等。举例输出： 
+    ``` python
+    # 假设我的年龄是25
+    请输入你的年龄: 30
+    你比我大 5 years。 
     ```
-3.  Get two numbers from the user using input prompt. If a is greater than b return a is greater than b, if a is less b return a is smaller than b, else a is equal to b. Output:
 
-```sh
-Enter number one: 4
-Enter number two: 3
-4 is greater than 3
-```
-
-    ### Exercises: Level 2
-
-   1. Write a code which gives grade to students according to theirs scores:
-   
-        ```sh
-        80-100, A
-        70-89, B
-        60-69, C
-        50-59, D
-        0-49, F
-        ```
-1. Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
-    September, October or November, the season is Autumn.
-    December, January or February, the season is Winter.
-    March, April or May, the season is Spring
-    June, July or August, the season is Summer
-2.  The following list contains some fruits:
-    ```sh
-    fruits = ['banana', 'orange', 'mango', 'lemon']
+3. 使用input获得两个数字。如果a比b大返回 a大于b，如果a比b小返回 a小于b，否则返回a与b相等。
     ```
-    If a fruit doesn't exist in the list add the fruit to the list and print the modified list. If the fruit exists print('That fruit already exist in the list') 
+    输入第一个数字: 4
+    输入第二个数字: 3
+    比较结果：4 大于 3
+    ```
 
-    ### Exercises: Level 3
+### 练习2级
+1. 写一个段逻辑代码，并根据分数范围给出他们对应的等级。
+    ```
+    80-100, A
+    70-89, B
+    60-69, C
+    50-59, D
+    0-49, F
+    ```
 
-   1. Here we have a person dictionary. Feel free to modify it!
-   
-```py
-        person={
-    'first_name': 'Asabeneh',
-    'last_name': 'Yetayeh',
-    'age': 250,
-    'country': 'Finland',
-    'is_marred': True,
-    'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
-    'address': {
-        'street': 'Space street',
-        'zipcode': '02210'
+2. 检查季节是秋季、冬季、春季还是夏季。
+- 如果用户输入为:September, October或November，则季节为Autumn；
+- 如果输入是December、January或February，这个季节是Winter；
+- March，April或May，季节则是Spring；
+- June月，July或August，则季节是Summer。
+
+3. 以下列举了一些水果:
+    ```
+    fruits = ['banana', 'orange', 'mango']
+    ```
+    然后获得输入的一种水果，如果列表中不存在，则将该水果添加到列表中并打印。如果已经存在则提示：该水果已经存在于列表中。
+
+### 练习3级
+1. 这里我们有一个人物字典。当然值你可以根据情况自己定义。
+    ```python
+     person={
+        'name': 'MegaQi',
+        'is_marred': True,
+        'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+        'address': {
+            'street': ' 上海静安寺北京西路',
+            'zipcode': '200041'
+        }
     }
-    }
-```
+    ```
+    然后分别分别实现下边条件判断要求：
+    - 检查人员字典是否有 skill 键，如果有打印出对应的列表值。
+    - 检查人员字典是否有 skill 键，如果有进一步检查这个人是否拥有Python技能，并打印出结果。
+    - 如果这个人技能树仅是JavaScript和React，则打印”他是个前端开发人员“。如果技能树有Node、Python和MongoDB，则打印“他是个后端工程师”，如果这个人会Recat、Node和MongoDB，请打印“他是个全栈开发人员”，否则打印“未知标题” - 为了结果更准确可以使用嵌套条件语句。
 
-     * Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
-     * Check if the person dictionary has skills key, if so check if the person has 'Python' skill and print out the result.
-     * If a person skills has only JavaScript and React, print('He is a front end developer'), if the person skills has Node, Python, MongoDB, print('He is a backend developer'), if the person skills has React, Node and MongoDB, Print('He is a fullstack developer'), else print('unknown title') - for more accurate results more conditions can be nested!
-     * If the person is married and if he lives in Finland, print the information in the following format:
-
-```py
-    Asabeneh Yetayeh lives in Finland. He is married.
-```
 
 🎉 CONGRATULATIONS ! 🎉
 
