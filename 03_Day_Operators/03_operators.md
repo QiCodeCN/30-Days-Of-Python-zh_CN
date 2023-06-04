@@ -15,8 +15,10 @@
 
 ## 布尔值
 
-布尔数据类型表示以下两个值之一：`True`或`False`。
-请注意，与 JavaScript 不同Python中的布尔值首字要 **大写**。 
+布尔数据类型表示以下两个值之一：`True` 或 `False`。
+
+请注意，与 JavaScript 不同Python中的布尔值首字要 **大写**。
+ 
 ```py
 # 示例：布尔值
 print(True)

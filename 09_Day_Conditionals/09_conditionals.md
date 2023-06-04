@@ -2,16 +2,18 @@
 [<< Day 8](../08_Day_Dictionaries/08_dictionaries.md) | [Day 10 >>](../10_Day_Loops/10_loops.md)
 
 - [📘 Day 9](#-day-9)
-  - [Conditionals](#conditionals)
-    - [If Condition](#if-condition)
-    - [If Else](#if-else)
-    - [If Elif Else](#if-elif-else)
-    - [Short Hand](#short-hand)
-    - [Nested Conditions](#nested-conditions)
-    - [If Condition and Logical Operators](#if-condition-and-logical-operators)
-    - [If and Or Logical Operators](#if-and-or-logical-operators)
-  - [💻 Exercises: Day 9](#-exercises-day-9)
-    - [Exercises: Level 1](#exercises-level-1)
+  - [条件语句](#条件语句)
+    - [如果if](#如果if)
+    - [如果if 否则else](#如果if-否则else)
+    - [if elif else](#if-elif-else)
+    - [短条件语句](#短条件语句)
+    - [嵌套条件语句](#嵌套条件语句)
+    - [if 条件 and 逻辑运算符](#if-条件-and-逻辑运算符)
+    - [if 条件 or 逻辑运算符](#if-条件-or-逻辑运算符)
+  - [💻 第9天练习](#-第9天练习)
+    - [练习1级](#练习1级)
+    - [练习2级](#练习2级)
+    - [练习3级](#练习3级)
 
 # 📘 Day 9
 
@@ -25,7 +27,7 @@
 
 在这节中，我们将学习到 if/else/elif 语句。因此前几节掌握的比较运算符和逻辑运算符在这里就会变得很有用。
 
-### if
+### 如果if
 在python和其他程序语言中，关键词 `if`用于检查条件是否真，并依此结果决定是否执行代码块。记住冒号后换行代码要缩进。
 
 ```python
@@ -42,7 +44,7 @@ if a > 0:
 # A 是正数
 ```
 
-### if else
+### 如果if 否则else
 如果 `if` 条件是 `true` 那么第一个代码块将被执行，否则 else 条件将被运行。
 ```python
 # 语法形式

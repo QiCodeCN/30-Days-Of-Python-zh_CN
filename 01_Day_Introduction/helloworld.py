@@ -18,11 +18,3 @@ print(type([1, 2, 3]))   # 列表 List
 print(type({'名称':'大奇'})) # 字典 Dictionary
 print(type({9.8, 3.14, 2.7}))    # 集合 Set
 print(type((9.8, 3.14, 2.7)))    # 元组 Tuple
-
-print(2 + 3)   # addition(+)
-print(3 - 1)   # subtraction(-)
-print(2 * 3)   # multiplication(*)
-print(3 / 2)   # division(/)
-print(3 ** 2)  # exponential(**)
-print(3 % 2)   # modulus(%)
-print(3 // 2)  # Floor division operator(//)

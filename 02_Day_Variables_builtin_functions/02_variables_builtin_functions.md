@@ -18,7 +18,7 @@
 
 ## 内置函数
 
-在Python中有很多的内置函数方法，它们全局的函数，这就意味着无需导入或配置你就可以直接使用。一些常见的Python内置函数如：_print(), len(), type(), int(), float(), str(), input(), list(), dict(), min(), max(), sum(), sorted(), open(), file(), help(), and dir()。_在下边表格中将罗列出来在Python官方文档的内置函数。
+在Python中有很多的内置函数方法，它们全局的函数，这就意味着无需导入或配置你就可以直接使用。一些常见的Python内置函数如：_print()_, _len()_, _type()_, _int()_, _float()_, _str()_, _input()_, _list()_, _dict()_, _min()_, _max()_, _sum()_, _sorted()_, _open()_, _file()_, _help()_, 和 _dir()_ 在下边表格中将罗列出来在Python官方文档的内置函数。
 > 📖内置函数 [https://docs.python.org/3.9/library/functions.html](https://docs.python.org/3.9/library/functions.html)
 
 ![Built-in Functions](../images/day201_builtin-functions.png)
@@ -64,9 +64,15 @@ current_year_2021
 birth_year
 num1
 num2
-_if  # 如果我们想使用保留关键字做变量名可以这样处理
-中文名称 # 中文变量也是可以的，因为都是字符，但在实际的代码中还是不建议用  
+_if 
+文名称
 ```
+> 注意：
+> 
+> **_if**  如果我们想使用保留关键字做变量名可以这样处理
+>
+> **中文名称** 中文变量也是可以的，因为都是字符，但在实际的代码中还是不建议用  
+
 无效变量名举例
 ```python
 first-name

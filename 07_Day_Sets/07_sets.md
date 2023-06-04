@@ -2,26 +2,22 @@
 [<< Day 6](../06_Day_Tuples/06_tuples.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
 
 - [📘 Day 7](#-day-7)
-  - [Sets](#sets)
-    - [Creating a Set](#creating-a-set)
-    - [Getting Set's Length](#getting-sets-length)
-    - [Accessing Items in a Set](#accessing-items-in-a-set)
-    - [Checking an Item](#checking-an-item)
-    - [Adding Items to a Set](#adding-items-to-a-set)
-    - [Removing Items from a Set](#removing-items-from-a-set)
-    - [Clearing Items in a Set](#clearing-items-in-a-set)
-    - [Deleting a Set](#deleting-a-set)
-    - [Converting List to Set](#converting-list-to-set)
-    - [Joining Sets](#joining-sets)
-    - [Finding Intersection Items](#finding-intersection-items)
-    - [Checking Subset and Super Set](#checking-subset-and-super-set)
-    - [Checking the Difference Between Two Sets](#checking-the-difference-between-two-sets)
-    - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
-    - [Joining Sets](#joining-sets-1)
-  - [💻 Exercises: Day 7](#-exercises-day-7)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+  - [集合Set](#集合Set)
+    - [创建set](#创建set)
+    - [获取长度](#获取长度)
+    - [访问和检索](#访问和检索)
+    - [项添加](#项添加)
+    - [移删清空](#移删清空)
+    - [list转set](#list转set)
+    - [连接set](#连接set)
+    - [交集/差集](#交集/差集)
+    - [检查子集/超集](#检查子集/超集)
+    - [对称差集合](#对称差集合)
+    - [检查是否相同元素](#检查是否相同元素)
+  - [💻 第7天练习](#-第7天练习)
+    - [练习1级](#练习1级)
+    - [练习2级](#练习2级)
+    - [练习3级](#练习3级)
 
 # 📘 Day 7
 
@@ -124,7 +120,7 @@ print(len(fruits))
 
 ### 移删清空
 
-### remove
+#### remove
 
 我们可以使用 `remove()` 方法将set中某项进行移除。 其中如果移除的项不存在则会抛出一个错误，因此在做此操作前做好检查下项是否存在set中。不过我嗯可以使用 `discard()` 方法来进行同样操作但不会引起错误。
 
@@ -170,7 +166,7 @@ fruits.clear()
 print(fruits) # set()
 ```
 
-### del
+#### del
 
 如果我们想彻底删除set本身，我们使用 `del` 操作关键词。
 
