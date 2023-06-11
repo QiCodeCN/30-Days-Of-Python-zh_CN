@@ -214,38 +214,71 @@ lambda a, b: a + b
 详细学习回顾请阅读：_[文件处理](../19_Day_File_handling/19_file_handling.md)_
 
 ### Day20 PIP包管理
-第20天
+第20天，Python语言的广受大家欢迎的原因除了入门学习简单上手快，还有就是它有很多贡献者们发布的包。利用这些包可以快速实现自己代码程序。而这些包的管理最常用的包管理之一就是PIP。本文中我们详细讲解了安装、卸载、查看、生成项目包依赖，并且了解了如何能够创建自己的发布包。
+
+详细学习回顾请阅读：_[PIP包管理](../20_Day_Python_package_manager/20_python_package_manager.md)_
 
 ### Day21 类和对象
-第21天
+第21天，Python程序中的每个元素都是类的对象，包括它的属性和方法。
+
+本篇首先解释了什么是类和对象，类被定义为具有相似特征和行为的对象的模板，而对象是类的具体实例。然后，深入探讨了如何创建类和实例化对象，并介绍了类中常见的成员，如属性和方法。
+
+接下来还讨论了类之间的继承关系，说明了如何创建子类以及如何继承和重写父类的属性和方法。它还介绍了多重继承的概念，并提供了一些注意事项和最佳实践。
+
+详细学习回顾请阅读：_[类和对象](../21_Day_Classes_and_objects/21_classes_and_objects.md)_
 
 ### Day22 Web爬虫
-第22天
+第22天，简单介绍了数据抓取的编程方法。核心用到了两个包 `requests` 和 `BeautifulSoup`。最后在课后作业中给出了一个用于实际操作的练习靶场。数据爬虫是Python工程一个分支。本篇只是入门，如果想在此方面专项发展，还需要单独进行深入学习的。
+
+详细学习回顾请阅读：_[Web爬虫](../22_Day_Web_scraping/22_web_scraping.md)_
 
 ### Day23 虚拟环境
-第23天
+第23天，虚拟环境可以创建一个隔离或分离的环境。这将帮助我们避免项目间依赖关系的冲突。常用并推荐的两个虚拟环境管理包：
+- virtualenv
+- anaconda
+
+详细学习回顾请阅读：_[虚拟环境](../23_Day_Virtual_environment/23_virtual_environment.md)_
 
 ### Day24 Python统计分析
-第24天
+第24天，本篇主要介绍了statistics模块，它是计算数值数据的数学统计的函数，主要用于绘图和科学计算。另外还有NumPy是Python中科学计算的核心库，它提供了高性能的多维数组对象和处理数组的工具。同爬虫一样数据统计分析也是Python领域里一个分支。如果你想深造请学习更多内容。
+
+详细学习回顾请阅读：_[Python统计分析](../24_Day_Statistics/24_statistics.md)_
 
 ### Day25 Pandas
-第25天
+第25天，Pandas是一个开源的Python库，提供了高效、灵活和易于使用的数据结构和数据分析工具。它是数据科学和数据分析中的常用工具之一，广泛应用于数据清洗、处理、转换和分析的任务。
+
+详细学习回顾请阅读：_[Python Pandas](../25_Day_Pandas/25_pandas.md)_
 
 ### Day26 Python web
+第25天，Python是个强大语言，同样可以用于Web服务的开发。本篇主要通过 Django和Flask 作为实战的例子进行简单的WEB开发。当然这篇中涉及到前端需要你了解一些HTML\CSS的基础。同样内容只是引路，在当今内卷的前端框架面前，有很多方案，比如vue、react等等。
 
-### Day27 Python web
-第27天
+详细学习回顾请阅读：_[Python web](../26_Day_Python_web/26_python_web.md)_
 
-### Day28 Python MongoDB
-第28天
+### Day27 Python MongoDB
+第27天，有服务就会有数据的持久化。本篇主要介绍非关系型数据MongoDB，通过阅读这篇文章，可以了解如何使用Python与MongoDB进行交互，并掌握基本的插入、查询、更新和删除文档的操作。文内提供了丰富的示例代码和解释，帮助快速上手使用Python与MongoDB进行数据处理和管理。
+
+详细学习回顾请阅读：_[Python MongoDB](../27_Day_Python_with_mongodb/27_python_with_mongodb.md)_
+
+### Day28 Python Mysql
+第28天，另外一个非常常用数据就是关系型的Mysql，笔者大奇额外补充了一篇。从环境搭建、配置，数据库创建、使用，表的增删改查都做了详细的演示。
+
+详细学习回顾请阅读：_[Python Mysql](../28_Day_Python_with_mysql/28_python_with_mysql.md)_
 
 ### Day29 Python API
-第29天
+第29天，最后一篇算是综合应用。首先是讲解了HTTP的基础，回顾两个核心请求方法：
+- GET：GET方法用于通过给定的URI从给定的服务器检索和获取信息。使用GET的请求应该只检索数据，并且不应对数据产生其他影响。
+- POST：POST请求用于创建数据并将数据发送到服务器，例如，使用HTML表单创建新的帖子、文件上传等。
 
-## 推荐
+最最后，拿了学生数据的例子，综合数据操作实现一个 RESTful API 服务。
 
+详细学习回顾请阅读：_[Python API](../29_Day_API/29_API.md)_
 
-🎉 CONGRATULATIONS ! 🎉
+## 推荐&结束语
+
+到这里，历时半年整个Python基础学习系列完结。但学习是永不能止步的，笔者会继续分享更多的内容。这里推荐我的另外一个真实战系列 https://github.com/QiCodeCN/TestProjectManagement ，它主要是通过0-1手把手教你实现的测试平台，其中后端服务就是Python实现。如果你感兴趣欢迎阅读它。并持续关注。
+
+如果你对本系列表示有用，请给作者项目微不足道的小星星，也希望能推荐给更多人阅读学习。
+
 
 [<< Day 29](../29_Day_Building_API/29_building_API.md)
 

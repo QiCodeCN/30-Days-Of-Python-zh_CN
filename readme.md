@@ -27,7 +27,7 @@
 | 21  |     [类和对象](./21_Day_Classes_and_objects/21_classes_and_objects.md)      |
 | 22  |                [Web爬虫](./22_Day_Web_scraping/22_web_scraping.md)                |
 | 23  |     [虚拟环境](./23_Day_Virtual_environment/23_virtual_environment.md)      |
-| 24  |                   [Statistics](./24_Day_Statistics/24_statistics.md)                   |
+| 24  |                   [Python统计分析](./24_Day_Statistics/24_statistics.md)                   |
 | 25  |                         [Pandas](./25_Day_Pandas/25_pandas.md)                         |
 | 26  |                   [Python web](./26_Day_Python_web/26_python_web.md)                   |
 | 27  |     [Python MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)      |
