@@ -45,7 +45,7 @@
 
 ## 开篇说
 
-> 🎉 本系列为 Python 基础学习，原稿来源于 [30-Days-Of-Python](https://xie.infoq.cn/link?target=https%3A%2F%2Fgithub.com%2FAsabeneh%2F30-Days-Of-Python) 英文项目，笔者大奇主要是对其本地化翻译、验证和补充。此系列适合零基础或仅会简单用的同学，此系列从基础到中阶，并伴有练习和解答。总之如果你想提升自己的 Python 技能，欢迎加入《挑战 30 天学完 Python》
+> 🎉 本系列为 Python 基础学习，原稿来源于 [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) 英文项目，笔者大奇主要是对其本地化翻译、验证和补充。此系列适合零基础或仅会简单用的同学，此系列从基础到中阶，并伴有练习和解答。总之如果你想提升自己的 Python 技能，欢迎加入《挑战 30 天学完 Python》
 
 
 开始学习之前，笔者先给出学习的思维导图，让大家快速了解未来30天将要学习的知识内容。

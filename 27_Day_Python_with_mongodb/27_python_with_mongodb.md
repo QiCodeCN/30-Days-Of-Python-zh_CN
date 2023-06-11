@@ -2,24 +2,26 @@
 [<< Day 26](../26_Day_Python_web/26_python_web.md) | [Day 28 >>](../28_Day_Python_with_mysql/28_python_with_mysql.md)
  
 - [📘 Day 27](#-day-27)
-- [Python with MongoDB](#python-with-mongodb)
+- [Python操作数据库](#Python操作数据库)
   - [MongoDB](#mongodb)
-    - [SQL versus NoSQL](#sql-versus-nosql)
-    - [Getting Connection String(MongoDB URI)](#getting-connection-stringmongodb-uri)
-    - [Connecting Flask application to MongoDB Cluster](#connecting-flask-application-to-mongodb-cluster)
-    - [Creating a database and collection](#creating-a-database-and-collection)
-    - [Inserting many documents to collection](#inserting-many-documents-to-collection)
-    - [MongoDB Find](#mongodb-find)
-    - [Find with Query](#find-with-query)
-    - [Find query with modifier](#find-query-with-modifier)
-    - [Limiting documents](#limiting-documents)
-    - [Find with sort](#find-with-sort)
-    - [Update with query](#update-with-query)
-    - [Delete Document](#delete-document)
-    - [Drop a collection](#drop-a-collection)
-  - [💻 Exercises: Day 27](#-exercises-day-27)
+    - [SQL VS NoSQL](#SQL-VS-NoSQL)
+    - [取得连接字符串(MongoDB URI)](#取得连接字符串(MongoDB-URI))
+    - [连接尝试](#连接尝试)
+    - [创建数据库和集合](#创建数据库和集合)
+    - [多行数据插入](#多行数据插入)
+    - [MongoDB查找](#MongoDB查找)
+    - [条件查找](#条件查找)
+    - [多条件查询](#多条件查询)
+    - [带有修饰符的查询](#带有修饰符的查询)
+    - [限制返回数量](#限制返回数量)
+    - [排序查询](#排序查询)
+    - [查询更新](#查询更新)
+    - [删除文档数据](#删除文档数据)
+    - [删除集合](#删除集合)
 
 # 📘 Day 27
+
+> 🎉 本系列为Python基础学习，原稿来源于 [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) 英文项目，大奇主要是对其本地化翻译、逐条验证和补充，想通过30天完成正儿八经的系统化实践。此系列适合零基础同学，或仅了解Python一点知识，但又没有系统学习的使用者。总之如果你想提升自己的Python技能，欢迎加入《挑战30天学完Python》
 
 # Python操作数据库
 
@@ -142,7 +144,7 @@ print(client.list_database_names())
 
 从图中可以看出，创建文档时使用了一个长id，该id为主键。每次我们创建一个文档，mongoDB都会为它创建一个唯一的id。
 
-### Inserting many documents to collection
+### 多行数据插入
 
 上述方法 *insert_one()* 每次仅插入一项，如果我们想一次插入多条数据，可以使用 *insert_many()* 方法或for循环。
 
