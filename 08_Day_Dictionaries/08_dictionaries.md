@@ -39,7 +39,7 @@
 
 ## Dictionaries
 
-A dictionary is a collection of unordered, modifiable(mutable) paired (key: value) data type.
+A dictionary is a collection of ordered for python 3.6+, modifiable(mutable) paired (key: value) data type.
 
 ### Creating a Dictionary
 
