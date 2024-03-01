@@ -1,10 +1,16 @@
 [<< Day 27](../27_Day_Python_with_mongodb/27_python_with_mongodb.md) | [Day 29 >>](../29_Day_Building_API/29_building_API.md)
 
 - [📘 Day 28](#-day-28)
-- [Application Programming Interface(API)](#application-programming-interfaceapi)
-  - [API](#api)
-  - [Building API](#building-api)
-  - [💻 Exercises: Day 28](#-exercises-day-28)
+- [Mysql](#Mysqli)
+  - [安装和配置](#安装和配置)
+  - [连接MySQL](#连接MySQL)
+  - [创建数据库](#创建数据库)
+  - [创建表](#创建表)
+  - [插入数据](#插入数据)
+  - [查询数据](#查询数据)
+  - [删除数据](#删除数据)
+  - [执行事务](#执行事务)
+  - [💻 第28天练习](#-第28天练习)
 
 # 📘 Day 28
 
